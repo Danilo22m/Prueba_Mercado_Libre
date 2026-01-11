@@ -1,0 +1,31 @@
+# Configuracion del proyecto Ejercicio 1 - ML vs LLM
+
+# Rutas
+paths:
+  data_raw: "/Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/data/raw/precios_historicos.csv"
+  data_processed: "data/processed/"
+  outputs: "outputs/"
+  results: "outputs/results/"
+  plots: "outputs/plots/"
+  models: "outputs/models/"
+  logs: "logs/"
+
+# Datos
+data:
+  test_size: 0.2
+  random_seed: 42
+  reduce_dataset: false
+  sample_size: 5000
+  num_productos_visualizar: 3
+
+# Preprocesamiento
+preprocessing:
+  min_registros_producto: 10
+  ventana_movil: 7
+  umbral_zscore_ground_truth: 3.0
+  metodo_ground_truth: "zscore"
+
+# General
+general:
+  verbose: true
+  save_intermediate: true
