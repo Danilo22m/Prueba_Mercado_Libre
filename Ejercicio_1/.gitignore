@@ -1,0 +1,48 @@
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Datos procesados (excluir, se regeneran)
+#data/processed/
+
+# Datos raw grandes (excluir si es muy pesado)
+# data/raw/*.csv
+
+# Outputs y logs (INCLUIR para entregables)
+# outputs/   <- Se versiona para mostrar resultados
+# logs/      <- Se versiona para mostrar ejecución
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Configuracion sensible
+.env
+*.key
+credentials.json
+
+# Modelos entrenados
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
