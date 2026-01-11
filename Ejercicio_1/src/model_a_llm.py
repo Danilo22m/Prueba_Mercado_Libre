@@ -6,7 +6,7 @@ import json
 import time
 import os
 from pathlib import Path
-from groq import Groq
+from openai import OpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -67,7 +67,7 @@ Responde SOLO en formato JSON exacto:
 
 
 def llamar_llm(prompt, config, client):
-    """Llama al LLM usando Groq API"""
+    """Llama al LLM usando OpenAI API"""
     response = client.chat.completions.create(
         model=config['model_a']['model_name'],
         messages=[{"role": "user", "content": prompt}],
@@ -118,7 +118,8 @@ def predecir_con_llm(df, config):
     if not api_key:
         raise ValueError(f"API key no encontrada. Define {config['model_a']['api_key_env']} en variables de entorno")
 
-    client = Groq(api_key=api_key)
+    api_key = api_key.strip()
+    client = OpenAI(api_key=api_key)
 
     predicciones = []
     confidences = []
@@ -156,8 +157,6 @@ def predecir_con_llm(df, config):
             costos.append(0.0)
 
         latencia = (time.time() - start_time) * 1000
-
-        time.sleep(0.05)
 
         predicciones.append(label)
         confidences.append(confidence)
@@ -247,7 +246,7 @@ def guardar_predicciones_llm(df, metricas, config):
 def ejecutar_modelo_a(config_path=None):
     """Ejecuta pipeline completo del Modelo A - LLM"""
     logger.info("="*60)
-    logger.info("MODELO A - LLM (GROQ)")
+    logger.info("MODELO A - LLM (OPENAI)")
     logger.info("="*60)
 
     config = cargar_configuracion(config_path)
