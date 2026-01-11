@@ -1,0 +1,9 @@
+{
+  "latencia_promedio_ms": 1.3035017441880576,
+  "latencia_p50_ms": 1.2841224670410156,
+  "latencia_p95_ms": 1.3260841369628906,
+  "total_predicciones": 35183,
+  "predicciones_anomalas": 715,
+  "pct_anomalas": 2.032231475428474,
+  "confidence_promedio": 0.8925215264367284
+}

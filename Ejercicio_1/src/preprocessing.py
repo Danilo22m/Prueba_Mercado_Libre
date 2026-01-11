@@ -138,10 +138,16 @@ def feature_engineering(df, config):
     df = df.fillna(0)
 
     features_creadas = [
-        'PRICE_MEAN_GLOBAL', 'PRICE_STD_GLOBAL',
-        'PRICE_MEAN_ROLLING', 'PRICE_STD_ROLLING',
-        'PRICE_LAG_1', 'PRICE_DIFF', 'PRICE_DIFF_PCT',
-        'PRICE_DIFF_VS_MEAN', 'PRICE_MIN_ROLLING', 'PRICE_MAX_ROLLING'
+        'PRICE_MEAN_GLOBAL',      # Media de precio de todo el historico del producto
+        'PRICE_STD_GLOBAL',       # Desviacion estandar de todo el historico del producto
+        'PRICE_MEAN_ROLLING',     # Media movil del precio en ventana de 7 dias
+        'PRICE_STD_ROLLING',      # Desviacion estandar movil en ventana de 7 dias
+        'PRICE_LAG_1',            # Precio del dia anterior
+        'PRICE_DIFF',             # Diferencia absoluta entre precio actual y dia anterior
+        'PRICE_DIFF_PCT',         # Diferencia porcentual entre precio actual y dia anterior
+        'PRICE_DIFF_VS_MEAN',     # Diferencia entre precio actual y media movil
+        'PRICE_MIN_ROLLING',      # Precio minimo en ventana de 7 dias
+        'PRICE_MAX_ROLLING'       # Precio maximo en ventana de 7 dias
     ]
 
     logger.info(f"Features creadas: {len(features_creadas)}")
