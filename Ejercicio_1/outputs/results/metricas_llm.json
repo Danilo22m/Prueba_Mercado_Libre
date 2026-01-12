@@ -1,9 +1,13 @@
 {
-  "latencia_promedio_ms": 1.3035017441880576,
-  "latencia_p50_ms": 1.2841224670410156,
-  "latencia_p95_ms": 1.3260841369628906,
-  "total_predicciones": 35183,
-  "predicciones_anomalas": 715,
-  "pct_anomalas": 2.032231475428474,
-  "confidence_promedio": 0.8925215264367284
+  "latencia_promedio_ms": 2021.9823503494263,
+  "latencia_p50_ms": 2550.100326538086,
+  "latencia_p95_ms": 2807.3668718338013,
+  "total_predicciones": 100,
+  "predicciones_anomalas": 87,
+  "pct_anomalas": 87.0,
+  "confidence_promedio": 0.9181999999999999,
+  "costo_total_usd": 0.0,
+  "costo_promedio_usd": 0.0,
+  "total_input_tokens": 17705,
+  "total_output_tokens": 4239
 }

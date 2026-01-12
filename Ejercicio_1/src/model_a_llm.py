@@ -6,7 +6,7 @@ import json
 import time
 import os
 from pathlib import Path
-from openai import OpenAI
+from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -37,11 +37,17 @@ def cargar_datos_test(config):
     logger.info(f"Test cargado: {len(df):,} registros")
 
     if config['model_a'].get('use_sample', False):
-        sample_pct = config['model_a'].get('sample_pct', 0.05)
-        sample_size = int(len(df) * sample_pct)
-        logger.info(f"Usando muestra del {sample_pct*100:.1f}% para LLM ({sample_size:,} registros)")
+        # Soporta tanto sample_size (numero fijo) como sample_pct (porcentaje)
+        if 'sample_pct' in config['model_a']:
+            sample_pct = config['model_a']['sample_pct']
+            sample_size = int(len(df) * sample_pct)
+            logger.info(f"Usando muestra del {sample_pct*100:.1f}% para LLM ({sample_size:,} registros)")
+        else:
+            sample_size = config['model_a'].get('sample_size', 100)
+            logger.info(f"Usando muestra de {sample_size} registros aleatorios para LLM")
+
         df = df.sample(n=sample_size, random_state=config['data']['random_seed'])
-        logger.info(f"Muestra estratificada: {(df['TRUE_LABEL']=='ANOMALO').sum():,} anomalos, {(df['TRUE_LABEL']=='NORMAL').sum():,} normales")
+        logger.info(f"Muestra: {(df['TRUE_LABEL']=='ANOMALO').sum()} anomalos, {(df['TRUE_LABEL']=='NORMAL').sum()} normales")
 
     return df
 
@@ -67,7 +73,7 @@ Responde SOLO en formato JSON exacto:
 
 
 def llamar_llm(prompt, config, client):
-    """Llama al LLM usando OpenAI API"""
+    """Llama al LLM usando Groq API"""
     response = client.chat.completions.create(
         model=config['model_a']['model_name'],
         messages=[{"role": "user", "content": prompt}],
@@ -119,7 +125,7 @@ def predecir_con_llm(df, config):
         raise ValueError(f"API key no encontrada. Define {config['model_a']['api_key_env']} en variables de entorno")
 
     api_key = api_key.strip()
-    client = OpenAI(api_key=api_key)
+    client = Groq(api_key=api_key)
 
     predicciones = []
     confidences = []
@@ -130,6 +136,8 @@ def predecir_con_llm(df, config):
     output_tokens_list = []
 
     total = len(df)
+    max_rpm = config['model_a'].get('max_requests_per_minute', 30)
+    delay_entre_requests = 60.0 / max_rpm if max_rpm > 0 else 0
 
     for idx, row in df.iterrows():
         if idx % 100 == 0:
@@ -162,6 +170,10 @@ def predecir_con_llm(df, config):
         confidences.append(confidence)
         reasons.append(reason)
         latencias.append(latencia)
+
+        # Delay para respetar rate limit
+        if delay_entre_requests > 0 and idx < total - 1:
+            time.sleep(delay_entre_requests)
 
     logger.info(f"Predicciones completadas: {total}")
 
@@ -246,7 +258,7 @@ def guardar_predicciones_llm(df, metricas, config):
 def ejecutar_modelo_a(config_path=None):
     """Ejecuta pipeline completo del Modelo A - LLM"""
     logger.info("="*60)
-    logger.info("MODELO A - LLM (OPENAI)")
+    logger.info("MODELO A - LLM (GROQ)")
     logger.info("="*60)
 
     config = cargar_configuracion(config_path)

@@ -1,0 +1,11 @@
+{
+  "tiempo_entrenamiento_s": 0.43839406967163086,
+  "latencia_promedio_ms": 0.0044630347904797,
+  "total_predicciones": 35183,
+  "predicciones_anomalas": 708,
+  "pct_anomalas": 2.0123355029417618,
+  "confidence_promedio": 0.14308358609432972,
+  "score_promedio": -0.4022783570762788,
+  "costo_total_usd": 0.0,
+  "costo_promedio_usd": 0.0
+}
