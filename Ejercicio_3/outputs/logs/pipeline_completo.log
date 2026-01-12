@@ -1,0 +1,532 @@
+[2026-01-12 18:12:44] INFO - ======================================================================
+[2026-01-12 18:12:44] INFO - PIPELINE COMPLETO RAG + AGENTE CRITICO
+[2026-01-12 18:12:44] INFO - Inicio: 2026-01-12 18:12:44
+[2026-01-12 18:12:44] INFO - Log guardado en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_3/outputs/logs/pipeline_completo.log
+[2026-01-12 18:12:44] INFO - ======================================================================
+[2026-01-12 18:12:44] INFO - Verificando requisitos...
+[2026-01-12 18:12:44] INFO - API Key configurada correctamente
+[2026-01-12 18:12:44] INFO - Archivos requeridos encontrados
+[2026-01-12 18:12:44] INFO - ============================================================
+[2026-01-12 18:12:44] INFO - FASE 1: Ingesta y Normalizacion
+[2026-01-12 18:12:44] INFO - ============================================================
+[2026-01-12 18:12:45] INFO - Iniciando FASE 1: Ingesta y Normalizacion
+[2026-01-12 18:12:45] INFO - Cargando dataset: data/raw/Laptops_with_technical_specifications.csv
+[2026-01-12 18:12:45] INFO - Dataset cargado: 1000 registros, 31 columnas
+[2026-01-12 18:12:45] INFO - Eliminando duplicados
+[2026-01-12 18:12:45] INFO - Duplicados eliminados: 88
+[2026-01-12 18:12:45] INFO - Filtrando laptops incompletos
+[2026-01-12 18:12:45] INFO - Laptops incompletos eliminados: 720
+[2026-01-12 18:12:45] INFO - Laptops con specs completas: 192
+[2026-01-12 18:12:45] INFO - Seleccionando muestra balanceada de 300 laptops
+[2026-01-12 18:12:45] INFO - Dataset tiene 192 laptops, usando todos
+[2026-01-12 18:12:45] INFO - Normalizando campos tecnicos
+[2026-01-12 18:12:45] INFO - Campos normalizados: 7
+[2026-01-12 18:12:45] INFO - Estructurando datos en formato JSON
+[2026-01-12 18:12:45] INFO - Datos estructurados: 192 laptops
+[2026-01-12 18:12:45] INFO - Guardando resultados: data/processed/laptops_normalized.json
+[2026-01-12 18:12:45] INFO - Resultados guardados: 192 laptops
+[2026-01-12 18:12:45] INFO - Generando reporte: data/processed/normalization_report.json
+[2026-01-12 18:12:45] INFO - Reporte generado exitosamente
+[2026-01-12 18:12:45] INFO - FASE 1 completada exitosamente
+[2026-01-12 18:12:45] INFO - FASE 1 completada: 192 laptops normalizados
+[2026-01-12 18:12:45] INFO - ============================================================
+[2026-01-12 18:12:45] INFO - FASE 2: Chunking e Indexacion con Embeddings
+[2026-01-12 18:12:45] INFO - ============================================================
+[2026-01-12 18:12:48] INFO - Iniciando FASE 2: Chunking e Indexacion con Embeddings
+[2026-01-12 18:12:48] INFO - Cargando laptops: data/processed/laptops_normalized.json
+[2026-01-12 18:12:48] INFO - Laptops cargados: 192
+[2026-01-12 18:12:48] INFO - Creando chunks field-based
+[2026-01-12 18:12:48] INFO - Chunks creados: 1056
+[2026-01-12 18:12:48] INFO - Estadisticas de tokens - min: 20, max: 51, mean: 30.1
+[2026-01-12 18:12:48] INFO - Generando embeddings con sentence-transformers
+[2026-01-12 18:12:48] INFO - Modelo: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-12 18:12:48] INFO - Use pytorch device_name: mps
+[2026-01-12 18:12:48] INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-12 18:12:51] INFO - Generando embeddings para 1056 chunks...
+[2026-01-12 18:12:52] INFO - Embeddings generados: shape (1056, 384)
+[2026-01-12 18:12:52] INFO - Guardando chunks: data/processed/chunks.json
+[2026-01-12 18:12:52] INFO - Chunks guardados: 1056
+[2026-01-12 18:12:52] INFO - Guardando embeddings: outputs/models/embeddings.pkl
+[2026-01-12 18:12:52] INFO - Embeddings guardados: (1056, 384)
+[2026-01-12 18:12:52] INFO - Generando reporte: data/processed/chunking_report.json
+[2026-01-12 18:12:52] INFO - Reporte generado exitosamente
+[2026-01-12 18:12:52] INFO - FASE 2 completada exitosamente
+[2026-01-12 18:12:52] INFO - FASE 2 completada: 1056 chunks, embeddings shape (1056, 384)
+[2026-01-12 18:12:52] INFO - ============================================================
+[2026-01-12 18:12:52] INFO - FASES 3-6: Pipeline RAG + Agente Critico + Evaluacion
+[2026-01-12 18:12:52] INFO - ============================================================
+[2026-01-12 18:12:52] INFO - ============================================================
+[2026-01-12 18:12:52] INFO - FASE 6: Evaluacion del Pipeline RAG
+[2026-01-12 18:12:52] INFO - ============================================================
+[2026-01-12 18:12:52] INFO - Inicializando componentes...
+[2026-01-12 18:12:52] INFO - Cargando index de chunks y embeddings
+[2026-01-12 18:12:52] INFO - Chunks cargados: 1056
+[2026-01-12 18:12:52] INFO - Embeddings cargados: shape (1056, 384)
+[2026-01-12 18:12:52] INFO - Cargando modelo: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-12 18:12:52] INFO - Use pytorch device_name: mps
+[2026-01-12 18:12:52] INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-12 18:12:55] INFO - Modelo cargado exitosamente
+[2026-01-12 18:12:55] INFO - Cliente Groq inicializado - Modelo: llama-3.3-70b-versatile
+[2026-01-12 18:12:55] INFO - Agente Critico inicializado
+[2026-01-12 18:12:55] INFO - Componentes inicializados
+[2026-01-12 18:12:55] INFO - Evaluando 10 queries
+[2026-01-12 18:12:55] INFO - 
+--- Query 1/10 ---
+[2026-01-12 18:12:55] INFO - Query: Que procesador tiene el HP 15?
+[2026-01-12 18:12:55] INFO - Chunks recuperados: 5
+[2026-01-12 18:12:55] INFO - Iniciando pipeline con critica para: Que procesador tiene el HP 15?...
+[2026-01-12 18:12:55] INFO - Intento 1/3
+[2026-01-12 18:12:55] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:12:55] INFO - Respuesta generada: El HP 15 tiene procesador Intel Pentium Silver N5030 [926:cpu] o Intel Core i5-1135G7 [228:cpu], [36...
+[2026-01-12 18:12:56] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:12:56] INFO - Respuesta APROBADA
+[2026-01-12 18:12:56] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:12:56] INFO - Respuesta: El HP 15 tiene procesador Intel Pentium Silver N5030 [926:cpu] o Intel Core i5-1...
+[2026-01-12 18:12:56] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 1096ms
+[2026-01-12 18:12:56] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=1.00 | Coverage=0.50
+[2026-01-12 18:12:56] INFO - 
+--- Query 2/10 ---
+[2026-01-12 18:12:56] INFO - Query: Que laptops tienen tarjeta grafica NVIDIA?
+[2026-01-12 18:12:56] INFO - Chunks recuperados: 5
+[2026-01-12 18:12:56] INFO - Iniciando pipeline con critica para: Que laptops tienen tarjeta grafica NVIDIA?...
+[2026-01-12 18:12:56] INFO - Intento 1/3
+[2026-01-12 18:12:57] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:12:57] INFO - Respuesta generada: Las laptops HP Victus 15 y HP OMEN 16 y HP OMEN 17 tienen tarjeta grafica NVIDIA [282:gpu], [644:gpu...
+[2026-01-12 18:12:58] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:12:58] INFO - Respuesta RECHAZADA: Debes especificar correctamente las tarjetas gráficas de cada laptop y no afirmar que todas tienen l
+[2026-01-12 18:12:58] INFO - Intento 2/3
+[2026-01-12 18:12:59] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:12:59] INFO - Respuesta generada: Las laptops HP Victus 15 tienen tarjeta grafica NVIDIA GeForce GTX 1650 [282:gpu], [644:gpu], las la...
+[2026-01-12 18:12:59] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:12:59] INFO - Respuesta APROBADA
+[2026-01-12 18:13:00] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:00] INFO - Respuesta: Las laptops HP Victus 15 tienen tarjeta grafica NVIDIA GeForce GTX 1650 [282:gpu...
+[2026-01-12 18:13:00] INFO - Estado: APROBADA | Intentos: 2 | Tiempo: 2867ms
+[2026-01-12 18:13:00] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=1.00 | Coverage=1.00
+[2026-01-12 18:13:00] INFO - 
+--- Query 3/10 ---
+[2026-01-12 18:13:00] INFO - Query: Cual es el tamano de pantalla del Lenovo ThinkPad?
+[2026-01-12 18:13:00] INFO - Chunks recuperados: 5
+[2026-01-12 18:13:00] INFO - Iniciando pipeline con critica para: Cual es el tamano de pantalla del Lenovo ThinkPad?...
+[2026-01-12 18:13:00] INFO - Intento 1/3
+[2026-01-12 18:13:00] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:00] INFO - Respuesta generada: No tengo informacion suficiente para responder esta pregunta....
+[2026-01-12 18:13:01] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:01] INFO - Respuesta APROBADA
+[2026-01-12 18:13:01] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:01] INFO - Respuesta: No tengo informacion suficiente para responder esta pregunta....
+[2026-01-12 18:13:01] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 873ms
+[2026-01-12 18:13:01] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=0.00 | Coverage=0.00
+[2026-01-12 18:13:01] INFO - 
+--- Query 4/10 ---
+[2026-01-12 18:13:01] INFO - Query: Que laptop tiene mejor rendimiento de CPU?
+[2026-01-12 18:13:01] INFO - Chunks recuperados: 5
+[2026-01-12 18:13:01] INFO - Iniciando pipeline con critica para: Que laptop tiene mejor rendimiento de CPU?...
+[2026-01-12 18:13:01] INFO - Intento 1/3
+[2026-01-12 18:13:02] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:02] INFO - Respuesta generada: El HP OMEN 16 tiene mejor rendimiento de CPU con 28587 puntos en CPU Mark [204:cpu], [606:cpu], [712...
+[2026-01-12 18:13:02] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:02] INFO - Respuesta APROBADA
+[2026-01-12 18:13:03] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:03] INFO - Respuesta: El HP OMEN 16 tiene mejor rendimiento de CPU con 28587 puntos en CPU Mark [204:c...
+[2026-01-12 18:13:03] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 1024ms
+[2026-01-12 18:13:03] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=1.00 | Coverage=1.00
+[2026-01-12 18:13:03] INFO - 
+--- Query 5/10 ---
+[2026-01-12 18:13:03] INFO - Query: Cuales laptops tienen WiFi 6?
+[2026-01-12 18:13:03] INFO - Chunks recuperados: 5
+[2026-01-12 18:13:03] INFO - Iniciando pipeline con critica para: Cuales laptops tienen WiFi 6?...
+[2026-01-12 18:13:03] INFO - Intento 1/3
+[2026-01-12 18:13:03] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:03] INFO - Respuesta generada: Las laptops que tienen WiFi 6 (802.11ax) son: HP Victus 16 [122:wifi_version], Lenovo ThinkPad X1 Ca...
+[2026-01-12 18:13:04] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:04] INFO - Respuesta RECHAZADA: Corregir la afirmacion para reflejar que la laptop HP Victus 16 tiene soporte para WiFi 6 (802.11ax)
+[2026-01-12 18:13:04] INFO - Intento 2/3
+[2026-01-12 18:13:05] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:05] INFO - Respuesta generada: Las laptops que tienen soporte para WiFi 6 (802.11ax) son: HP Victus 16 [122:wifi_version], Lenovo T...
+[2026-01-12 18:13:06] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:06] INFO - Respuesta RECHAZADA: Corrija la cita [122:wifi_version] para que solo se refiera al HP Victus 16 y aclare la información 
+[2026-01-12 18:13:06] INFO - Intento 3/3
+[2026-01-12 18:13:06] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:06] INFO - Respuesta generada: El HP Victus 16 tiene WiFi 802.11a/b/g/n/ac/ax [122:wifi_version], lo que indica soporte para WiFi 6...
+[2026-01-12 18:13:07] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:07] INFO - Respuesta APROBADA
+[2026-01-12 18:13:07] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:07] INFO - Respuesta: El HP Victus 16 tiene WiFi 802.11a/b/g/n/ac/ax [122:wifi_version], lo que indica...
+[2026-01-12 18:13:07] INFO - Estado: APROBADA | Intentos: 3 | Tiempo: 4282ms
+[2026-01-12 18:13:07] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=0.80 | Coverage=1.00
+[2026-01-12 18:13:07] INFO - 
+--- Query 6/10 ---
+[2026-01-12 18:13:07] INFO - Query: Que GPU tiene el ASUS ROG?
+[2026-01-12 18:13:07] INFO - Chunks recuperados: 5
+[2026-01-12 18:13:07] INFO - Iniciando pipeline con critica para: Que GPU tiene el ASUS ROG?...
+[2026-01-12 18:13:07] INFO - Intento 1/3
+[2026-01-12 18:13:08] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:08] INFO - Respuesta generada: El ASUS ROG Strix G15 tiene una tarjeta gráfica AMD Radeon RX 6800M [774:gpu]....
+[2026-01-12 18:13:09] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:09] INFO - Respuesta APROBADA
+[2026-01-12 18:13:09] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:09] INFO - Respuesta: El ASUS ROG Strix G15 tiene una tarjeta gráfica AMD Radeon RX 6800M [774:gpu]....
+[2026-01-12 18:13:09] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 1193ms
+[2026-01-12 18:13:09] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=1.00 | Coverage=0.00
+[2026-01-12 18:13:09] INFO - 
+--- Query 7/10 ---
+[2026-01-12 18:13:09] INFO - Query: Laptops con pantalla de 15.6 pulgadas
+[2026-01-12 18:13:09] INFO - Chunks recuperados: 5
+[2026-01-12 18:13:09] INFO - Iniciando pipeline con critica para: Laptops con pantalla de 15.6 pulgadas...
+[2026-01-12 18:13:09] INFO - Intento 1/3
+[2026-01-12 18:13:09] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:09] INFO - Respuesta generada: No tengo informacion suficiente para responder esta pregunta....
+[2026-01-12 18:13:10] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:10] INFO - Respuesta APROBADA
+[2026-01-12 18:13:10] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:10] INFO - Respuesta: No tengo informacion suficiente para responder esta pregunta....
+[2026-01-12 18:13:10] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 862ms
+[2026-01-12 18:13:10] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=0.00 | Coverage=0.00
+[2026-01-12 18:13:10] INFO - 
+--- Query 8/10 ---
+[2026-01-12 18:13:10] INFO - Query: Que laptops tienen puerto Ethernet?
+[2026-01-12 18:13:10] INFO - Chunks recuperados: 5
+[2026-01-12 18:13:10] INFO - Iniciando pipeline con critica para: Que laptops tienen puerto Ethernet?...
+[2026-01-12 18:13:10] INFO - Intento 1/3
+[2026-01-12 18:13:11] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:11] INFO - Respuesta generada: El HP Victus 15 de HP tiene puerto Ethernet [233:ethernet], [340:ethernet], [434:ethernet], [644:eth...
+[2026-01-12 18:13:11] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:13:11] INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+[2026-01-12 18:13:13] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:13] INFO - Respuesta APROBADA
+[2026-01-12 18:13:13] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:13:13] INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+[2026-01-12 18:13:16] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:16] INFO - Respuesta: El HP Victus 15 de HP tiene puerto Ethernet [233:ethernet], [340:ethernet], [434...
+[2026-01-12 18:13:16] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 3179ms
+[2026-01-12 18:13:16] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=0.20 | Coverage=0.33
+[2026-01-12 18:13:16] INFO - 
+--- Query 9/10 ---
+[2026-01-12 18:13:16] INFO - Query: Cual es el peso del Dell XPS?
+[2026-01-12 18:13:16] INFO - Chunks recuperados: 5
+[2026-01-12 18:13:16] INFO - Iniciando pipeline con critica para: Cual es el peso del Dell XPS?...
+[2026-01-12 18:13:16] INFO - Intento 1/3
+[2026-01-12 18:13:17] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:13:17] INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+[2026-01-12 18:13:18] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:18] INFO - Respuesta generada: El peso del Dell XPS 9510 es de 344.40 x 230.30 x 7.70 ~ 18.00 mm [276:weight]. No hay informacion s...
+[2026-01-12 18:13:18] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:13:18] INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+[2026-01-12 18:13:22] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:22] INFO - Respuesta APROBADA
+[2026-01-12 18:13:22] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:13:22] INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+[2026-01-12 18:13:25] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:25] INFO - Respuesta: El peso del Dell XPS 9510 es de 344.40 x 230.30 x 7.70 ~ 18.00 mm [276:weight]. ...
+[2026-01-12 18:13:25] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 5731ms
+[2026-01-12 18:13:25] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=0.50 | Coverage=0.50
+[2026-01-12 18:13:25] INFO - 
+--- Query 10/10 ---
+[2026-01-12 18:13:25] INFO - Query: Que resolucion de pantalla tiene el Lenovo IdeaPad?
+[2026-01-12 18:13:25] INFO - Chunks recuperados: 5
+[2026-01-12 18:13:25] INFO - Iniciando pipeline con critica para: Que resolucion de pantalla tiene el Lenovo IdeaPad...
+[2026-01-12 18:13:25] INFO - Intento 1/3
+[2026-01-12 18:13:25] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:13:25] INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+[2026-01-12 18:13:27] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:27] INFO - Respuesta generada: El Lenovo IdeaPad 3 15 tiene resolucion de pantalla HD (1366 x 768) [797:display_resolution] [366:di...
+[2026-01-12 18:13:27] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:13:27] INFO - Retrying request to /openai/v1/chat/completions in 3.000000 seconds
+[2026-01-12 18:13:30] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:30] INFO - Respuesta APROBADA
+[2026-01-12 18:13:31] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:13:31] INFO - Retrying request to /openai/v1/chat/completions in 1.000000 seconds
+[2026-01-12 18:13:32] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:13:32] INFO - Respuesta: El Lenovo IdeaPad 3 15 tiene resolucion de pantalla HD (1366 x 768) [797:display...
+[2026-01-12 18:13:32] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 5688ms
+[2026-01-12 18:13:32] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=1.00 | Coverage=0.00
+[2026-01-12 18:13:32] INFO - Ejemplos guardados: outputs/results/ejemplos_completos.json
+[2026-01-12 18:13:32] INFO - Metricas guardadas: outputs/results/metricas.json
+[2026-01-12 18:13:32] INFO - Logs guardados: outputs/logs/logs_agente_critico.json
+[2026-01-12 18:13:32] INFO - Reporte guardado: outputs/results/reporte_evaluacion.txt
+[2026-01-12 18:13:32] INFO - 
+============================================================
+[2026-01-12 18:13:32] INFO - Evaluacion completada
+[2026-01-12 18:13:32] INFO - ============================================================
+[2026-01-12 18:13:32] INFO - 
+======================================================================
+[2026-01-12 18:13:32] INFO - RESUMEN FINAL DEL PIPELINE
+[2026-01-12 18:13:32] INFO - ======================================================================
+[2026-01-12 18:13:32] INFO - Total queries evaluadas: 10
+[2026-01-12 18:13:32] INFO - Respuestas aprobadas: 10
+[2026-01-12 18:13:32] INFO - Respuestas rechazadas: 0
+[2026-01-12 18:13:32] INFO - Tasa de aprobacion: 100.0%
+[2026-01-12 18:13:32] INFO - Tiempo promedio: 2679.36 ms
+[2026-01-12 18:13:32] INFO - 
+----------------------------------------------------------------------
+[2026-01-12 18:13:32] INFO - METRICAS AVANZADAS DE RAG
+[2026-01-12 18:13:32] INFO - ----------------------------------------------------------------------
+[2026-01-12 18:13:32] INFO - Precision (Retrieval):     0.0000
+[2026-01-12 18:13:32] INFO - Recall (Retrieval):        0.0000
+[2026-01-12 18:13:32] INFO - F1-Score:                  0.0000
+[2026-01-12 18:13:32] INFO - Faithfulness:              0.6500
+[2026-01-12 18:13:32] INFO - Answer Coverage:           0.4333
+[2026-01-12 18:13:32] INFO - 
+Resultados guardados en: outputs/results/
+[2026-01-12 18:13:32] INFO - Logs guardados en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_3/outputs/logs/pipeline_completo.log
+[2026-01-12 18:13:32] INFO - 
+======================================================================
+[2026-01-12 18:13:32] INFO - PIPELINE COMPLETADO EXITOSAMENTE
+[2026-01-12 18:13:32] INFO - Fin: 2026-01-12 18:13:32
+[2026-01-12 18:13:32] INFO - ======================================================================
+[2026-01-12 18:16:24] INFO - ======================================================================
+[2026-01-12 18:16:24] INFO - PIPELINE COMPLETO RAG + AGENTE CRITICO
+[2026-01-12 18:16:24] INFO - Inicio: 2026-01-12 18:16:24
+[2026-01-12 18:16:24] INFO - Log guardado en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_3/outputs/logs/pipeline_completo.log
+[2026-01-12 18:16:24] INFO - ======================================================================
+[2026-01-12 18:16:24] INFO - Verificando requisitos...
+[2026-01-12 18:16:24] INFO - API Key configurada correctamente
+[2026-01-12 18:16:24] INFO - Archivos requeridos encontrados
+[2026-01-12 18:16:24] INFO - ============================================================
+[2026-01-12 18:16:24] INFO - FASE 1: Ingesta y Normalizacion
+[2026-01-12 18:16:24] INFO - ============================================================
+[2026-01-12 18:16:24] INFO - Iniciando FASE 1: Ingesta y Normalizacion
+[2026-01-12 18:16:24] INFO - Cargando dataset: data/raw/Laptops_with_technical_specifications.csv
+[2026-01-12 18:16:24] INFO - Dataset cargado: 1000 registros, 31 columnas
+[2026-01-12 18:16:24] INFO - Eliminando duplicados
+[2026-01-12 18:16:24] INFO - Duplicados eliminados: 88
+[2026-01-12 18:16:24] INFO - Filtrando laptops incompletos
+[2026-01-12 18:16:24] INFO - Laptops incompletos eliminados: 720
+[2026-01-12 18:16:24] INFO - Laptops con specs completas: 192
+[2026-01-12 18:16:24] INFO - Seleccionando muestra balanceada de 300 laptops
+[2026-01-12 18:16:24] INFO - Dataset tiene 192 laptops, usando todos
+[2026-01-12 18:16:24] INFO - Normalizando campos tecnicos
+[2026-01-12 18:16:24] INFO - Campos normalizados: 7
+[2026-01-12 18:16:24] INFO - Estructurando datos en formato JSON
+[2026-01-12 18:16:24] INFO - Datos estructurados: 192 laptops
+[2026-01-12 18:16:24] INFO - Guardando resultados: data/processed/laptops_normalized.json
+[2026-01-12 18:16:24] INFO - Resultados guardados: 192 laptops
+[2026-01-12 18:16:24] INFO - Generando reporte: data/processed/normalization_report.json
+[2026-01-12 18:16:24] INFO - Reporte generado exitosamente
+[2026-01-12 18:16:24] INFO - FASE 1 completada exitosamente
+[2026-01-12 18:16:24] INFO - FASE 1 completada: 192 laptops normalizados
+[2026-01-12 18:16:24] INFO - ============================================================
+[2026-01-12 18:16:24] INFO - FASE 2: Chunking e Indexacion con Embeddings
+[2026-01-12 18:16:24] INFO - ============================================================
+[2026-01-12 18:16:28] INFO - Iniciando FASE 2: Chunking e Indexacion con Embeddings
+[2026-01-12 18:16:28] INFO - Cargando laptops: data/processed/laptops_normalized.json
+[2026-01-12 18:16:28] INFO - Laptops cargados: 192
+[2026-01-12 18:16:28] INFO - Creando chunks field-based
+[2026-01-12 18:16:28] INFO - Chunks creados: 1056
+[2026-01-12 18:16:28] INFO - Estadisticas de tokens - min: 20, max: 51, mean: 30.1
+[2026-01-12 18:16:28] INFO - Generando embeddings con sentence-transformers
+[2026-01-12 18:16:28] INFO - Modelo: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-12 18:16:28] INFO - Use pytorch device_name: mps
+[2026-01-12 18:16:28] INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-12 18:16:32] INFO - Generando embeddings para 1056 chunks...
+[2026-01-12 18:16:33] INFO - Embeddings generados: shape (1056, 384)
+[2026-01-12 18:16:33] INFO - Guardando chunks: data/processed/chunks.json
+[2026-01-12 18:16:33] INFO - Chunks guardados: 1056
+[2026-01-12 18:16:33] INFO - Guardando embeddings: outputs/models/embeddings.pkl
+[2026-01-12 18:16:33] INFO - Embeddings guardados: (1056, 384)
+[2026-01-12 18:16:33] INFO - Generando reporte: data/processed/chunking_report.json
+[2026-01-12 18:16:33] INFO - Reporte generado exitosamente
+[2026-01-12 18:16:33] INFO - FASE 2 completada exitosamente
+[2026-01-12 18:16:33] INFO - FASE 2 completada: 1056 chunks, embeddings shape (1056, 384)
+[2026-01-12 18:16:33] INFO - ============================================================
+[2026-01-12 18:16:33] INFO - FASES 3-6: Pipeline RAG + Agente Critico + Evaluacion
+[2026-01-12 18:16:33] INFO - ============================================================
+[2026-01-12 18:16:33] INFO - ============================================================
+[2026-01-12 18:16:33] INFO - FASE 6: Evaluacion del Pipeline RAG
+[2026-01-12 18:16:33] INFO - ============================================================
+[2026-01-12 18:16:33] INFO - Inicializando componentes...
+[2026-01-12 18:16:33] INFO - Cargando index de chunks y embeddings
+[2026-01-12 18:16:33] INFO - Chunks cargados: 1056
+[2026-01-12 18:16:33] INFO - Embeddings cargados: shape (1056, 384)
+[2026-01-12 18:16:33] INFO - Cargando modelo: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-12 18:16:33] INFO - Use pytorch device_name: mps
+[2026-01-12 18:16:33] INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-12 18:16:36] INFO - Modelo cargado exitosamente
+[2026-01-12 18:16:36] INFO - Cliente Groq inicializado - Modelo: llama-3.3-70b-versatile
+[2026-01-12 18:16:36] INFO - Agente Critico inicializado
+[2026-01-12 18:16:36] INFO - Componentes inicializados
+[2026-01-12 18:16:36] INFO - Evaluando 10 queries
+[2026-01-12 18:16:36] INFO - 
+--- Query 1/10 ---
+[2026-01-12 18:16:36] INFO - Query: Que procesador tiene el HP 15?
+[2026-01-12 18:16:36] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:36] INFO - Iniciando pipeline con critica para: Que procesador tiene el HP 15?...
+[2026-01-12 18:16:36] INFO - Intento 1/3
+[2026-01-12 18:16:37] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:37] INFO - Respuesta generada: El HP 15 tiene procesador Intel Pentium Silver N5030 [926:cpu] o Intel Core i5-1135G7 [228:cpu], [36...
+[2026-01-12 18:16:37] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:37] INFO - Respuesta APROBADA
+[2026-01-12 18:16:38] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:38] INFO - Respuesta: El HP 15 tiene procesador Intel Pentium Silver N5030 [926:cpu] o Intel Core i5-1...
+[2026-01-12 18:16:38] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 1474ms
+[2026-01-12 18:16:38] INFO - Metricas: Precision=1.00 | Recall=1.00 | Faithfulness=1.00 | Coverage=1.00
+[2026-01-12 18:16:38] INFO - 
+--- Query 2/10 ---
+[2026-01-12 18:16:38] INFO - Query: Que laptops tienen tarjeta grafica NVIDIA?
+[2026-01-12 18:16:38] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:38] INFO - Iniciando pipeline con critica para: Que laptops tienen tarjeta grafica NVIDIA?...
+[2026-01-12 18:16:38] INFO - Intento 1/3
+[2026-01-12 18:16:38] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:38] INFO - Respuesta generada: Las laptops HP Victus 15 y HP OMEN 16 y HP OMEN 17 tienen tarjeta grafica NVIDIA [282:gpu], [644:gpu...
+[2026-01-12 18:16:40] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:40] INFO - Respuesta RECHAZADA: Debes especificar correctamente las tarjetas gráficas de cada laptop y no generalizar que todas tien
+[2026-01-12 18:16:40] INFO - Intento 2/3
+[2026-01-12 18:16:40] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:40] INFO - Respuesta generada: La laptop HP Victus 15 tiene tarjeta gráfica NVIDIA GeForce GTX 1650 [282:gpu] y [644:gpu], la lapto...
+[2026-01-12 18:16:40] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:40] INFO - Respuesta APROBADA
+[2026-01-12 18:16:41] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:41] INFO - Respuesta: La laptop HP Victus 15 tiene tarjeta gráfica NVIDIA GeForce GTX 1650 [282:gpu] y...
+[2026-01-12 18:16:41] INFO - Estado: APROBADA | Intentos: 2 | Tiempo: 2824ms
+[2026-01-12 18:16:41] INFO - Metricas: Precision=1.00 | Recall=1.00 | Faithfulness=1.00 | Coverage=1.00
+[2026-01-12 18:16:41] INFO - 
+--- Query 3/10 ---
+[2026-01-12 18:16:41] INFO - Query: Cual es el tamano de pantalla del Lenovo ThinkPad?
+[2026-01-12 18:16:41] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:41] INFO - Iniciando pipeline con critica para: Cual es el tamano de pantalla del Lenovo ThinkPad?...
+[2026-01-12 18:16:41] INFO - Intento 1/3
+[2026-01-12 18:16:41] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:41] INFO - Respuesta generada: No tengo informacion suficiente para responder esta pregunta....
+[2026-01-12 18:16:42] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:42] INFO - Respuesta APROBADA
+[2026-01-12 18:16:42] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:42] INFO - Respuesta: No tengo informacion suficiente para responder esta pregunta....
+[2026-01-12 18:16:42] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 826ms
+[2026-01-12 18:16:42] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=0.00 | Coverage=0.00
+[2026-01-12 18:16:42] INFO - 
+--- Query 4/10 ---
+[2026-01-12 18:16:42] INFO - Query: Que laptop tiene mejor rendimiento de CPU?
+[2026-01-12 18:16:42] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:42] INFO - Iniciando pipeline con critica para: Que laptop tiene mejor rendimiento de CPU?...
+[2026-01-12 18:16:42] INFO - Intento 1/3
+[2026-01-12 18:16:42] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:42] INFO - Respuesta generada: El HP OMEN 16 tiene mejor rendimiento de CPU con 28587 puntos en CPU Mark [204:cpu], [606:cpu], [712...
+[2026-01-12 18:16:43] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:43] INFO - Respuesta APROBADA
+[2026-01-12 18:16:43] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:43] INFO - Respuesta: El HP OMEN 16 tiene mejor rendimiento de CPU con 28587 puntos en CPU Mark [204:c...
+[2026-01-12 18:16:43] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 1037ms
+[2026-01-12 18:16:43] INFO - Metricas: Precision=1.00 | Recall=1.00 | Faithfulness=1.00 | Coverage=0.67
+[2026-01-12 18:16:43] INFO - 
+--- Query 5/10 ---
+[2026-01-12 18:16:43] INFO - Query: Cuales laptops tienen WiFi 6?
+[2026-01-12 18:16:43] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:43] INFO - Iniciando pipeline con critica para: Cuales laptops tienen WiFi 6?...
+[2026-01-12 18:16:43] INFO - Intento 1/3
+[2026-01-12 18:16:44] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:44] INFO - Respuesta generada: Las laptops que tienen WiFi 6 (802.11ax) son: HP Victus 16 [122:wifi_version] y Lenovo ThinkPad X1 C...
+[2026-01-12 18:16:45] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:45] INFO - Respuesta APROBADA
+[2026-01-12 18:16:46] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:46] INFO - Respuesta: Las laptops que tienen WiFi 6 (802.11ax) son: HP Victus 16 [122:wifi_version] y ...
+[2026-01-12 18:16:46] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 2256ms
+[2026-01-12 18:16:46] INFO - Metricas: Precision=1.00 | Recall=1.00 | Faithfulness=0.50 | Coverage=0.67
+[2026-01-12 18:16:46] INFO - 
+--- Query 6/10 ---
+[2026-01-12 18:16:46] INFO - Query: Que GPU tiene el ASUS ROG?
+[2026-01-12 18:16:46] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:46] INFO - Iniciando pipeline con critica para: Que GPU tiene el ASUS ROG?...
+[2026-01-12 18:16:46] INFO - Intento 1/3
+[2026-01-12 18:16:47] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:47] INFO - Respuesta generada: El ASUS ROG Strix G15 tiene una tarjeta gráfica AMD Radeon RX 6800M [774:gpu]....
+[2026-01-12 18:16:48] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:48] INFO - Respuesta APROBADA
+[2026-01-12 18:16:49] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:49] INFO - Respuesta: El ASUS ROG Strix G15 tiene una tarjeta gráfica AMD Radeon RX 6800M [774:gpu]....
+[2026-01-12 18:16:49] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 2344ms
+[2026-01-12 18:16:49] INFO - Metricas: Precision=0.20 | Recall=0.50 | Faithfulness=1.00 | Coverage=0.67
+[2026-01-12 18:16:49] INFO - 
+--- Query 7/10 ---
+[2026-01-12 18:16:49] INFO - Query: Laptops con pantalla de 15.6 pulgadas
+[2026-01-12 18:16:49] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:49] INFO - Iniciando pipeline con critica para: Laptops con pantalla de 15.6 pulgadas...
+[2026-01-12 18:16:49] INFO - Intento 1/3
+[2026-01-12 18:16:49] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:49] INFO - Respuesta generada: No tengo informacion suficiente para responder esta pregunta....
+[2026-01-12 18:16:49] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:49] INFO - Respuesta APROBADA
+[2026-01-12 18:16:50] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:50] INFO - Respuesta: No tengo informacion suficiente para responder esta pregunta....
+[2026-01-12 18:16:50] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 748ms
+[2026-01-12 18:16:50] INFO - Metricas: Precision=0.00 | Recall=0.00 | Faithfulness=0.00 | Coverage=0.00
+[2026-01-12 18:16:50] INFO - 
+--- Query 8/10 ---
+[2026-01-12 18:16:50] INFO - Query: Que laptops tienen puerto Ethernet?
+[2026-01-12 18:16:50] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:50] INFO - Iniciando pipeline con critica para: Que laptops tienen puerto Ethernet?...
+[2026-01-12 18:16:50] INFO - Intento 1/3
+[2026-01-12 18:16:50] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:50] INFO - Respuesta generada: El HP Victus 15 de HP tiene puerto Ethernet [233:ethernet], [340:ethernet], [434:ethernet], [644:eth...
+[2026-01-12 18:16:50] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:50] INFO - Respuesta APROBADA
+[2026-01-12 18:16:52] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:52] INFO - Respuesta: El HP Victus 15 de HP tiene puerto Ethernet [233:ethernet], [340:ethernet], [434...
+[2026-01-12 18:16:52] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 757ms
+[2026-01-12 18:16:52] INFO - Metricas: Precision=1.00 | Recall=1.00 | Faithfulness=0.20 | Coverage=0.50
+[2026-01-12 18:16:52] INFO - 
+--- Query 9/10 ---
+[2026-01-12 18:16:52] INFO - Query: Cual es el peso del Dell XPS?
+[2026-01-12 18:16:52] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:52] INFO - Iniciando pipeline con critica para: Cual es el peso del Dell XPS?...
+[2026-01-12 18:16:52] INFO - Intento 1/3
+[2026-01-12 18:16:53] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:53] INFO - Respuesta generada: El peso del Dell XPS 9510 es de 344.40 x 230.30 x 7.70 ~ 18.00 mm [276:weight]. No hay informacion s...
+[2026-01-12 18:16:53] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:53] INFO - Respuesta APROBADA
+[2026-01-12 18:16:54] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:54] INFO - Respuesta: El peso del Dell XPS 9510 es de 344.40 x 230.30 x 7.70 ~ 18.00 mm [276:weight]. ...
+[2026-01-12 18:16:54] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 1130ms
+[2026-01-12 18:16:54] INFO - Metricas: Precision=0.60 | Recall=1.00 | Faithfulness=0.50 | Coverage=1.00
+[2026-01-12 18:16:54] INFO - 
+--- Query 10/10 ---
+[2026-01-12 18:16:54] INFO - Query: Que resolucion de pantalla tiene el Lenovo IdeaPad?
+[2026-01-12 18:16:54] INFO - Chunks recuperados: 5
+[2026-01-12 18:16:54] INFO - Iniciando pipeline con critica para: Que resolucion de pantalla tiene el Lenovo IdeaPad...
+[2026-01-12 18:16:54] INFO - Intento 1/3
+[2026-01-12 18:16:54] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:54] INFO - Respuesta generada: El Lenovo IdeaPad 3 15 tiene resolucion de pantalla HD (1366 x 768) [797:display_resolution] [366:di...
+[2026-01-12 18:16:54] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:16:54] INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+[2026-01-12 18:16:57] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:16:57] INFO - Respuesta APROBADA
+[2026-01-12 18:16:57] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-01-12 18:16:57] INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+[2026-01-12 18:17:00] INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-01-12 18:17:00] INFO - Respuesta: El Lenovo IdeaPad 3 15 tiene resolucion de pantalla HD (1366 x 768) [797:display...
+[2026-01-12 18:17:00] INFO - Estado: APROBADA | Intentos: 1 | Tiempo: 3134ms
+[2026-01-12 18:17:00] INFO - Metricas: Precision=1.00 | Recall=1.00 | Faithfulness=1.00 | Coverage=0.67
+[2026-01-12 18:17:00] INFO - Ejemplos guardados: outputs/results/ejemplos_completos.json
+[2026-01-12 18:17:00] INFO - Metricas guardadas: outputs/results/metricas.json
+[2026-01-12 18:17:00] INFO - Logs guardados: outputs/logs/logs_agente_critico.json
+[2026-01-12 18:17:00] INFO - Reporte guardado: outputs/results/reporte_evaluacion.txt
+[2026-01-12 18:17:00] INFO - 
+============================================================
+[2026-01-12 18:17:00] INFO - Evaluacion completada
+[2026-01-12 18:17:00] INFO - ============================================================
+[2026-01-12 18:17:00] INFO - 
+======================================================================
+[2026-01-12 18:17:00] INFO - RESUMEN FINAL DEL PIPELINE
+[2026-01-12 18:17:00] INFO - ======================================================================
+[2026-01-12 18:17:00] INFO - Total queries evaluadas: 10
+[2026-01-12 18:17:00] INFO - Respuestas aprobadas: 10
+[2026-01-12 18:17:00] INFO - Respuestas rechazadas: 0
+[2026-01-12 18:17:00] INFO - Tasa de aprobacion: 100.0%
+[2026-01-12 18:17:00] INFO - Tiempo promedio: 1653.01 ms
+[2026-01-12 18:17:00] INFO - 
+----------------------------------------------------------------------
+[2026-01-12 18:17:00] INFO - METRICAS AVANZADAS DE RAG
+[2026-01-12 18:17:00] INFO - ----------------------------------------------------------------------
+[2026-01-12 18:17:00] INFO - Precision (Retrieval):     0.6800
+[2026-01-12 18:17:00] INFO - Recall (Retrieval):        0.7500
+[2026-01-12 18:17:00] INFO - F1-Score:                  0.7133
+[2026-01-12 18:17:00] INFO - Faithfulness:              0.6200
+[2026-01-12 18:17:00] INFO - Answer Coverage:           0.6167
+[2026-01-12 18:17:00] INFO - 
+Resultados guardados en: outputs/results/
+[2026-01-12 18:17:00] INFO - Logs guardados en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_3/outputs/logs/pipeline_completo.log
+[2026-01-12 18:17:00] INFO - 
+======================================================================
+[2026-01-12 18:17:00] INFO - PIPELINE COMPLETADO EXITOSAMENTE
+[2026-01-12 18:17:00] INFO - Fin: 2026-01-12 18:17:00
+[2026-01-12 18:17:00] INFO - ======================================================================

@@ -1,23 +1,31 @@
 ======================================================================
 REPORTE DE EVALUACION - SISTEMA RAG + AGENTE CRITICO
-Fecha: 2026-01-12 12:20:30
+Fecha: 2026-01-12 18:17:00
 ======================================================================
 
 ## METRICAS CONSOLIDADAS
 
 Total queries evaluadas: 10
-Respuestas aprobadas: 9
-Respuestas rechazadas: 1
-Tasa de aprobacion: 90.0%
-Total intentos: 13
-Promedio intentos por query: 1.3
+Respuestas aprobadas: 10
+Respuestas rechazadas: 0
+Tasa de aprobacion: 100.0%
+Total intentos: 11
+Promedio intentos por query: 1.1
+
+## METRICAS AVANZADAS DE RAG
+
+Precision (Retrieval):     0.6800 (min: 0.0000, max: 1.0000)
+Recall (Retrieval):        0.7500 (min: 0.0000, max: 1.0000)
+F1-Score:                  0.7133
+Faithfulness:              0.6200 (min: 0.0000, max: 1.0000)
+Answer Coverage:           0.6167 (min: 0.0000, max: 1.0000)
 
 ## TIEMPOS DE RESPUESTA
 
-Tiempo total promedio: 2054.26 ms
-  - Retrieval: 176.71 ms
-  - Generation: 1280.56 ms
-  - Verificacion: 596.89 ms
+Tiempo total promedio: 1653.01 ms
+  - Retrieval: 72.05 ms
+  - Generation: 684.75 ms
+  - Verificacion: 896.1 ms
 
 ======================================================================
 EJEMPLOS COMPLETOS (Query -> Chunks -> Respuesta)
@@ -32,13 +40,13 @@ Chunks recuperados (5):
   3. HP 15 de HP tiene procesador Intel Core i5-1135G7, con rendimiento de ... [368:cpu]
   ... y 2 chunks mas
 
-Respuesta: El HP 15 tiene procesador Intel Pentium Silver N5030 [926:cpu] o Intel Core i5-1135G7 [228:cpu, 368:cpu, 757:cpu, 212:cpu].
-Citas usadas: [926:cpu], [228:cpu, 368:cpu, 757:cpu, 212:cpu]
+Respuesta: El HP 15 tiene procesador Intel Pentium Silver N5030 [926:cpu] o Intel Core i5-1135G7 [228:cpu], [368:cpu], [757:cpu], [212:cpu].
+Citas usadas: [368:cpu], [212:cpu], [757:cpu], [926:cpu], [228:cpu]
 
 Estado: APROBADA
 Intentos: 1
 
-Tiempos: Total=1586.13ms | Retrieval=365.35ms | Gen=613.3ms
+Tiempos: Total=1474.25ms | Retrieval=71.92ms | Gen=778.86ms
 
 --- Query 2 ---
 Q: Que laptops tienen tarjeta grafica NVIDIA?
@@ -50,12 +58,12 @@ Chunks recuperados (5):
   ... y 2 chunks mas
 
 Respuesta: La laptop HP Victus 15 tiene tarjeta gráfica NVIDIA GeForce GTX 1650 [282:gpu] y [644:gpu], la laptop HP OMEN 16 tiene tarjeta gráfica NVIDIA GeForce RTX 3070 [640:gpu] y la laptop HP OMEN 17 tiene tarjeta gráfica NVIDIA GeForce RTX 3070 Ti [778:gpu] y [709:gpu].
-Citas usadas: [644:gpu], [709:gpu], [282:gpu], [778:gpu], [640:gpu]
+Citas usadas: [778:gpu], [644:gpu], [709:gpu], [640:gpu], [282:gpu]
 
 Estado: APROBADA
 Intentos: 2
 
-Tiempos: Total=3502.34ms | Retrieval=70.63ms | Gen=2996.53ms
+Tiempos: Total=2824.17ms | Retrieval=96.44ms | Gen=2375.33ms
 
 --- Query 3 ---
 Q: Cual es el tamano de pantalla del Lenovo ThinkPad?
@@ -72,7 +80,7 @@ Citas usadas:
 Estado: APROBADA
 Intentos: 1
 
-Tiempos: Total=1101.08ms | Retrieval=105.99ms | Gen=646.26ms
+Tiempos: Total=825.97ms | Retrieval=97.88ms | Gen=386.76ms
 
 --- Query 4 ---
 Q: Que laptop tiene mejor rendimiento de CPU?
@@ -84,12 +92,12 @@ Chunks recuperados (5):
   ... y 2 chunks mas
 
 Respuesta: El HP OMEN 16 tiene mejor rendimiento de CPU con 28587 puntos en CPU Mark [204:cpu], [606:cpu], [712:cpu]. El HP OMEN 17 tiene un rendimiento de 26457 puntos en CPU Mark [75:cpu], [709:cpu].
-Citas usadas: [204:cpu], [75:cpu], [709:cpu], [606:cpu], [712:cpu]
+Citas usadas: [712:cpu], [204:cpu], [75:cpu], [709:cpu], [606:cpu]
 
 Estado: APROBADA
 Intentos: 1
 
-Tiempos: Total=956.65ms | Retrieval=39.11ms | Gen=573.65ms
+Tiempos: Total=1037.27ms | Retrieval=19.7ms | Gen=623.51ms
 
 --- Query 5 ---
 Q: Cuales laptops tienen WiFi 6?
@@ -101,15 +109,12 @@ Chunks recuperados (5):
   ... y 2 chunks mas
 
 Respuesta: Las laptops que tienen WiFi 6 (802.11ax) son: HP Victus 16 [122:wifi_version] y Lenovo ThinkPad X1 Carbon Gen 10 [556:wifi_version], [458:wifi_version], [51:wifi_version].
-Citas usadas: [51:wifi_version], [122:wifi_version], [458:wifi_version], [556:wifi_version]
+Citas usadas: [51:wifi_version], [556:wifi_version], [122:wifi_version], [458:wifi_version]
 
-Estado: RECHAZADA
-Intentos: 3
-Problemas detectados:
-  - [error_parseo] Unterminated string starting at: line 2 column 18 
-ADVERTENCIA: Respuesta no verificada completamente. Usar con precaucion.
+Estado: APROBADA
+Intentos: 1
 
-Tiempos: Total=7394.27ms | Retrieval=33.66ms | Gen=5519.23ms
+Tiempos: Total=2256.25ms | Retrieval=49.62ms | Gen=459.54ms
 
 --- Query 6 ---
 Q: Que GPU tiene el ASUS ROG?
@@ -126,7 +131,7 @@ Citas usadas: [774:gpu]
 Estado: APROBADA
 Intentos: 1
 
-Tiempos: Total=1793.78ms | Retrieval=578.67ms | Gen=594.27ms
+Tiempos: Total=2343.56ms | Retrieval=113.26ms | Gen=590.36ms
 
 --- Query 7 ---
 Q: Laptops con pantalla de 15.6 pulgadas
@@ -143,7 +148,7 @@ Citas usadas:
 Estado: APROBADA
 Intentos: 1
 
-Tiempos: Total=855.79ms | Retrieval=98.11ms | Gen=286.17ms
+Tiempos: Total=747.92ms | Retrieval=61.19ms | Gen=285.92ms
 
 --- Query 8 ---
 Q: Que laptops tienen puerto Ethernet?
@@ -155,12 +160,12 @@ Chunks recuperados (5):
   ... y 2 chunks mas
 
 Respuesta: El HP Victus 15 de HP tiene puerto Ethernet [233:ethernet], [340:ethernet], [434:ethernet], [644:ethernet], [951:ethernet].
-Citas usadas: [340:ethernet], [233:ethernet], [644:ethernet], [951:ethernet], [434:ethernet]
+Citas usadas: [233:ethernet], [644:ethernet], [951:ethernet], [340:ethernet], [434:ethernet]
 
 Estado: APROBADA
 Intentos: 1
 
-Tiempos: Total=1307.15ms | Retrieval=380.97ms | Gen=446.75ms
+Tiempos: Total=757.25ms | Retrieval=55.46ms | Gen=364.61ms
 
 --- Query 9 ---
 Q: Cual es el peso del Dell XPS?
@@ -171,13 +176,13 @@ Chunks recuperados (5):
   3. Dell XPS 9510 de Dell tiene resolucion de pantalla  Full HD + (1920 x ... [276:display_resolution]
   ... y 2 chunks mas
 
-Respuesta: El peso del Dell XPS 9510 es de 344.40 x 230.30 x 7.70 ~ 18.00 mm [276:weight]. No hay informacion sobre el peso del Dell XPS en general, solo del modelo 9510 [276:weight].
+Respuesta: El peso del Dell XPS 9510 es de 344.40 x 230.30 x 7.70 ~ 18.00 mm [276:weight]. No hay informacion sobre el peso en kg o libras, solo las dimensiones [276:weight].
 Citas usadas: [276:weight]
 
 Estado: APROBADA
 Intentos: 1
 
-Tiempos: Total=1080.9ms | Retrieval=30.03ms | Gen=562.55ms
+Tiempos: Total=1129.89ms | Retrieval=44.46ms | Gen=465.98ms
 
 --- Query 10 ---
 Q: Que resolucion de pantalla tiene el Lenovo IdeaPad?
@@ -189,28 +194,27 @@ Chunks recuperados (5):
   ... y 2 chunks mas
 
 Respuesta: El Lenovo IdeaPad 3 15 tiene resolucion de pantalla HD (1366 x 768) [797:display_resolution] [366:display_resolution]. El Lenovo Ideapad 320 tiene resolucion de pantalla HD (1366 x 768) [9:display_resolution]. El Lenovo IdeaPad 5 Pro 14 tiene resolucion de pantalla 2.2K (2240 x 1400) [987:display_resolution] [527:display_resolution].
-Citas usadas: [797:display_resolution], [366:display_resolution], [987:display_resolution], [527:display_resolution], [9:display_resolution]
+Citas usadas: [366:display_resolution], [797:display_resolution], [9:display_resolution], [987:display_resolution], [527:display_resolution]
 
 Estado: APROBADA
 Intentos: 1
 
-Tiempos: Total=964.52ms | Retrieval=64.54ms | Gen=566.88ms
+Tiempos: Total=3133.63ms | Retrieval=110.58ms | Gen=516.68ms
 
 ======================================================================
 ANALISIS DE CASOS
 ======================================================================
 
-Casos APROBADOS (9):
+Casos APROBADOS (10):
   - Query 1: Que procesador tiene el HP 15?...
   - Query 2: Que laptops tienen tarjeta grafica NVIDI...
   - Query 3: Cual es el tamano de pantalla del Lenovo...
   - Query 4: Que laptop tiene mejor rendimiento de CP...
+  - Query 5: Cuales laptops tienen WiFi 6?...
   - Query 6: Que GPU tiene el ASUS ROG?...
   - Query 7: Laptops con pantalla de 15.6 pulgadas...
   - Query 8: Que laptops tienen puerto Ethernet?...
   - Query 9: Cual es el peso del Dell XPS?...
   - Query 10: Que resolucion de pantalla tiene el Leno...
 
-Casos RECHAZADOS (1):
-  - Query 5: Cuales laptops tienen WiFi 6?...
-    Razon: Respuesta no verificada completamente. Usar con precaucion.
+Casos RECHAZADOS (0):

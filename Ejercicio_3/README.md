@@ -62,12 +62,12 @@ Ejercicio_3/
 │   ├── models/                  # Embeddings generados
 │   │   └── embeddings.pkl
 │   ├── logs/                    # Logs de ejecucion
-│   │   ├── pipeline_completo_TIMESTAMP.log
-│   │   └── logs_agente_critico_TIMESTAMP.json
+│   │   ├── pipeline_completo.log
+│   │   └── logs_agente_critico.json
 │   └── results/                 # Resultados y metricas
-│       ├── ejemplos_completos_TIMESTAMP.json
-│       ├── metricas_TIMESTAMP.json
-│       └── reporte_evaluacion_TIMESTAMP.txt
+│       ├── ejemplos_completos.json
+│       ├── metricas.json
+│       └── reporte_evaluacion.txt
 ├── src/
 │   ├── fase1_ingesta.py         # FASE 1: Ingesta y normalizacion
 │   ├── fase2_chunking.py        # FASE 2: Chunking e indexacion
@@ -248,7 +248,7 @@ make clean      # Limpiar outputs
 │ - Verifica cada afirmacion contra los chunks originales         │
 │ - Detecta alucinaciones y citas incorrectas                     │
 │ - Decision: APROBAR / REHACER (max 2 reintentos)                │
-│ - Output: logs_agente_critico_TIMESTAMP.json                    │
+│ - Output: logs_agente_critico.json                              │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -323,42 +323,56 @@ El Agente Critico es un componente **OBLIGATORIO** que:
 Despues de ejecutar el pipeline completo, encontraras:
 
 ### Archivos de Resultados
-- `outputs/results/ejemplos_completos_TIMESTAMP.json`: 10 ejemplos Query -> Chunks -> Respuesta
-- `outputs/results/metricas_TIMESTAMP.json`: Metricas consolidadas
-- `outputs/results/reporte_evaluacion_TIMESTAMP.txt`: Reporte legible
+- `outputs/results/ejemplos_completos.json`: 10 ejemplos Query -> Chunks -> Respuesta
+- `outputs/results/metricas.json`: Metricas consolidadas (incluye metricas avanzadas)
+- `outputs/results/reporte_evaluacion.txt`: Reporte legible
 
 ### Logs
-- `outputs/logs/pipeline_completo_TIMESTAMP.log`: Log completo de ejecucion
-- `outputs/logs/logs_agente_critico_TIMESTAMP.json`: Decisiones del agente critico
+- `outputs/logs/pipeline_completo.log`: Log completo de ejecucion
+- `outputs/logs/logs_agente_critico.json`: Decisiones del agente critico
 
 ### Modelos
 - `outputs/models/embeddings.pkl`: Index de embeddings generados
 
+> **Nota**: Los archivos se sobrescriben en cada ejecucion (sin timestamps).
+
 ## Metricas de Evaluacion
 
-El sistema calcula las siguientes metricas:
+El sistema calcula las siguientes metricas avanzadas de RAG:
 
-- **Precision@K**: Precision de los chunks recuperados
-- **Recall@K**: Recall de los chunks recuperados
-- **MRR (Mean Reciprocal Rank)**: Ranking promedio del primer resultado relevante
-- **Faithfulness**: Fidelidad de la respuesta a los chunks
-- **Answer Coverage**: Cobertura de la respuesta sobre los datos
-- **Citation Accuracy**: Precision de las citas generadas
+### Metricas de Retrieval
+- **Precision**: Proporcion de chunks recuperados que son relevantes para la query
+- **Recall**: Proporcion de informacion relevante que fue recuperada
+- **F1-Score**: Media armonica de Precision y Recall
+
+### Metricas de Generacion
+- **Faithfulness**: Fidelidad de la respuesta al contexto (evaluada por LLM)
+- **Answer Coverage**: Proporcion de informacion esperada presente en la respuesta
+
+### Metricas del Agente Critico
+- **Tasa de Aprobacion**: Porcentaje de respuestas aprobadas en primer intento
+- **Promedio de Intentos**: Numero promedio de intentos para aprobar una respuesta
+
+### Metricas de Tiempo
+- **Tiempo Total**: Tiempo promedio end-to-end por query
+- **Tiempo de Retrieval**: Tiempo promedio de busqueda semantica
+- **Tiempo de Generation**: Tiempo promedio de generacion LLM
+- **Tiempo de Verificacion**: Tiempo promedio del agente critico
 
 ## Queries de Prueba
 
-El sistema incluye 10 queries de prueba predefinidas:
+El sistema incluye 10 queries de prueba con ground truth para evaluacion:
 
-1. Laptops gaming con mejor relacion precio-rendimiento
-2. Laptops con mejor bateria para viajes
-3. Laptops ligeras para programacion
-4. Comparacion de procesadores Intel vs AMD
-5. Laptops con pantalla 4K
-6. Mejores laptops para edicion de video
-7. Laptops economicas para estudiantes
-8. Laptops con mas RAM
-9. Laptops con mejor GPU
-10. Laptops con almacenamiento SSD mas rapido
+1. Que procesador tiene el HP 15?
+2. Que laptops tienen tarjeta grafica NVIDIA?
+3. Cual es el tamano de pantalla del Lenovo ThinkPad?
+4. Que laptop tiene mejor rendimiento de CPU?
+5. Cuales laptops tienen WiFi 6?
+6. Que GPU tiene el ASUS ROG?
+7. Laptops con pantalla de 15.6 pulgadas
+8. Que laptops tienen puerto Ethernet?
+9. Cual es el peso del Dell XPS?
+10. Que resolucion de pantalla tiene el Lenovo IdeaPad?
 
 ## Troubleshooting
 

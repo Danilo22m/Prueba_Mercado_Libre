@@ -190,15 +190,17 @@ Despues de ejecutar el pipeline completo, encontraras:
 ```
 outputs/
 ├── logs/
-│   ├── pipeline_completo_TIMESTAMP.log      # Log completo del flujo
-│   └── logs_agente_critico_TIMESTAMP.json   # Logs del agente critico
+│   ├── pipeline_completo.log        # Log completo del flujo
+│   └── logs_agente_critico.json     # Logs del agente critico
 ├── results/
-│   ├── ejemplos_completos_TIMESTAMP.json    # 10 ejemplos Query→Respuesta
-│   ├── metricas_TIMESTAMP.json              # Metricas consolidadas
-│   └── reporte_evaluacion_TIMESTAMP.txt     # Reporte legible
+│   ├── ejemplos_completos.json      # 10 ejemplos Query→Respuesta
+│   ├── metricas.json                # Metricas consolidadas (incluye avanzadas)
+│   └── reporte_evaluacion.txt       # Reporte legible
 └── models/
-    └── embeddings.pkl                       # Index de embeddings
+    └── embeddings.pkl               # Index de embeddings
 ```
+
+> **Nota**: Los archivos se sobrescriben en cada ejecucion (sin timestamps).
 
 ## Troubleshooting
 

@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.3.0">
   <diagram name="RAG_Agente_Critico" id="ejercicio3_rag">
-    <mxGraphModel dx="1201" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1216" dy="813" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,11 +13,11 @@
         <mxCell id="fase1_titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" value="FASE 1: INGESTA Y NORMALIZACIÓN" vertex="1">
           <mxGeometry height="30" width="300" x="245" y="110" as="geometry" />
         </mxCell>
-        <mxCell id="fase1_csv" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="📄 Laptops_with_technical_specifications.csv" vertex="1">
-          <mxGeometry height="30" width="260" x="245" y="150" as="geometry" />
+        <mxCell id="fase1_csv" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Laptops_with_technical_specifications.csv" vertex="1">
+          <mxGeometry height="30" width="260" x="265" y="140" as="geometry" />
         </mxCell>
         <mxCell id="fase1_steps" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" value="• Cargar dataset&amp;nbsp;&lt;br&gt;• Seleccionar ~200-400 modelos&lt;br&gt;• Limpiar y normalizar datos&lt;br&gt;• Extraer campos técnicos" vertex="1">
-          <mxGeometry height="40" width="260" x="245" y="180" as="geometry" />
+          <mxGeometry height="40" width="260" x="255" y="170" as="geometry" />
         </mxCell>
         <mxCell id="fase2_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" value="" vertex="1">
           <mxGeometry height="140" width="340" x="605" y="100" as="geometry" />
@@ -25,11 +25,8 @@
         <mxCell id="fase2_titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" value="FASE 2: CHUNKING E INDEXACIÓN" vertex="1">
           <mxGeometry height="30" width="300" x="625" y="110" as="geometry" />
         </mxCell>
-        <mxCell id="fase2_chunks" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="📦 Crear Chunks (50-120 tokens)" vertex="1">
-          <mxGeometry height="30" width="260" x="625" y="150" as="geometry" />
-        </mxCell>
         <mxCell id="fase2_steps" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" value="• Dividir specs en chunks cortos&#xa;• Indexar con BM25 o Embeddings&#xa;• Preparar búsqueda vectorial&#xa;• Formato: [laptop_id:campo:valor]" vertex="1">
-          <mxGeometry height="40" width="260" x="635" y="180" as="geometry" />
+          <mxGeometry height="40" width="260" x="635" y="160" as="geometry" />
         </mxCell>
         <mxCell id="arrow1_2" edge="1" parent="1" source="fase1_box" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="fase2_box" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -43,11 +40,8 @@
         <mxCell id="fase3_titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" value="FASE 3: RETRIEVAL (Búsqueda)" vertex="1">
           <mxGeometry height="30" width="300" x="245" y="290" as="geometry" />
         </mxCell>
-        <mxCell id="fase3_query" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="❓ Query del Usuario" vertex="1">
-          <mxGeometry height="30" width="260" x="255" y="320" as="geometry" />
-        </mxCell>
         <mxCell id="fase3_steps" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" value="• Buscar top-k (3-5) chunks relevantes&#xa;• Rankear por similitud/BM25&#xa;• Devolver chunks + metadata&#xa;• Contexto para generación" vertex="1">
-          <mxGeometry height="40" width="260" x="245" y="360" as="geometry" />
+          <mxGeometry height="40" width="260" x="245" y="320" as="geometry" />
         </mxCell>
         <mxCell id="arrow2_3" edge="1" parent="1" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -65,11 +59,8 @@
         <mxCell id="fase4_titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" value="FASE 4: GENERATION (LLM)" vertex="1">
           <mxGeometry height="30" width="300" x="625" y="290" as="geometry" />
         </mxCell>
-        <mxCell id="fase4_llm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="🤖 LLM (Groq API)" vertex="1">
-          <mxGeometry height="30" width="260" x="635" y="320" as="geometry" />
-        </mxCell>
         <mxCell id="fase4_steps" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" value="• Generar respuesta ≤120 palabras&#xa;• Incluir citas [laptop_id:campo]&#xa;• Usar solo chunks recuperados&#xa;• Respuesta candidata" vertex="1">
-          <mxGeometry height="40" width="260" x="635" y="360" as="geometry" />
+          <mxGeometry height="40" width="260" x="645" y="320" as="geometry" />
         </mxCell>
         <mxCell id="arrow3_4" edge="1" parent="1" source="fase3_box" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" target="fase4_box" value="Chunks + Query">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -77,23 +68,17 @@
             <mxPoint x="605" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="DebTlXPUaELD0uuefTZa-1" edge="1" parent="1" source="fase5_box" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="output_text" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="fase5_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;" value="" vertex="1">
-          <mxGeometry height="180" width="720" x="225" y="460" as="geometry" />
+          <mxGeometry height="170" width="430" x="350" y="460" as="geometry" />
         </mxCell>
         <mxCell id="fase5_titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#CC0000;" value="FASE 5: AGENTE CRÍTICO (OBLIGATORIO)" vertex="1">
           <mxGeometry height="30" width="680" x="245" y="470" as="geometry" />
         </mxCell>
-        <mxCell id="fase5_input" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="🔍 Input: Respuesta + Chunks" vertex="1">
-          <mxGeometry height="30" width="200" x="245" y="510" as="geometry" />
-        </mxCell>
-        <mxCell id="fase5_verify" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="✅ Verificación de Soporte" vertex="1">
-          <mxGeometry height="30" width="200" x="475" y="510" as="geometry" />
-        </mxCell>
-        <mxCell id="fase5_decision" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="⚖️ Decisión" vertex="1">
-          <mxGeometry height="30" width="200" x="705" y="510" as="geometry" />
-        </mxCell>
         <mxCell id="fase5_steps" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" value="• Analizar cada afirmación de la respuesta&#xa;• Verificar que tenga soporte en chunks recuperados&#xa;• Decisión: ✅ APROBAR / ❌ RECHAZAR / 🔄 REHACER&#xa;• Registrar decisión en logs JSON&#xa;• Si RECHAZAR: descartar respuesta&#xa;• Si REHACER: generar nueva respuesta" vertex="1">
-          <mxGeometry height="80" width="660" x="245" y="550" as="geometry" />
+          <mxGeometry height="80" width="660" x="390" y="500" as="geometry" />
         </mxCell>
         <mxCell id="arrow4_5" edge="1" parent="1" source="fase4_box" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" target="fase5_box" value="Respuesta Candidata">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -105,17 +90,11 @@
             <mxPoint x="585" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="output_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;strokeWidth=3;fontSize=14;fontStyle=1" value="🎯 RESPUESTA APROBADA" vertex="1">
-          <mxGeometry height="50" width="400" x="385" y="680" as="geometry" />
+        <mxCell id="output_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;strokeWidth=3;fontSize=14;fontStyle=1" value="RESPUESTA APROBADA" vertex="1">
+          <mxGeometry height="90" width="400" x="385" y="650" as="geometry" />
         </mxCell>
         <mxCell id="output_text" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" value="Respuesta verificada ≤120 palabras + Citas [laptop_id:campo]" vertex="1">
           <mxGeometry height="30" width="400" x="385" y="700" as="geometry" />
-        </mxCell>
-        <mxCell id="arrow5_output" edge="1" parent="1" source="fase5_box" style="endArrow=classic;html=1;strokeWidth=3;fillColor=#d4edda;strokeColor=#28a745;fontSize=12;fontStyle=1" target="output_box" value="✅ APROBADO">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="585" y="640" as="sourcePoint" />
-            <mxPoint x="585" y="680" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="fase6_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" value="" vertex="1">
           <mxGeometry height="280" width="720" x="225" y="770" as="geometry" />
@@ -123,25 +102,25 @@
         <mxCell id="fase6_titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" value="FASE 6: EVALUACIÓN DEL SISTEMA COMPLETO" vertex="1">
           <mxGeometry height="30" width="680" x="245" y="780" as="geometry" />
         </mxCell>
-        <mxCell id="eval_retrieval" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="📊 MÉTRICAS DE RETRIEVAL" vertex="1">
+        <mxCell id="eval_retrieval" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="MÉTRICAS DE RETRIEVAL" vertex="1">
           <mxGeometry height="30" width="200" x="245" y="820" as="geometry" />
         </mxCell>
-        <mxCell id="eval_retrieval_items" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" value="• Precision@k&#xa;• Recall@k&#xa;• MRR (Mean Reciprocal Rank)" vertex="1">
+        <mxCell id="eval_retrieval_items" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" value="• Precision&lt;br&gt;• Recall&lt;br&gt;• MRR (Mean Reciprocal Rank)" vertex="1">
           <mxGeometry height="50" width="180" x="255" y="855" as="geometry" />
         </mxCell>
-        <mxCell id="eval_generation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="📝 MÉTRICAS DE GENERACIÓN" vertex="1">
+        <mxCell id="eval_generation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="MÉTRICAS DE GENERACIÓN" vertex="1">
           <mxGeometry height="30" width="200" x="475" y="820" as="geometry" />
         </mxCell>
-        <mxCell id="eval_generation_items" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" value="• Faithfulness (soporte)&#xa;• Answer Coverage&#xa;• Citation Accuracy&#xa;• Response Length" vertex="1">
+        <mxCell id="eval_generation_items" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" value="• Faithfulness (soporte)&lt;br&gt;• Answer Coverage&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="180" x="485" y="855" as="geometry" />
         </mxCell>
-        <mxCell id="eval_agent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" value="🤖 MÉTRICAS DEL AGENTE" vertex="1">
+        <mxCell id="eval_agent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" value="MÉTRICAS DEL AGENTE" vertex="1">
           <mxGeometry height="30" width="200" x="705" y="820" as="geometry" />
         </mxCell>
-        <mxCell id="eval_agent_items" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" value="• Tasa de aprobación&#xa;• Tasa de rechazo&#xa;• Tasa de rehacimiento&#xa;• Logs JSON" vertex="1">
+        <mxCell id="eval_agent_items" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" value="• Tasa de aprobación&lt;br&gt;• Tasa de rechazo&lt;br&gt;• Logs JSON" vertex="1">
           <mxGeometry height="60" width="180" x="715" y="855" as="geometry" />
         </mxCell>
-        <mxCell id="eval_examples" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="📋 ENTREGABLES" vertex="1">
+        <mxCell id="eval_examples" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="ENTREGABLES" vertex="1">
           <mxGeometry height="30" width="660" x="245" y="930" as="geometry" />
         </mxCell>
         <mxCell id="eval_examples_items" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" value="• 5-10 ejemplos completos (Query → Chunks → Respuesta)   • Tabla de métricas consolidada   • Logs JSON del agente crítico   • Análisis de casos aprobados/rechazados" vertex="1">

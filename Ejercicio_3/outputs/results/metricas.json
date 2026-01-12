@@ -1,0 +1,85 @@
+{
+  "resumen": {
+    "total_queries": 10,
+    "aprobadas": 10,
+    "rechazadas": 0,
+    "tasa_aprobacion": 100.0,
+    "total_intentos": 11,
+    "promedio_intentos": 1.1
+  },
+  "metricas_avanzadas": {
+    "precision": {
+      "promedio": 0.68,
+      "min": 0.0,
+      "max": 1.0,
+      "std": 0.4214
+    },
+    "recall": {
+      "promedio": 0.75,
+      "min": 0.0,
+      "max": 1.0,
+      "std": 0.4031
+    },
+    "faithfulness": {
+      "promedio": 0.62,
+      "min": 0.0,
+      "max": 1.0,
+      "std": 0.4118
+    },
+    "answer_coverage": {
+      "promedio": 0.6167,
+      "min": 0.0,
+      "max": 1.0,
+      "std": 0.35
+    },
+    "f1_score": 0.7133
+  },
+  "tiempos": {
+    "total": {
+      "promedio_ms": 1653.01,
+      "min_ms": 747.92,
+      "max_ms": 3133.63,
+      "std_ms": 859.94
+    },
+    "retrieval": {
+      "promedio_ms": 72.05,
+      "min_ms": 19.7,
+      "max_ms": 113.26
+    },
+    "generation": {
+      "promedio_ms": 684.75,
+      "min_ms": 285.92,
+      "max_ms": 2375.33
+    },
+    "verificacion": {
+      "promedio_ms": 896.1,
+      "min_ms": 337.08,
+      "max_ms": 2506.28
+    }
+  },
+  "agente_critico": {
+    "total_verificaciones": 11,
+    "aprobadas": 10,
+    "rechazadas": 1,
+    "total_reintentos": 1,
+    "problemas_detectados": {
+      "alucinacion": 1,
+      "cita_incorrecta": 0,
+      "dato_erroneo": 1,
+      "sin_soporte": 0
+    }
+  },
+  "retrieval": {
+    "total_queries": 10,
+    "avg_retrieval_time_ms": 72.04,
+    "avg_chunks_retrieved": 5.0,
+    "queries_with_no_results": 0
+  },
+  "generation": {
+    "total_generations": 11,
+    "successful_generations": 11,
+    "failed_generations": 0,
+    "avg_generation_time_ms": 510.0,
+    "total_tokens_used": 5245
+  }
+}

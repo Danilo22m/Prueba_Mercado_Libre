@@ -8,7 +8,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 607.32,
+      "verification_time_ms": 623.38,
       "error": false
     },
     "advertencia": ""
@@ -22,7 +22,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 435.13,
+      "verification_time_ms": 352.32,
       "error": false
     },
     "advertencia": ""
@@ -36,7 +36,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 348.68,
+      "verification_time_ms": 341.22,
       "error": false
     },
     "advertencia": ""
@@ -50,7 +50,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 343.81,
+      "verification_time_ms": 393.95,
       "error": false
     },
     "advertencia": ""
@@ -58,21 +58,16 @@
   {
     "query_id": 5,
     "query": "Cuales laptops tienen WiFi 6?",
-    "aprobada": false,
-    "intentos": 3,
+    "aprobada": true,
+    "intentos": 1,
     "verificacion": {
-      "veredicto": "REHACER",
-      "problemas": [
-        {
-          "tipo": "error_parseo",
-          "descripcion": "Unterminated string starting at: line 2 column 18 (char 19)"
-        }
-      ],
-      "feedback": "No se pudo parsear la verificacion. Regenerar respuesta.",
-      "verification_time_ms": 1841.31,
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 1746.92,
       "error": false
     },
-    "advertencia": "Respuesta no verificada completamente. Usar con precaucion."
+    "advertencia": ""
   },
   {
     "query_id": 6,
@@ -83,7 +78,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 620.59,
+      "verification_time_ms": 1639.8,
       "error": false
     },
     "advertencia": ""
@@ -97,7 +92,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 471.46,
+      "verification_time_ms": 400.73,
       "error": false
     },
     "advertencia": ""
@@ -111,7 +106,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 479.32,
+      "verification_time_ms": 337.08,
       "error": false
     },
     "advertencia": ""
@@ -125,7 +120,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 488.2,
+      "verification_time_ms": 619.33,
       "error": false
     },
     "advertencia": ""
@@ -139,7 +134,7 @@
       "veredicto": "APROBAR",
       "problemas": [],
       "feedback": "",
-      "verification_time_ms": 333.06,
+      "verification_time_ms": 2506.28,
       "error": false
     },
     "advertencia": ""

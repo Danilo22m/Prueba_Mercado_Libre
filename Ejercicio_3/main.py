@@ -28,9 +28,8 @@ sys.path.insert(0, str(SRC_DIR))
 LOGS_DIR = BASE_DIR / 'outputs' / 'logs'
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
-# Configurar logging dual: consola + archivo
-timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-log_file = LOGS_DIR / f'pipeline_completo_{timestamp}.log'
+# Configurar logging dual: consola + archivo (sobrescribe el log anterior)
+log_file = LOGS_DIR / 'pipeline_completo.log'
 
 # Crear handlers
 console_handler = logging.StreamHandler(sys.stdout)
@@ -180,6 +179,24 @@ def main():
         logger.info(f"Respuestas rechazadas: {resumen['rechazadas']}")
         logger.info(f"Tasa de aprobacion: {resumen['tasa_aprobacion']}%")
         logger.info(f"Tiempo promedio: {metricas['tiempos']['total']['promedio_ms']} ms")
+
+        # Metricas avanzadas de RAG
+        logger.info("\n" + "-"*70)
+        logger.info("METRICAS AVANZADAS DE RAG")
+        logger.info("-"*70)
+
+        avanzadas = metricas.get('metricas_avanzadas', {})
+        precision = avanzadas.get('precision', {}).get('promedio', 0)
+        recall = avanzadas.get('recall', {}).get('promedio', 0)
+        f1 = avanzadas.get('f1_score', 0)
+        faithfulness = avanzadas.get('faithfulness', {}).get('promedio', 0)
+        coverage = avanzadas.get('answer_coverage', {}).get('promedio', 0)
+
+        logger.info(f"Precision (Retrieval):     {precision:.4f}")
+        logger.info(f"Recall (Retrieval):        {recall:.4f}")
+        logger.info(f"F1-Score:                  {f1:.4f}")
+        logger.info(f"Faithfulness:              {faithfulness:.4f}")
+        logger.info(f"Answer Coverage:           {coverage:.4f}")
 
         logger.info(f"\nResultados guardados en: outputs/results/")
         logger.info(f"Logs guardados en: {log_file}")
