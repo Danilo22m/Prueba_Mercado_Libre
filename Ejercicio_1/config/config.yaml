@@ -34,7 +34,7 @@ model_a:
   max_tokens: 150
   timeout: 30
   use_sample: true
-  sample_size: 300  # Cambiado de sample_pct a sample_size fijo
+  sample_size: 600  # Cambiado de sample_pct a sample_size fijo
   cost_per_1m_input_tokens: 0.0
   cost_per_1m_output_tokens: 0.0
   max_requests_per_minute: 30
