@@ -1,0 +1,86 @@
+{
+  "basicas": {
+    "num_nodos": 2000,
+    "num_aristas": 28074,
+    "densidad": 0.007022011005502752,
+    "densidad_porcentaje": 0.7022011005502752
+  },
+  "distribucion_grados": {
+    "in_degree": {
+      "min": 0,
+      "max": 559,
+      "promedio": 14.037
+    },
+    "out_degree": {
+      "min": 0,
+      "max": 72,
+      "promedio": 14.037
+    },
+    "total_degree": {
+      "min": 0,
+      "max": 573,
+      "promedio": 28.074
+    }
+  },
+  "nodos_especiales": {
+    "huerfanos": {
+      "cantidad": 281,
+      "porcentaje": 14.05
+    },
+    "sinks": {
+      "cantidad": 139,
+      "porcentaje": 6.950000000000001
+    },
+    "aislados": {
+      "cantidad": 97,
+      "porcentaje": 4.8500000000000005
+    }
+  },
+  "componentes": {
+    "weakly_connected": {
+      "num_componentes": 156,
+      "tamano_mayor": 1447,
+      "porcentaje_mayor": 72.35000000000001
+    },
+    "strongly_connected": {
+      "num_componentes": 484,
+      "tamano_mayor": 744,
+      "porcentaje_mayor": 37.2
+    }
+  },
+  "validacion": {
+    "es_valido": true,
+    "validaciones": [
+      {
+        "metrica": "Número de nodos",
+        "valor": 2000,
+        "estado": "BUENO",
+        "mensaje": "Suficientes nodos (2,000) para análisis robusto."
+      },
+      {
+        "metrica": "Densidad",
+        "valor": "0.007022",
+        "estado": "BUENO",
+        "mensaje": "Densidad adecuada (0.7022%) para análisis de centralidad."
+      },
+      {
+        "metrica": "In-degree máximo",
+        "valor": 559,
+        "estado": "EXCELENTE",
+        "mensaje": "Existe diversidad clara de grados (max=559, avg=14.04). Ideal para análisis de autoridad."
+      },
+      {
+        "metrica": "Nodos huérfanos",
+        "valor": "14.05%",
+        "estado": "BUENO",
+        "mensaje": "Bajo porcentaje de nodos huérfanos (14.05%)."
+      },
+      {
+        "metrica": "Conectividad (WCC)",
+        "valor": "156 componentes",
+        "estado": "ADVERTENCIA",
+        "mensaje": "Grafo fragmentado en 156 componentes. Considerar usar solo el componente principal."
+      }
+    ]
+  }
+}
