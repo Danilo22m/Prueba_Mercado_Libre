@@ -1,0 +1,42 @@
+{
+  "modelo_a_llm": {
+    "precision": 0.04597701149425287,
+    "recall": 1.0,
+    "f1_score": 0.08791208791208792,
+    "true_positives": 4,
+    "true_negatives": 13,
+    "false_positives": 83,
+    "false_negatives": 0,
+    "confusion_matrix": [
+      [
+        13,
+        83
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "pr_auc": 0.4304545454545454
+  },
+  "modelo_b_isolation_forest": {
+    "precision": 0.18926553672316385,
+    "recall": 0.21405750798722045,
+    "f1_score": 0.20089955022488756,
+    "true_positives": 134,
+    "true_negatives": 33983,
+    "false_positives": 574,
+    "false_negatives": 492,
+    "confusion_matrix": [
+      [
+        33983,
+        574
+      ],
+      [
+        492,
+        134
+      ]
+    ],
+    "pr_auc": 0.2142893821285659
+  }
+}

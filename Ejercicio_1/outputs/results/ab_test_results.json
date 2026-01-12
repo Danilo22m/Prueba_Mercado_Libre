@@ -1,0 +1,46 @@
+{
+  "n_bootstrap": 1000,
+  "n_registros_comunes": 100,
+  "metricas_llm": {
+    "precision_mean": 0.04592944793577871,
+    "precision_std": 0.0017718551656561168,
+    "recall_mean": 1.0,
+    "recall_std": 0.0,
+    "f1_mean": 0.08781965772091747,
+    "f1_std": 0.003237005199766504
+  },
+  "metricas_if": {
+    "precision_mean": 0.0,
+    "precision_std": 0.0,
+    "recall_mean": 0.0,
+    "recall_std": 0.0,
+    "f1_mean": 0.0,
+    "f1_std": 0.0
+  },
+  "diferencias": {
+    "precision_diff_mean": 0.04592944793577871,
+    "precision_ci": [
+      0.043010752688172046,
+      0.05
+    ],
+    "precision_p_value": 0.0,
+    "recall_diff_mean": 1.0,
+    "recall_ci": [
+      1.0,
+      1.0
+    ],
+    "recall_p_value": 0.0,
+    "f1_diff_mean": 0.08781965772091747,
+    "f1_ci": [
+      0.08247422680412372,
+      0.09523809523809523
+    ],
+    "f1_p_value": 0.0
+  },
+  "significancia": {
+    "alpha": 0.05,
+    "precision_significativo": true,
+    "recall_significativo": true,
+    "f1_significativo": true
+  }
+}
