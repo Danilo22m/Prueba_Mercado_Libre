@@ -16,6 +16,37 @@ Este proyecto implementa un pipeline completo de detección de anomalías que:
 6. **Realiza A/B testing** con bootstrap estadístico
 7. **Genera visualizaciones** comparativas
 
+## ⚠️ Pre-requisitos Importantes
+
+### API Key de Groq (Obligatorio para Modelo A - LLM)
+
+**IMPORTANTE**: Para ejecutar el Modelo A (LLM), necesitas una API key de Groq.
+
+1. **Obtener API Key**:
+   - Regístrate en: https://console.groq.com/
+   - Genera una API key en la sección "API Keys"
+   - Copia la key (empieza con `gsk_...`)
+
+2. **Configurar API Key**:
+
+   **Opción 1 - Variable de Entorno** (Recomendado):
+   ```bash
+   export GROQ_API_KEY="gsk_tu_api_key_aqui"
+   ```
+
+   **Opción 2 - Archivo .env**:
+   ```bash
+   # Crear archivo .env en la raíz del proyecto
+   echo "GROQ_API_KEY=gsk_tu_api_key_aqui" > .env
+   ```
+
+3. **Verificar Configuración**:
+   ```bash
+   echo $GROQ_API_KEY  # Debe mostrar tu API key
+   ```
+
+> **Nota**: Sin la API key, solo podrás ejecutar el Modelo B (Isolation Forest). El Modelo A (LLM) fallará con error de autenticación.
+
 ## Estructura del Proyecto
 
 ```
@@ -72,9 +103,10 @@ source venv/bin/activate  # En Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Configurar API key de Groq:
+4. **⚠️ Configurar API key de Groq** (Ver sección "Pre-requisitos Importantes" arriba):
 ```bash
-export GROQ_API_KEY="tu_api_key_aqui"
+export GROQ_API_KEY="gsk_tu_api_key_aqui"
+# O crear archivo .env con: GROQ_API_KEY=gsk_tu_api_key_aqui
 ```
 
 ### Opción 2: Docker (Recomendado)
@@ -101,9 +133,15 @@ cp .env.example .env
 
 ## Uso
 
+> **⚠️ Recordatorio**: Asegúrate de tener configurada la variable `GROQ_API_KEY` antes de ejecutar el Modelo A (LLM). Ver sección "Pre-requisitos Importantes".
+
 ### Pipeline Completo
 
 ```bash
+# 1. Verificar API key (opcional)
+echo $GROQ_API_KEY
+
+# 2. Ejecutar pipeline completo
 python main.py
 ```
 
@@ -246,6 +284,27 @@ El preprocesamiento genera 10 features:
 10. `ZSCORE`: Z-score del precio
 
 ## Troubleshooting
+
+### Error: API key no configurada
+
+**Síntoma**: `ValueError: API key no encontrada` o `Error code: 401 - Unauthorized`
+
+**Solución**:
+1. Verificar que la API key esté configurada:
+   ```bash
+   echo $GROQ_API_KEY
+   ```
+2. Si está vacía, configurarla:
+   ```bash
+   export GROQ_API_KEY="gsk_tu_api_key_aqui"
+   ```
+3. O crear archivo `.env` con:
+   ```
+   GROQ_API_KEY=gsk_tu_api_key_aqui
+   ```
+4. Verificar que la key sea válida en: https://console.groq.com/
+
+> **Nota**: La API key debe empezar con `gsk_` y tener al menos 50 caracteres.
 
 ### Error: Rate limit de Groq
 
