@@ -1,4 +1,4 @@
 ID,Titulo,Categoria,Prioridad,Impacto,Esfuerzo,ROI,Num_Acciones,Num_KPIs
 ACT-001,Implementar Link Building Interno para Páginas Huérfanas,SEO Interno,ALTA,Alto,Medio,Alto,4,2
-ACT-002,Optimizar Campañas Virales con Estrategia Betweenness,Marketing Viral,ALTA,Muy Alto,Bajo,Muy Alto,4,2
+ACT-002,Optimizar Campañas Virales con Estrategia In-Degree,Marketing Viral,ALTA,Muy Alto,Bajo,Muy Alto,4,2
 ACT-003,Potenciar Contenido y UX de Páginas Autoridad,Optimización de Conversión,ALTA,Alto,Medio-Alto,Alto,5,3
