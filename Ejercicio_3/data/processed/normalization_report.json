@@ -1,0 +1,30 @@
+{
+  "fecha_ejecucion": "2026-01-12T11:10:05.960802",
+  "estadisticas": {
+    "original_count": 1000,
+    "removed_duplicates": 88,
+    "removed_incomplete": 720,
+    "selected_count": 192,
+    "fields_normalized": [
+      "ram",
+      "cpu",
+      "gpu",
+      "disc",
+      "weight",
+      "price_in_dollar",
+      "display_size"
+    ],
+    "null_handling": {
+      "hdmi_version": "No especificado",
+      "wifi_version": "No especificado",
+      "bluetooth_version": "No especificado",
+      "ethernet": "No",
+      "fingerprint_reader": "No",
+      "webcam_resolution": "No especificado"
+    }
+  },
+  "archivos": {
+    "input": "data/raw/Laptops_with_technical_specifications.csv",
+    "output": "data/processed/laptops_normalized.json"
+  }
+}

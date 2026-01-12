@@ -1,0 +1,91 @@
+# Configuracion - Ejercicio 3: Sistema RAG + Agente Critico
+# Autor: Danilo Melo
+# Fecha: 2026-01-12
+
+# Datos
+data:
+  raw_csv: "data/raw/Laptops_with_technical_specifications.csv"
+  processed_json: "data/processed/laptops_normalized.json"
+  normalization_report: "data/processed/normalization_report.json"
+
+  # Seleccion de muestra
+  min_laptops: 200
+  max_laptops: 400
+  target_laptops: 300
+  random_seed: 42
+
+  # Criterios de calidad
+  min_non_null_fields: 15  # Minimo de campos no nulos requeridos
+  required_fields:
+    - laptop_id
+    - full_name
+    - producer
+    - model
+    - price_in_dollar
+    - cpu
+    - ram
+    - disc
+
+# Chunking (Fase 2)
+chunking:
+  min_tokens: 50
+  max_tokens: 120
+  overlap_tokens: 10
+  chunking_strategy: "field_based"  # field_based o semantic
+
+# Indexacion (Fase 2)
+indexing:
+  method: "bm25"  # bm25 o embeddings
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"  # Si se usa embeddings
+
+# Retrieval (Fase 3)
+retrieval:
+  top_k: 5  # Numero de chunks a recuperar
+  min_score: 0.1  # Score minimo de similitud
+
+# Generacion LLM (Fase 4)
+generation:
+  provider: "groq"
+  model_name: "llama-3.3-70b-versatile"
+  api_key_env: "GROQ_API_KEY"
+  temperature: 0.0
+  max_tokens: 200  # Para respuestas de ~120 palabras
+  timeout: 30
+  max_requests_per_minute: 30
+  max_words_response: 120
+
+# Agente Critico (Fase 5)
+critical_agent:
+  provider: "groq"
+  model_name: "llama-3.3-70b-versatile"
+  api_key_env: "GROQ_API_KEY"
+  temperature: 0.0
+  max_tokens: 500
+  timeout: 30
+  max_retries: 2  # Numero maximo de intentos de REHACER
+
+# Evaluacion (Fase 6)
+evaluation:
+  n_test_queries: 10  # Numero de queries de prueba
+  queries_file: "data/processed/test_queries.json"
+
+  # Metricas
+  compute_precision_at_k: true
+  compute_recall_at_k: true
+  compute_mrr: true
+  compute_faithfulness: true
+  compute_answer_coverage: true
+  compute_citation_accuracy: true
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_file: "outputs/logs/execution.log"
+  agent_decisions_log: "outputs/logs/agent_decisions.json"
+
+# Outputs
+outputs:
+  results_dir: "outputs/results"
+  examples_file: "outputs/results/ejemplos_completos.json"
+  metrics_file: "outputs/results/metricas.json"
+  metrics_table: "outputs/results/tabla_metricas.csv"
