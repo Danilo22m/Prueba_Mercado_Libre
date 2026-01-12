@@ -1,23 +1,23 @@
 {
   "modelo_a_llm": {
-    "precision": 0.04597701149425287,
+    "precision": 0.027559055118110236,
     "recall": 1.0,
-    "f1_score": 0.08791208791208792,
-    "true_positives": 4,
-    "true_negatives": 13,
-    "false_positives": 83,
+    "f1_score": 0.05363984674329502,
+    "true_positives": 7,
+    "true_negatives": 46,
+    "false_positives": 247,
     "false_negatives": 0,
     "confusion_matrix": [
       [
-        13,
-        83
+        46,
+        247
       ],
       [
         0,
-        4
+        7
       ]
     ],
-    "pr_auc": 0.4304545454545454
+    "pr_auc": 0.4609656160198707
   },
   "modelo_b_isolation_forest": {
     "precision": 0.18926553672316385,
