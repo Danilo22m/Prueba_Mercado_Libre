@@ -7,7 +7,7 @@
         <mxCell id="titulo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#000000;" value="EJERCICIO 2: PROPAGACIÓN DE INFORMACIÓN Y AUTORIDAD DE URLs" vertex="1">
           <mxGeometry height="40" width="760" x="200" y="10" as="geometry" />
         </mxCell>
-        <mxCell id="dataset" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" value="Dataset: web-Stanford.txt&#xa;Stanford Web Graph&#xa;Nodos: 281,903 | Aristas: 2,312,497&#xa;Formato: FromNodeId → ToNodeId" vertex="1">
+        <mxCell id="dataset" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" value="Dataset: web-Stanford.txt&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="100" width="320" x="420" y="70" as="geometry" />
         </mxCell>
         <mxCell id="arrow1" edge="1" parent="1" source="dataset" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#82b366;" target="preprocessing">
@@ -19,7 +19,7 @@
         <mxCell id="arrow2" edge="1" parent="1" source="preprocessing" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#82b366;" target="construction">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="construction" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=10;fontStyle=1" value="FASE 2: Construcción del Grafo Dirigido&#xa;• G = nx.DiGraph()&#xa;• G.add_edges_from(edge_list)&#xa;• Número de nodos: N&#xa;• Número de aristas: E&#xa;• Densidad: E / (N*(N-1))" vertex="1">
+        <mxCell id="construction" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=10;fontStyle=1" value="FASE 2: Analisis Estaistico Grafo&lt;div&gt;&lt;br&gt;• Número de nodos: N&lt;br&gt;• Número de aristas: E&lt;br&gt;• Densidad: E / (N*(N-1))&lt;/div&gt;" vertex="1">
           <mxGeometry height="120" width="400" x="380" y="410" as="geometry" />
         </mxCell>
         <mxCell id="arrow3" edge="1" parent="1" source="construction" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#d79b00;" target="metrics">
@@ -128,13 +128,13 @@
         <mxCell id="arrow10" edge="1" parent="1" source="propagation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#006EAF;" target="recommendations">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rec1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;align=left;spacingLeft=10;" value="ACCIONABLE 1&#xa;Link Building Interno&#xa;Objetivo: PageRank +20%&#xa;KPI: In-degree +15 enlaces/producto" vertex="1">
+        <mxCell id="rec1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;align=left;spacingLeft=10;" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;ACCIONABLE 1&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="280" x="120" y="1690" as="geometry" />
         </mxCell>
-        <mxCell id="rec2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;align=left;spacingLeft=10;" value="ACCIONABLE 2&#xa;Rescatar Páginas Huérfanas&#xa;Objetivo: Visibilidad páginas in-degree=0&#xa;KPI: Reducir huérfanas -30%" vertex="1">
+        <mxCell id="rec2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;align=left;spacingLeft=10;" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;ACCIONABLE 2&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="280" x="440" y="1690" as="geometry" />
         </mxCell>
-        <mxCell id="rec3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;align=left;spacingLeft=10;" value="ACCIONABLE 3&#xa;Optimizar Semillas para Campañas&#xa;Objetivo: Maximizar alcance viral&#xa;KPI: Cobertura +40%, Costo -30%" vertex="1">
+        <mxCell id="rec3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;align=left;spacingLeft=10;" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;ACCIONABLE 3&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="280" x="760" y="1690" as="geometry" />
         </mxCell>
         <mxCell id="arrow11a" edge="1" parent="1" source="recommendations" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#006EAF;" target="rec1">
