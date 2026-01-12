@@ -28,8 +28,8 @@ data:
 
 # Chunking (Fase 2)
 chunking:
-  min_tokens: 50
-  max_tokens: 120
+  min_tokens: 20
+  max_tokens: 150
   overlap_tokens: 10
   chunking_strategy: "field_based"  # field_based o semantic
 

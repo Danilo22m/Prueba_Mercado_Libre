@@ -1,0 +1,39 @@
+{
+  "fecha_ejecucion": "2026-01-12T11:45:32.606154",
+  "estadisticas": {
+    "total_laptops": 192,
+    "total_chunks": 1056,
+    "chunks_by_field": {
+      "cpu": 192,
+      "gpu": 179,
+      "display_size": 191,
+      "weight": 110,
+      "ethernet": 121,
+      "ram": 23,
+      "disc": 22,
+      "display_resolution": 176,
+      "wifi_version": 31,
+      "bluetooth_version": 4,
+      "hdmi_version": 7
+    },
+    "token_stats": {
+      "min": 20,
+      "max": 51,
+      "mean": 30.140151515151516,
+      "std": 6.487258605872546
+    },
+    "discarded_chunks": 911,
+    "embedding_dimension": 384
+  },
+  "configuracion": {
+    "min_tokens": 20,
+    "max_tokens": 150,
+    "strategy": "field_based",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "archivos": {
+    "input": "data/processed/laptops_normalized.json",
+    "chunks": "data/processed/chunks.json",
+    "embeddings": "outputs/models/embeddings.pkl"
+  }
+}
