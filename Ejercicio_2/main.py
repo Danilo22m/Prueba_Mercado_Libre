@@ -20,29 +20,62 @@ import sys
 import logging
 import yaml
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Tuple
+from datetime import datetime
 import subprocess
 
 
+# Directorios
+BASE_DIR = Path(__file__).resolve().parent
+LOGS_DIR = BASE_DIR / 'outputs' / 'logs'
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
+
+
 # =============================================================================
-# CONFIGURACIÓN
+# CONFIGURACION
 # =============================================================================
 def cargar_configuracion() -> Dict:
-    """Carga la configuración desde config.yaml"""
+    """Carga la configuracion desde config.yaml"""
     config_path = Path(__file__).parent / "config" / "config.yaml"
     with open(config_path, 'r', encoding='utf-8') as f:
         return yaml.safe_load(f)
 
 
-def setup_logging(config: Dict) -> logging.Logger:
-    """Configura el sistema de logging"""
+def setup_logging(config: Dict) -> Tuple[logging.Logger, Path]:
+    """Configura logging dual: consola + archivo"""
+    # Crear nombre de archivo con timestamp
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    log_file = LOGS_DIR / f'pipeline_completo_{timestamp}.log'
+
+    # Crear logger
+    logger = logging.getLogger('ejercicio2')
     log_config = config.get('logging', {})
-    logging.basicConfig(
-        level=getattr(logging, log_config.get('level', 'INFO')),
-        format=log_config.get('format', '[%(asctime)s] %(levelname)s - %(message)s'),
+    logger.setLevel(getattr(logging, log_config.get('level', 'INFO')))
+
+    # Limpiar handlers existentes
+    logger.handlers.clear()
+
+    # Formato
+    log_format = logging.Formatter(
+        log_config.get('format', '[%(asctime)s] %(levelname)s - %(message)s'),
         datefmt=log_config.get('date_format', '%Y-%m-%d %H:%M:%S')
     )
-    return logging.getLogger(__name__)
+
+    # Handler para consola
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(log_format)
+    logger.addHandler(console_handler)
+
+    # Handler para archivo
+    file_handler = logging.FileHandler(log_file, encoding='utf-8')
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(log_format)
+    logger.addHandler(file_handler)
+
+    logger.info(f"Log guardado en: {log_file}")
+
+    return logger, log_file
 
 
 # =============================================================================
@@ -90,11 +123,11 @@ def ejecutar_fase(fase_num: int, script_path: str, logger: logging.Logger) -> bo
 # MAIN
 # =============================================================================
 def main():
-    """Función principal que ejecuta todo el pipeline"""
+    """Funcion principal que ejecuta todo el pipeline"""
 
-    # Cargar configuración y setup logging
+    # Cargar configuracion y setup logging
     config = cargar_configuracion()
-    logger = setup_logging(config)
+    logger, log_file = setup_logging(config)
 
     logger.info("")
     logger.info("=" * 80)
@@ -161,10 +194,12 @@ def main():
     logger.info(f"  - Propagación: {config['outputs']['propagacion_dir']}")
     logger.info(f"  - Recomendaciones: {config['outputs']['recomendaciones_dir']}")
     logger.info("")
-    logger.info("PRÓXIMOS PASOS:")
+    logger.info("PROXIMOS PASOS:")
     logger.info("  1. Revisar visualizaciones en outputs/visualizaciones/")
     logger.info("  2. Abrir grafo interactivo: outputs/visualizaciones/fase5_grafo_interactivo.html")
     logger.info("  3. Leer recomendaciones: outputs/recomendaciones/fase7_recomendaciones.md")
+    logger.info("")
+    logger.info(f"LOG GUARDADO EN: {log_file}")
     logger.info("=" * 80)
 
 

@@ -18,6 +18,7 @@ import sys
 import logging
 import argparse
 from pathlib import Path
+from datetime import datetime
 
 # Agregar src al path
 BASE_DIR = Path(__file__).resolve().parent
@@ -30,13 +31,49 @@ from evaluation import ejecutar_evaluacion
 from ab_test import ejecutar_ab_test
 from visualizaciones_series import crear_visualizaciones_series_temporales
 
+# Directorios
+LOGS_DIR = BASE_DIR / 'outputs' / 'logs'
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def setup_logging() -> logging.Logger:
+    """Configura logging dual: consola + archivo"""
+    # Crear nombre de archivo con timestamp
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    log_file = LOGS_DIR / f'pipeline_completo_{timestamp}.log'
+
+    # Crear logger
+    logger = logging.getLogger('ejercicio1')
+    logger.setLevel(logging.INFO)
+
+    # Limpiar handlers existentes
+    logger.handlers.clear()
+
+    # Formato
+    log_format = logging.Formatter(
+        '[%(asctime)s] %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+
+    # Handler para consola
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(log_format)
+    logger.addHandler(console_handler)
+
+    # Handler para archivo
+    file_handler = logging.FileHandler(log_file, encoding='utf-8')
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(log_format)
+    logger.addHandler(file_handler)
+
+    logger.info(f"Log guardado en: {log_file}")
+
+    return logger, log_file
+
+
 # Configurar logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='[%(asctime)s] %(levelname)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
-logger = logging.getLogger(__name__)
+logger, log_file = setup_logging()
 
 
 def print_banner():
@@ -138,6 +175,8 @@ def ejecutar_pipeline_completo(config_path=None, skip_preprocessing=False,
         print("  - confusion_matrices.png")
         print("  - precision_recall_curves.png")
         print("  - series_temporales_comparacion_modelos.png")
+        print(f"\nLOG GUARDADO EN:")
+        print(f"  - {log_file}")
         print("="*80 + "\n")
 
         return True
