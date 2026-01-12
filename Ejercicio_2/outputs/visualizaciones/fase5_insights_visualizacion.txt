@@ -1,0 +1,44 @@
+================================================================================
+ANÁLISIS VISUAL DEL SUBGRAFO
+================================================================================
+
+1. COMPOSICIÓN DEL SUBGRAFO
+--------------------------------------------------------------------------------
+- Nodos totales: 675
+- Top-N incluidos: 10
+- Vecinos: 665
+- Aristas: 10,613
+- Densidad: 0.023328 (2.3328%)
+
+2. MÉTRICAS DE ESTRUCTURA
+--------------------------------------------------------------------------------
+- Grado promedio: 31.45
+- Diámetro: No calculable (grafo no conexo)
+- Coeficiente clustering promedio: 0.7950
+- Componentes débilmente conexas: 2
+- Componentes fuertemente conexas: 114
+
+3. CONCENTRACIÓN DE INFLUENCIA
+--------------------------------------------------------------------------------
+- 9.29% de las aristas apuntan hacia Top-10
+- In-degree promedio de Top-N: 98.60
+
+4. PATRONES IDENTIFICADOS
+--------------------------------------------------------------------------------
+- Estructura dominante: Distribuida
+  * Los Top-N no concentran la mayoría de las conexiones
+  * Estructura más plana con múltiples sub-hubs
+
+- Alto clustering (0.795): Los nodos forman comunidades densas
+
+5. HALLAZGOS CLAVE
+--------------------------------------------------------------------------------
+- Grafo fragmentado en 2 componentes
+  Recomendación: Agregar enlaces puente entre componentes
+
+6. RECOMENDACIONES BASADAS EN VISUALIZACIÓN
+--------------------------------------------------------------------------------
+- Fragmentación detectada: 2 componentes separados
+  Acción: Identificar nodos puente y reforzar conexiones inter-componentes
+
+================================================================================

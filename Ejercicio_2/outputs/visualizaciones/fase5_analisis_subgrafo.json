@@ -1,0 +1,20 @@
+{
+  "composicion": {
+    "nodos_totales": 675,
+    "top_n_incluidos": 10,
+    "vecinos": 665,
+    "aristas": 10613,
+    "densidad": 0.023327838223980657
+  },
+  "metricas_estructura": {
+    "grado_promedio": 31.445925925925927,
+    "diametro": null,
+    "clustering_promedio": 0.7949553140286478,
+    "componentes_debiles": 2,
+    "componentes_fuertes": 114
+  },
+  "concentracion": {
+    "pct_aristas_hacia_top_n": 9.290492791859041,
+    "in_degree_promedio_top_n": 98.6
+  }
+}

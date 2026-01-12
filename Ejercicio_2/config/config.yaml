@@ -71,10 +71,37 @@ ranking:
     out_degree_percentile: 90    # Percentil para considerar alto out-degree
 
 # =============================================================================
+# VISUALIZACIÓN (FASE 5)
+# =============================================================================
+visualizacion:
+  # Configuración de subgrafo
+  top_n_subgrafo: 10             # Top-N nodos a incluir en el centro del subgrafo
+  incluir_vecinos: true          # Incluir vecinos de 1er nivel
+  incluir_vecinos_2do_nivel: false  # Incluir vecinos de 2do nivel (solo para Top-3)
+
+  # Visualización estática (Matplotlib)
+  estatica:
+    figsize: [16, 14]            # Tamaño de figura (ancho, alto) en pulgadas
+    dpi: 300                     # Resolución (puntos por pulgada)
+    layout: "spring"             # Layout: spring, kamada_kawai, circular, shell
+    node_size_scale: 15000       # Escala de tamaño de nodo (multiplicador de PageRank)
+    edge_alpha: 0.3              # Transparencia de aristas (0-1)
+    show_labels_top_n: 10        # Mostrar etiquetas solo para Top-N
+
+  # Visualización interactiva (Pyvis)
+  interactiva:
+    height: "900px"              # Altura del canvas
+    width: "100%"                # Ancho del canvas
+    node_size_scale: 800         # Escala de tamaño de nodo
+    physics_enabled: true        # Habilitar física de layout
+    edge_color: "#cccccc"        # Color de aristas
+
+# =============================================================================
 # OUTPUTS
 # =============================================================================
 outputs:
   results_dir: "outputs/results"
+  visualizaciones_dir: "outputs/visualizaciones"
 
 # =============================================================================
 # LOGGING
