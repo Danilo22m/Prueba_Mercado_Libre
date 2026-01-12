@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  ejercicio1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ejercicio1:latest
+    container_name: ejercicio1_pipeline
+
+    # Variables de entorno
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+
+    # Volúmenes para persistir datos
+    volumes:
+      # Datos de entrada (read-only)
+      - ./data/raw:/app/data/raw:ro
+
+      # Datos procesados (read-write)
+      - ./data/processed:/app/data/processed
+
+      # Outputs (read-write)
+      - ./outputs:/app/outputs
+
+      # Logs (read-write)
+      - ./logs:/app/logs
+
+      # Configuración (read-only)
+      - ./config:/app/config:ro
+
+    # Comando por defecto (puede ser sobrescrito)
+    command: ["--skip-preprocessing", "--skip-models"]
+
+    # Restart policy
+    restart: "no"
+
+# Network (opcional, por si se agregan más servicios)
+networks:
+  default:
+    name: ejercicio1_network
