@@ -97,11 +97,59 @@ visualizacion:
     edge_color: "#cccccc"        # Color de aristas
 
 # =============================================================================
+# SIMULACIÓN DE PROPAGACIÓN (FASE 6 - OPCIONAL)
+# =============================================================================
+propagacion:
+  # Modelo Independent Cascade
+  modelo: "independent_cascade"  # Modelo de propagación
+  probabilidad: 0.1              # Probabilidad de activación (0.0-1.0)
+  max_pasos: 5                   # Máximo de pasos de simulación
+  num_simulaciones: 100          # Número de simulaciones por estrategia (para promediar)
+
+  # Estrategias de selección de semillas
+  estrategias:
+    - "pagerank_top5"            # Top-5 por PageRank
+    - "in_degree_top5"           # Top-5 por In-Degree
+    - "betweenness_top5"         # Top-5 por Betweenness
+    - "authority_top5"           # Top-5 por Authority (HITS)
+    - "random"                   # 5 nodos aleatorios (baseline)
+
+  num_semillas: 5                # Número de semillas por estrategia
+
+  # Análisis de sensibilidad
+  analisis_sensibilidad: true    # Probar diferentes probabilidades
+  probabilidades_test: [0.05, 0.10, 0.15, 0.20, 0.30]  # Valores de p a probar
+
+# =============================================================================
+# RECOMENDACIONES E-COMMERCE (FASE 7)
+# =============================================================================
+recomendaciones:
+  num_accionables: 3               # Número de accionables a generar
+
+  # Formatos de salida
+  formatos_salida:
+    - "json"                       # Para desarrolladores/integraciones
+    - "markdown"                   # Para Product Managers
+    - "csv"                        # Para tracking en Excel
+    - "txt"                        # Resumen ejecutivo
+
+  # Priorización de accionables
+  priorizar_por: "impacto"         # impacto, esfuerzo, roi
+
+  # Umbrales para detección de oportunidades
+  umbrales:
+    min_nodos_huerfanos_pct: 5     # % mínimo de nodos sin inlinks para recomendar link building
+    max_concentracion_pr: 50       # % máximo de PR concentrado en top-N para diversificar
+    min_cobertura_propagacion: 10  # % mínimo de cobertura para considerar estrategia efectiva
+
+# =============================================================================
 # OUTPUTS
 # =============================================================================
 outputs:
   results_dir: "outputs/results"
   visualizaciones_dir: "outputs/visualizaciones"
+  propagacion_dir: "outputs/propagacion"
+  recomendaciones_dir: "outputs/recomendaciones"
 
 # =============================================================================
 # LOGGING

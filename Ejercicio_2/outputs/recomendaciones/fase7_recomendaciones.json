@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "fecha_generacion": "2026-01-12 00:02:38",
+    "num_nodos": 2000,
+    "num_aristas": 28074,
+    "densidad": 0.007022011005502752,
+    "num_accionables": 3
+  },
+  "accionables": [
+    {
+      "id": "ACT-001",
+      "titulo": "Implementar Link Building Interno para Páginas Huérfanas",
+      "descripcion": "Se detectaron 281 páginas (14.05%) sin enlaces internos entrantes. Esto reduce su visibilidad en crawleos y su PageRank.",
+      "categoria": "SEO Interno",
+      "prioridad": "ALTA",
+      "impacto_estimado": "Alto",
+      "esfuerzo_estimado": "Medio",
+      "roi_esperado": "Alto",
+      "acciones_concretas": [
+        "Identificar las 50 páginas huérfanas prioritarias",
+        "Agregar enlaces contextuales desde páginas relacionadas de alta autoridad",
+        "Incluir enlaces en breadcrumbs, menús de navegación y secciones 'Relacionados'",
+        "Monitorear incremento de PageRank en páginas enlazadas"
+      ],
+      "kpis": [
+        {
+          "metrica": "Páginas huérfanas (in-degree=0)",
+          "valor_actual": 281,
+          "objetivo": 231,
+          "plazo": "2 semanas"
+        },
+        {
+          "metrica": "PageRank promedio de páginas objetivo",
+          "valor_actual": "Baseline actual",
+          "objetivo": "+20% vs baseline",
+          "plazo": "4 semanas"
+        }
+      ],
+      "recursos_necesarios": [
+        "Equipo de Contenidos (priorización de páginas)",
+        "Equipo de Desarrollo (implementación de enlaces)",
+        "Herramienta de análisis de grafos (validación post-implementación)"
+      ],
+      "paginas_ejemplo": [
+        {
+          "nodo": 964,
+          "out_degree": 55
+        },
+        {
+          "nodo": 71877,
+          "out_degree": 18
+        },
+        {
+          "nodo": 122520,
+          "out_degree": 18
+        },
+        {
+          "nodo": 86240,
+          "out_degree": 17
+        },
+        {
+          "nodo": 187986,
+          "out_degree": 17
+        }
+      ]
+    },
+    {
+      "id": "ACT-002",
+      "titulo": "Optimizar Campañas Virales con Estrategia Betweenness",
+      "descripcion": "La estrategia 'Betweenness' alcanzó 2.80% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.",
+      "categoria": "Marketing Viral",
+      "prioridad": "ALTA",
+      "impacto_estimado": "Muy Alto",
+      "esfuerzo_estimado": "Bajo",
+      "roi_esperado": "Muy Alto",
+      "acciones_concretas": [
+        "Identificar las páginas top según Betweenness",
+        "Ejecutar campañas de promoción inicial en estas páginas (banners, emails, push notifications)",
+        "Implementar mecanismos de sharing fácil (botones sociales, referrals)",
+        "Medir alcance viral post-campaña (vistas, shares, conversiones)"
+      ],
+      "kpis": [
+        {
+          "metrica": "Cobertura viral (% usuarios alcanzados)",
+          "valor_actual": "Baseline pre-campaña",
+          "objetivo": "+2% vs baseline",
+          "plazo": "1 mes post-campaña"
+        },
+        {
+          "metrica": "Tasa de viralización (shares/usuario)",
+          "valor_actual": "Baseline histórico",
+          "objetivo": "+30% vs histórico",
+          "plazo": "1 mes post-campaña"
+        }
+      ],
+      "recursos_necesarios": [
+        "Equipo de Marketing (diseño de campaña)",
+        "Equipo de Producto (implementación de features virales)",
+        "Herramienta de tracking (analytics, atribución)"
+      ],
+      "semillas_recomendadas": [
+        226411,
+        161890,
+        84906,
+        65463,
+        221742
+      ],
+      "comparacion_estrategias": [
+        {
+          "nombre": "betweenness_top5",
+          "cobertura": 2.7975
+        },
+        {
+          "nombre": "in_degree_top5",
+          "cobertura": 2.742999999999999
+        },
+        {
+          "nombre": "pagerank_top5",
+          "cobertura": 2.5905
+        },
+        {
+          "nombre": "authority_top5",
+          "cobertura": 2.2885000000000004
+        },
+        {
+          "nombre": "random",
+          "cobertura": 0.7134999999999999
+        }
+      ]
+    },
+    {
+      "id": "ACT-003",
+      "titulo": "Potenciar Contenido y UX de Páginas Autoridad",
+      "descripcion": "Se identificaron 3 páginas con rol de Autoridad (alta Authority HITS, alto in-degree). Estas páginas son confiables y reciben muchos enlaces. Optimizarlas maximiza conversión.",
+      "categoria": "Optimización de Conversión",
+      "prioridad": "ALTA",
+      "impacto_estimado": "Alto",
+      "esfuerzo_estimado": "Medio-Alto",
+      "roi_esperado": "Alto",
+      "acciones_concretas": [
+        "Auditar contenido y UX de las páginas autoridad top-10",
+        "Actualizar contenido (descripciones, imágenes, reviews)",
+        "Optimizar CTAs y flujo de conversión",
+        "Implementar A/B tests en estas páginas prioritarias",
+        "Agregar señales de confianza (reviews, ratings, garantías)"
+      ],
+      "kpis": [
+        {
+          "metrica": "Tasa de conversión (páginas autoridad)",
+          "valor_actual": "Baseline actual",
+          "objetivo": "+15% vs baseline",
+          "plazo": "6 semanas"
+        },
+        {
+          "metrica": "Tiempo en página (engagement)",
+          "valor_actual": "Baseline actual",
+          "objetivo": "+25% vs baseline",
+          "plazo": "6 semanas"
+        },
+        {
+          "metrica": "Bounce rate",
+          "valor_actual": "Baseline actual",
+          "objetivo": "-10% vs baseline",
+          "plazo": "6 semanas"
+        }
+      ],
+      "recursos_necesarios": [
+        "Equipo de Producto (priorización de mejoras)",
+        "Equipo de Diseño (optimización de UX)",
+        "Equipo de Contenidos (actualización de copy)",
+        "Equipo de Data (A/B testing y análisis)"
+      ],
+      "paginas_prioritarias": [
+        {
+          "nodo": 226411,
+          "in_degree": 559,
+          "authority": 7.286055461191797e-05,
+          "pagerank": 0.0233155199242625
+        },
+        {
+          "nodo": 65463,
+          "in_degree": 60,
+          "authority": 0.0006376336274038,
+          "pagerank": 0.0048859530709697
+        },
+        {
+          "nodo": 84906,
+          "in_degree": 163,
+          "authority": 0.0190115878637945,
+          "pagerank": 0.0038946116862188
+        }
+      ]
+    }
+  ]
+}
