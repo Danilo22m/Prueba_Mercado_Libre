@@ -1,0 +1,20 @@
+# Ejercicio 2: Grafos y Autoridad de URLs
+# Dependencias Python
+
+# Core
+networkx==3.2.1           # Análisis de grafos y algoritmos
+pandas==2.1.4             # Manipulación de datos
+numpy==1.26.3             # Operaciones numéricas
+scipy==1.11.4             # Algoritmos científicos
+
+# Visualización
+matplotlib==3.8.2         # Gráficos estáticos
+seaborn==0.13.1           # Visualizaciones estadísticas
+plotly==5.18.0            # Gráficos interactivos
+pyvis==0.3.2              # Visualización interactiva de grafos
+
+# Configuración
+pyyaml==6.0.1             # Lectura de archivos YAML
+
+# Utilidades
+tqdm==4.66.1              # Barras de progreso

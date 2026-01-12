@@ -1,0 +1,72 @@
+{
+  "estrategia": "betweenness_top5",
+  "semillas": [
+    226411,
+    161890,
+    84906,
+    65463,
+    221742
+  ],
+  "resultados": {
+    "0.05": {
+      "cobertura_promedio_pct": 0.932,
+      "cobertura_std_pct": 0.47814851249376483,
+      "cobertura_temporal_promedio": [
+        5.0,
+        9.17,
+        12.35,
+        15.12,
+        17.26,
+        18.64
+      ]
+    },
+    "0.1": {
+      "cobertura_promedio_pct": 2.9989999999999997,
+      "cobertura_std_pct": 1.0651990424329156,
+      "cobertura_temporal_promedio": [
+        5.0,
+        13.75,
+        25.04,
+        38.4,
+        50.58,
+        59.98
+      ]
+    },
+    "0.15": {
+      "cobertura_promedio_pct": 5.0489999999999995,
+      "cobertura_std_pct": 1.608679271949508,
+      "cobertura_temporal_promedio": [
+        5.0,
+        17.75,
+        37.57,
+        59.11,
+        79.92,
+        100.98
+      ]
+    },
+    "0.2": {
+      "cobertura_promedio_pct": 7.6545000000000005,
+      "cobertura_std_pct": 2.310444708275876,
+      "cobertura_temporal_promedio": [
+        5.0,
+        22.28,
+        50.25,
+        79.33,
+        115.12,
+        153.09
+      ]
+    },
+    "0.3": {
+      "cobertura_promedio_pct": 14.2515,
+      "cobertura_std_pct": 2.988147042901336,
+      "cobertura_temporal_promedio": [
+        5.0,
+        29.77,
+        70.95,
+        124.12,
+        205.78,
+        285.03
+      ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+================================================================================
+ANÁLISIS TOP-20 URLS MÁS INFLUYENTES
+================================================================================
+
+1. RESUMEN EJECUTIVO
+--------------------------------------------------------------------------------
+
+- Los Top-5 nodos concentran 5.82% del PageRank total
+- Los Top-10 nodos concentran 9.69% del PageRank total
+- Los Top-20 nodos concentran 14.96% del PageRank total
+
+Diversidad de roles:
+  - Multi-Rol: 13 nodos (65.0%)
+  - Propagador: 3 nodos (15.0%)
+  - Puente: 2 nodos (10.0%)
+  - Estándar: 2 nodos (10.0%)
+
+2. CORRELACIONES ENTRE MÉTRICAS
+--------------------------------------------------------------------------------
+
+pagerank_vs_in_degree: 0.5823 (MODERADA - Existe relación pero con variabilidad)
+pagerank_vs_authority: 0.0471 (DÉBIL - Métricas relativamente independientes)
+pagerank_vs_betweenness: 0.6574 (MODERADA - Existe relación pero con variabilidad)
+hub_vs_out_degree: 0.6749 (MODERADA - Existe relación pero con variabilidad)
+authority_vs_in_degree: 0.5723 (MODERADA - Existe relación pero con variabilidad)
+betweenness_vs_closeness: 0.2781 (DÉBIL - Métricas relativamente independientes)
+
+3. TOP-5 NODOS MÁS INFLUYENTES
+--------------------------------------------------------------------------------
+
+[1] Nodo 226411
+    Rol: Multi-Rol
+    PageRank: 0.023316
+    In-Degree: 559 | Out-Degree: 14
+    Authority: 0.000073 | Hub: 0.000000
+    Explicación: PageRank 46.6x superior al promedio (excepcional). 559 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida.
+
+[2] Nodo 114260
+    Rol: Puente
+    PageRank: 0.009946
+    In-Degree: 52 | Out-Degree: 1
+    Authority: 0.000000 | Hub: 0.000000
+    Explicación: PageRank 19.9x superior al promedio (excepcional). 52 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub).
+
+[3] Nodo 29878
+    Rol: Puente
+    PageRank: 0.008486
+    In-Degree: 1 | Out-Degree: 52
+    Authority: 0.000000 | Hub: 0.000000
+    Explicación: PageRank 17.0x superior al promedio (excepcional). Principalmente destino de navegación (authority > hub).
+
+[4] Nodo 161890
+    Rol: Multi-Rol
+    PageRank: 0.008307
+    In-Degree: 71 | Out-Degree: 37
+    Authority: 0.000002 | Hub: 0.000001
+    Explicación: PageRank 16.6x superior al promedio (excepcional). 71 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida.
+
+[5] Nodo 145892
+    Rol: Multi-Rol
+    PageRank: 0.008184
+    In-Degree: 51 | Out-Degree: 15
+    Authority: 0.000002 | Hub: 0.000001
+    Explicación: PageRank 16.4x superior al promedio (excepcional). 51 enlaces entrantes (top 5%). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida.
+
+4. HALLAZGOS PRINCIPALES
+--------------------------------------------------------------------------------
+
+- PageRank promedio Top-20: 17.42x superior al resto
+- In-Degree promedio Top-20: 6.27x superior al resto
+- Betweenness promedio Top-20: 67.08x superior al resto
+
+
+5. RECOMENDACIONES INICIALES
+--------------------------------------------------------------------------------
+
+- Nodos Puente identificados (2): Monitoreo prioritario.
+  Su caída fragmentaría el grafo. Considerar rutas alternativas.
+
+================================================================================

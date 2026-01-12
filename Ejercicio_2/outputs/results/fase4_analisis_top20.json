@@ -1,0 +1,426 @@
+{
+  "resumen": {
+    "total_nodos_analizados": 20,
+    "top_n": 20,
+    "diversidad_roles": {
+      "Multi-Rol": 13,
+      "Propagador": 3,
+      "Puente": 2,
+      "Estándar": 2
+    },
+    "concentracion_pagerank": {
+      "top_5": 0.05823902273238555,
+      "top_10": 0.09693280761440753,
+      "top_20": 0.1496471622119809
+    },
+    "comparacion_top_vs_resto": {
+      "pagerank": {
+        "promedio_top": 0.0074823581105984485,
+        "promedio_resto": 0.000429471130195935,
+        "ratio": 17.422260972896638
+      },
+      "in_degree": {
+        "promedio_top": 83.6,
+        "promedio_resto": 13.334343434343435,
+        "ratio": 6.269525035982122
+      },
+      "betweenness": {
+        "promedio_top": 0.02439732269275084,
+        "promedio_resto": 0.00036371115348703814,
+        "ratio": 67.078841159652
+      }
+    }
+  },
+  "correlaciones": {
+    "pagerank_vs_in_degree": 0.5823472377184589,
+    "pagerank_vs_authority": 0.047124774536975104,
+    "pagerank_vs_betweenness": 0.6574004315576855,
+    "hub_vs_out_degree": 0.674921392616496,
+    "authority_vs_in_degree": 0.5723050485198025,
+    "betweenness_vs_closeness": 0.27812110504933296
+  },
+  "top_nodos": [
+    {
+      "ranking": 1,
+      "nodo": 226411,
+      "metricas": {
+        "pagerank": 0.0233155199242625,
+        "in_degree": 559,
+        "out_degree": 14,
+        "hits_authority": 7.286055461190183e-05,
+        "hits_hub": 2.951195499556131e-07,
+        "betweenness": 0.1584139481371339,
+        "closeness": 0.3459390985815489
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Autoridad",
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 3 roles: Autoridad, Puente, Propagador",
+      "explicacion_completa": "PageRank 46.6x superior al promedio (excepcional). 559 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 2,
+      "nodo": 114260,
+      "metricas": {
+        "pagerank": 0.0099464919257347,
+        "in_degree": 52,
+        "out_degree": 1,
+        "hits_authority": 5.461585311606555e-20,
+        "hits_hub": 5.780489277981461e-21,
+        "betweenness": 0.0006512265141579,
+        "closeness": 0.0260130065032516
+      },
+      "rol_principal": "Puente",
+      "roles_secundarios": [],
+      "explicacion_rol": "Alto betweenness (0.000651), conecta comunidades",
+      "explicacion_completa": "PageRank 19.9x superior al promedio (excepcional). 52 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub)."
+    },
+    {
+      "ranking": 3,
+      "nodo": 29878,
+      "metricas": {
+        "pagerank": 0.0084861295084515,
+        "in_degree": 1,
+        "out_degree": 52,
+        "hits_authority": 4.068321400763584e-19,
+        "hits_hub": 9.791677798782651e-20,
+        "betweenness": 0.0006512265141579,
+        "closeness": 0.0131327799822241
+      },
+      "rol_principal": "Puente",
+      "roles_secundarios": [],
+      "explicacion_rol": "Alto betweenness (0.000651), conecta comunidades",
+      "explicacion_completa": "PageRank 17.0x superior al promedio (excepcional). Principalmente destino de navegación (authority > hub)."
+    },
+    {
+      "ranking": 4,
+      "nodo": 161890,
+      "metricas": {
+        "pagerank": 0.0083066008699241,
+        "in_degree": 71,
+        "out_degree": 37,
+        "hits_authority": 2.47950601491994e-06,
+        "hits_hub": 9.18068073943638e-07,
+        "betweenness": 0.0800926011181829,
+        "closeness": 0.2384650075990981
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 16.6x superior al promedio (excepcional). 71 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 5,
+      "nodo": 145892,
+      "metricas": {
+        "pagerank": 0.0081842805040081,
+        "in_degree": 51,
+        "out_degree": 15,
+        "hits_authority": 1.5734244089672816e-06,
+        "hits_hub": 8.126068849244457e-07,
+        "betweenness": 0.0196548018517886,
+        "closeness": 0.2371092368673281
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 16.4x superior al promedio (excepcional). 51 enlaces entrantes (top 5%). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 6,
+      "nodo": 112742,
+      "metricas": {
+        "pagerank": 0.0078564273513626,
+        "in_degree": 51,
+        "out_degree": 14,
+        "hits_authority": 1.6289194169736742e-06,
+        "hits_hub": 8.112079697752403e-07,
+        "betweenness": 0.0352697716698378,
+        "closeness": 0.2367353654752321
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 15.7x superior al promedio (excepcional). 51 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 7,
+      "nodo": 151428,
+      "metricas": {
+        "pagerank": 0.0077432808467327,
+        "in_degree": 51,
+        "out_degree": 11,
+        "hits_authority": 1.563908019344568e-06,
+        "hits_hub": 2.261413252989028e-07,
+        "betweenness": 0.0084395760707752,
+        "closeness": 0.237334127069858
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 15.5x superior al promedio (excepcional). 51 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 8,
+      "nodo": 60440,
+      "metricas": {
+        "pagerank": 0.0077149298799781,
+        "in_degree": 50,
+        "out_degree": 12,
+        "hits_authority": 1.588606578218273e-06,
+        "hits_hub": 7.979045431973282e-07,
+        "betweenness": 0.0190864815726133,
+        "closeness": 0.2366607326361794
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 15.4x superior al promedio (excepcional). 50 enlaces entrantes (top 5%). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 9,
+      "nodo": 222873,
+      "metricas": {
+        "pagerank": 0.0077082436762194,
+        "in_degree": 49,
+        "out_degree": 12,
+        "hits_authority": 1.5621752478972274e-06,
+        "hits_hub": 2.2070111787336854e-07,
+        "betweenness": 0.0068541493000467,
+        "closeness": 0.2365861468395717
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 15.4x superior al promedio (excepcional). 49 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 10,
+      "nodo": 208542,
+      "metricas": {
+        "pagerank": 0.0076709031277261,
+        "in_degree": 51,
+        "out_degree": 11,
+        "hits_authority": 1.617687925478205e-06,
+        "hits_hub": 1.2631568686318244e-06,
+        "betweenness": 0.0042915751392287,
+        "closeness": 0.2367353654752321
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 15.3x superior al promedio (excepcional). 51 enlaces entrantes (top 5%). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 11,
+      "nodo": 91,
+      "metricas": {
+        "pagerank": 0.0076075631641111,
+        "in_degree": 49,
+        "out_degree": 10,
+        "hits_authority": 1.5623961957200368e-06,
+        "hits_hub": 2.0924050230560807e-07,
+        "betweenness": 8.228305811124953e-05,
+        "closeness": 0.2365861468395717
+      },
+      "rol_principal": "Propagador",
+      "roles_secundarios": [],
+      "explicacion_rol": "Alta closeness (0.236586), alcance rápido",
+      "explicacion_completa": "PageRank 15.2x superior al promedio (excepcional). 49 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 12,
+      "nodo": 96358,
+      "metricas": {
+        "pagerank": 0.0075534139523559,
+        "in_degree": 50,
+        "out_degree": 9,
+        "hits_authority": 1.5865985157302534e-06,
+        "hits_hub": 2.0037979818896845e-07,
+        "betweenness": 2.4093666039230317e-05,
+        "closeness": 0.2366607326361794
+      },
+      "rol_principal": "Propagador",
+      "roles_secundarios": [],
+      "explicacion_rol": "Alta closeness (0.236661), alcance rápido",
+      "explicacion_completa": "PageRank 15.1x superior al promedio (excepcional). 50 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 13,
+      "nodo": 118244,
+      "metricas": {
+        "pagerank": 0.0062875900330244,
+        "in_degree": 22,
+        "out_degree": 14,
+        "hits_authority": 5.26151615974674e-07,
+        "hits_hub": 2.8824103613224857e-07,
+        "betweenness": 0.0004431774800635,
+        "closeness": 0.2345899512256128
+      },
+      "rol_principal": "Propagador",
+      "roles_secundarios": [],
+      "explicacion_rol": "Alta closeness (0.234590), alcance rápido",
+      "explicacion_completa": "PageRank 12.6x superior al promedio (excepcional). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 14,
+      "nodo": 89073,
+      "metricas": {
+        "pagerank": 0.0050461388622786,
+        "in_degree": 28,
+        "out_degree": 8,
+        "hits_authority": 5.0600452266280895e-12,
+        "hits_hub": 2.6009092338330627e-10,
+        "betweenness": 0.0002938155764568,
+        "closeness": 0.0137211462874294
+      },
+      "rol_principal": "Estándar",
+      "roles_secundarios": [],
+      "explicacion_rol": "Métricas en rango promedio (PageRank: 0.005046)",
+      "explicacion_completa": "PageRank 10.1x superior al promedio (excepcional). Principalmente página de referencia (hub > authority)."
+    },
+    {
+      "ranking": 15,
+      "nodo": 65463,
+      "metricas": {
+        "pagerank": 0.0048859530709697,
+        "in_degree": 60,
+        "out_degree": 4,
+        "hits_authority": 0.0006376336274038,
+        "hits_hub": 0.000272830208257,
+        "betweenness": 0.0575253874542539,
+        "closeness": 0.1583729628527344
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Autoridad",
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 3 roles: Autoridad, Puente, Propagador",
+      "explicacion_completa": "PageRank 9.8x superior al promedio (muy alto). 60 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 16,
+      "nodo": 241454,
+      "metricas": {
+        "pagerank": 0.0046990332331769,
+        "in_degree": 34,
+        "out_degree": 9,
+        "hits_authority": 2.5071878410578316e-14,
+        "hits_hub": 2.601622863310865e-10,
+        "betweenness": 0.0003860789253485,
+        "closeness": 0.0170611621600273
+      },
+      "rol_principal": "Estándar",
+      "roles_secundarios": [],
+      "explicacion_rol": "Métricas en rango promedio (PageRank: 0.004699)",
+      "explicacion_completa": "PageRank 9.4x superior al promedio (muy alto). Principalmente página de referencia (hub > authority)."
+    },
+    {
+      "ranking": 17,
+      "nodo": 185472,
+      "metricas": {
+        "pagerank": 0.00450205153636,
+        "in_degree": 44,
+        "out_degree": 13,
+        "hits_authority": 1.3494463355054796e-06,
+        "hits_hub": 2.640289257989007e-07,
+        "betweenness": 0.011610594247145,
+        "closeness": 0.2378605335620915
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 9.0x superior al promedio (muy alto). 44 enlaces entrantes (top 10%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 18,
+      "nodo": 251990,
+      "metricas": {
+        "pagerank": 0.0041456472374957,
+        "in_degree": 180,
+        "out_degree": 9,
+        "hits_authority": 6.744818734529072e-06,
+        "hits_hub": 1.207925446954527e-06,
+        "betweenness": 0.0066363042680865,
+        "closeness": 0.16290968835112
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 8.3x superior al promedio (muy alto). 180 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 19,
+      "nodo": 105607,
+      "metricas": {
+        "pagerank": 0.0040923518215781,
+        "in_degree": 56,
+        "out_degree": 12,
+        "hits_authority": 9.47090975592212e-07,
+        "hits_hub": 1.5639273622224143e-08,
+        "betweenness": 0.0104238637912473,
+        "closeness": 0.1883783799051345
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 2 roles: Puente, Propagador",
+      "explicacion_completa": "PageRank 8.2x superior al promedio (muy alto). 56 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    },
+    {
+      "ranking": 20,
+      "nodo": 84906,
+      "metricas": {
+        "pagerank": 0.0038946116862188,
+        "in_degree": 163,
+        "out_degree": 19,
+        "hits_authority": 0.0190115878637945,
+        "hits_hub": 0.0009293555932565,
+        "betweenness": 0.0671154975003419,
+        "closeness": 0.133100681546447
+      },
+      "rol_principal": "Multi-Rol",
+      "roles_secundarios": [
+        "Autoridad",
+        "Puente",
+        "Propagador"
+      ],
+      "explicacion_rol": "Combina 3 roles: Autoridad, Puente, Propagador",
+      "explicacion_completa": "PageRank 7.8x superior al promedio (muy alto). 163 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub). Nodo puente crítico (top 5% betweenness). Alta capacidad de propagación rápida."
+    }
+  ]
+}

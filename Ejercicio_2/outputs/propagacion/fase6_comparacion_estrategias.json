@@ -1,0 +1,176 @@
+{
+  "resultados": {
+    "pagerank_top5": {
+      "semillas": [
+        226411,
+        114260,
+        29878,
+        161890,
+        145892
+      ],
+      "cobertura_promedio_pct": 2.6329999999999996,
+      "cobertura_std_pct": 0.8129335766223462,
+      "cobertura_mediana_pct": 2.8000000000000003,
+      "pasos_promedio": 5.81,
+      "cobertura_temporal_promedio": [
+        5.0,
+        16.17,
+        25.43,
+        36.12,
+        45.65,
+        52.66
+      ],
+      "cobertura_temporal_std": [
+        0.0,
+        3.346804446035053,
+        6.708584053285761,
+        11.253692727278455,
+        14.192515633248387,
+        16.25867153244692
+      ],
+      "num_simulaciones": 100
+    },
+    "in_degree_top5": {
+      "semillas": [
+        226411,
+        251990,
+        84906,
+        3164,
+        73530
+      ],
+      "cobertura_promedio_pct": 2.546,
+      "cobertura_std_pct": 1.8803813443022668,
+      "cobertura_mediana_pct": 2.0,
+      "pasos_promedio": 5.21,
+      "cobertura_temporal_promedio": [
+        5.0,
+        10.49,
+        16.26,
+        25.86,
+        39.12,
+        50.92
+      ],
+      "cobertura_temporal_std": [
+        0.0,
+        2.2693391108426257,
+        6.176762906247897,
+        15.859394692106001,
+        28.014025058887913,
+        37.60762688604533
+      ],
+      "num_simulaciones": 100
+    },
+    "betweenness_top5": {
+      "semillas": [
+        226411,
+        161890,
+        84906,
+        65463,
+        221742
+      ],
+      "cobertura_promedio_pct": 2.6770000000000005,
+      "cobertura_std_pct": 0.8977310287608421,
+      "cobertura_mediana_pct": 2.8000000000000003,
+      "pasos_promedio": 5.86,
+      "cobertura_temporal_promedio": [
+        5.0,
+        13.53,
+        24.21,
+        35.84,
+        45.86,
+        53.54
+      ],
+      "cobertura_temporal_std": [
+        0.0,
+        2.670037452920839,
+        6.822455569661116,
+        11.274502206306051,
+        14.384728012722382,
+        17.954620575216843
+      ],
+      "num_simulaciones": 100
+    },
+    "authority_top5": {
+      "semillas": [
+        3164,
+        84906,
+        151707,
+        90543,
+        73530
+      ],
+      "cobertura_promedio_pct": 2.1134999999999997,
+      "cobertura_std_pct": 1.6956688208491657,
+      "cobertura_mediana_pct": 1.6500000000000001,
+      "pasos_promedio": 4.85,
+      "cobertura_temporal_promedio": [
+        5.0,
+        8.16,
+        12.17,
+        20.13,
+        32.32,
+        42.27
+      ],
+      "cobertura_temporal_std": [
+        0.0,
+        1.6353592877407703,
+        4.499011002431535,
+        12.985880794154857,
+        25.194396202330392,
+        33.91337641698331
+      ],
+      "num_simulaciones": 100
+    },
+    "random": {
+      "semillas": [
+        264066,
+        51025,
+        186902,
+        126917,
+        179782
+      ],
+      "cobertura_promedio_pct": 0.6845,
+      "cobertura_std_pct": 0.34217648954888763,
+      "cobertura_mediana_pct": 0.6,
+      "pasos_promedio": 3.94,
+      "cobertura_temporal_promedio": [
+        5.0,
+        8.27,
+        10.71,
+        12.2,
+        12.99,
+        13.69
+      ],
+      "cobertura_temporal_std": [
+        0.0,
+        1.6053348560347156,
+        3.2071638561196085,
+        4.50111097397076,
+        5.4726501806711525,
+        6.843529790977755
+      ],
+      "num_simulaciones": 100
+    }
+  },
+  "ranking": [
+    [
+      "betweenness_top5",
+      2.6770000000000005
+    ],
+    [
+      "pagerank_top5",
+      2.6329999999999996
+    ],
+    [
+      "in_degree_top5",
+      2.546
+    ],
+    [
+      "authority_top5",
+      2.1134999999999997
+    ],
+    [
+      "random",
+      0.6845
+    ]
+  ]
+}

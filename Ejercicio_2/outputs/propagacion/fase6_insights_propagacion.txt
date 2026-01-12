@@ -1,0 +1,84 @@
+================================================================================
+INSIGHTS - SIMULACIÓN DE PROPAGACIÓN DE INFORMACIÓN
+================================================================================
+
+1. CONFIGURACIÓN DE SIMULACIÓN
+--------------------------------------------------------------------------------
+Modelo: independent_cascade
+Probabilidad base: 0.1
+Máximo de pasos: 5
+Simulaciones por estrategia: 100
+Número de semillas: 5
+
+2. RANKING DE ESTRATEGIAS
+--------------------------------------------------------------------------------
+1. betweenness_top5
+   - Cobertura promedio: 2.68%
+   - Desviación estándar: 0.90%
+   - Cobertura mediana: 2.80%
+   - Pasos promedio: 5.86
+
+2. pagerank_top5
+   - Cobertura promedio: 2.63%
+   - Desviación estándar: 0.81%
+   - Cobertura mediana: 2.80%
+   - Pasos promedio: 5.81
+
+3. in_degree_top5
+   - Cobertura promedio: 2.55%
+   - Desviación estándar: 1.88%
+   - Cobertura mediana: 2.00%
+   - Pasos promedio: 5.21
+
+4. authority_top5
+   - Cobertura promedio: 2.11%
+   - Desviación estándar: 1.70%
+   - Cobertura mediana: 1.65%
+   - Pasos promedio: 4.85
+
+5. random
+   - Cobertura promedio: 0.68%
+   - Desviación estándar: 0.34%
+   - Cobertura mediana: 0.60%
+   - Pasos promedio: 3.94
+
+3. ANÁLISIS DE LA MEJOR ESTRATEGIA
+--------------------------------------------------------------------------------
+Estrategia más efectiva: betweenness_top5
+Cobertura: 2.68%
+
+Estrategia menos efectiva: random
+Cobertura: 0.68%
+
+Mejora relativa: 1.99 puntos porcentuales
+Mejora relativa: 291.1%
+
+4. ANÁLISIS DE SENSIBILIDAD A LA PROBABILIDAD
+--------------------------------------------------------------------------------
+Estrategia analizada: betweenness_top5
+
+Cobertura por probabilidad:
+  p=0.05: 0.93% (+/- 0.48%)
+  p=0.10: 3.00% (+/- 1.07%)
+  p=0.15: 5.05% (+/- 1.61%)
+  p=0.20: 7.65% (+/- 2.31%)
+  p=0.30: 14.25% (+/- 2.99%)
+
+Cobertura mínima (p=0.05): 0.93%
+Cobertura máxima (p=0.3): 14.25%
+
+Elasticidad promedio: 53.28 puntos porcentuales por 0.01 de incremento en p
+
+5. RECOMENDACIONES
+--------------------------------------------------------------------------------
+[RECOMENDACIÓN 1] Usar estrategia 'betweenness_top5' para maximizar alcance
+   Esta estrategia alcanza 2.68% del grafo en promedio.
+
+[RECOMENDACIÓN 2] La estrategia 'betweenness_top5' supera significativamente
+   a la selección aleatoria, demostrando el valor de las métricas de centralidad.
+
+[RECOMENDACIÓN 3] Ajustar probabilidad de activación según objetivo:
+   - Para propagación conservadora: p=0.05
+   - Para propagación agresiva: p=0.3
+
+================================================================================
