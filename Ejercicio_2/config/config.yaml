@@ -31,6 +31,46 @@ analisis:
   calcular_distribucion: true  # Calcular distribución de grados
 
 # =============================================================================
+# MÉTRICAS DE CENTRALIDAD (FASE 3)
+# =============================================================================
+metricas:
+  # PageRank
+  pagerank:
+    alpha: 0.85                # Factor de amortiguación (damping factor)
+    max_iter: 100              # Máximo de iteraciones
+    tol: 1.0e-6                # Tolerancia para convergencia
+
+  # HITS (Hubs and Authorities)
+  hits:
+    max_iter: 100              # Máximo de iteraciones
+    tol: 1.0e-6                # Tolerancia para convergencia
+
+  # Betweenness Centrality
+  betweenness:
+    k: null                    # null = todos los nodos, int = muestra aleatoria
+    normalized: true           # Normalizar valores entre 0 y 1
+
+  # Closeness Centrality
+  closeness:
+    wf_improved: true          # Usar fórmula mejorada de Wasserman-Faust
+
+# =============================================================================
+# RANKING Y ANÁLISIS TOP-N (FASE 4)
+# =============================================================================
+ranking:
+  top_n: 20                      # Número de nodos top a analizar
+  metrica_principal: "pagerank"  # Métrica principal para ranking (pagerank, in_degree, hits_authority)
+
+  # Umbrales para clasificación de roles
+  umbrales:
+    authority_percentile: 90     # Percentil para considerar alta authority
+    hub_percentile: 90           # Percentil para considerar alto hub
+    betweenness_percentile: 90   # Percentil para considerar alto betweenness
+    closeness_percentile: 90     # Percentil para considerar alta closeness
+    in_degree_percentile: 90     # Percentil para considerar alto in-degree
+    out_degree_percentile: 90    # Percentil para considerar alto out-degree
+
+# =============================================================================
 # OUTPUTS
 # =============================================================================
 outputs:
