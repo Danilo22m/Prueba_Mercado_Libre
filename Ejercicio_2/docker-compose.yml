@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # Servicio principal: Análisis de Grafos
+  grafos-analisis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ejercicio2-grafos
+    image: ejercicio2-grafos:latest
+
+    # Volúmenes: montar datos y outputs
+    volumes:
+      # Datos de entrada (dataset)
+      - ./data:/app/data
+      # Resultados de salida
+      - ./outputs:/app/outputs
+      # Configuración (opcional, si quieres modificarla sin rebuild)
+      - ./config:/app/config
+
+    # Variables de entorno adicionales (opcional)
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+
+    # Recursos (opcional: limitar CPU y memoria)
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 8G
+        reservations:
+          cpus: '2.0'
+          memory: 4G
+
+    # Restart policy
+    restart: on-failure
+
+    # Comando por defecto (puede ser sobrescrito)
+    command: python main.py
+
+  # Servicio opcional: Servidor web para visualizaciones
+  web-viewer:
+    image: python:3.11-slim
+    container_name: ejercicio2-web-viewer
+
+    volumes:
+      - ./outputs:/app/outputs
+
+    working_dir: /app/outputs/visualizaciones
+
+    ports:
+      - "8000:8000"
+
+    # Servidor HTTP simple para ver visualizaciones
+    command: python -m http.server 8000
+
+    # Este servicio es opcional, comentarlo si no se necesita
+    profiles:
+      - web

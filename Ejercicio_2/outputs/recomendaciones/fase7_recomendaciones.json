@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "fecha_generacion": "2026-01-12 00:02:38",
+    "fecha_generacion": "2026-01-12 00:06:14",
     "num_nodos": 2000,
     "num_aristas": 28074,
     "densidad": 0.007022011005502752,
@@ -67,7 +67,7 @@
     {
       "id": "ACT-002",
       "titulo": "Optimizar Campañas Virales con Estrategia Betweenness",
-      "descripcion": "La estrategia 'Betweenness' alcanzó 2.80% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.",
+      "descripcion": "La estrategia 'Betweenness' alcanzó 2.68% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.",
       "categoria": "Marketing Viral",
       "prioridad": "ALTA",
       "impacto_estimado": "Muy Alto",
@@ -108,23 +108,23 @@
       "comparacion_estrategias": [
         {
           "nombre": "betweenness_top5",
-          "cobertura": 2.7975
-        },
-        {
-          "nombre": "in_degree_top5",
-          "cobertura": 2.742999999999999
+          "cobertura": 2.6770000000000005
         },
         {
           "nombre": "pagerank_top5",
-          "cobertura": 2.5905
+          "cobertura": 2.6329999999999996
+        },
+        {
+          "nombre": "in_degree_top5",
+          "cobertura": 2.546
         },
         {
           "nombre": "authority_top5",
-          "cobertura": 2.2885000000000004
+          "cobertura": 2.1134999999999997
         },
         {
           "nombre": "random",
-          "cobertura": 0.7134999999999999
+          "cobertura": 0.6845
         }
       ]
     },
@@ -174,7 +174,7 @@
         {
           "nodo": 226411,
           "in_degree": 559,
-          "authority": 7.286055461191797e-05,
+          "authority": 7.286055461190183e-05,
           "pagerank": 0.0233155199242625
         },
         {

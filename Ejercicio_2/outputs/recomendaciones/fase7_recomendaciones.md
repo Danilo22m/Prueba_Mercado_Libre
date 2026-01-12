@@ -1,6 +1,6 @@
 # Recomendaciones Accionables - Optimización de Grafo de URLs
 
-**Fecha de Generación:** 2026-01-12 00:02:38  
+**Fecha de Generación:** 2026-01-12 00:06:14  
 **Grafo Analizado:** 2000 nodos, 28074 aristas  
 **Método:** Análisis de Grafos con NetworkX + Simulación de Propagación
 
@@ -53,7 +53,7 @@ Se detectaron 281 páginas (14.05%) sin enlaces internos entrantes. Esto reduce 
 
 ### Descripción
 
-La estrategia 'Betweenness' alcanzó 2.80% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.
+La estrategia 'Betweenness' alcanzó 2.68% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.
 
 ### Acciones Concretas
 

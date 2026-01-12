@@ -2,7 +2,7 @@
 RESUMEN EJECUTIVO - RECOMENDACIONES DE OPTIMIZACIÓN
 ================================================================================
 
-Fecha: 2026-01-12 00:02:38
+Fecha: 2026-01-12 00:06:14
 Grafo: 2000 nodos, 28074 aristas
 
 --------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ ACCIONABLES PRIORITARIOS
 2. OPTIMIZAR CAMPAÑAS VIRALES CON ESTRATEGIA BETWEENNESS
    Prioridad: ALTA | ROI: Muy Alto
 
-   La estrategia 'Betweenness' alcanzó 2.80% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.
+   La estrategia 'Betweenness' alcanzó 2.68% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.
 
    Próximos pasos:
    1) Identificar las páginas top según Betweenness

@@ -1,0 +1,55 @@
+# .dockerignore - Archivos a excluir del contexto de Docker
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs (se generan dentro del contenedor)
+outputs/results/*
+outputs/visualizaciones/*
+outputs/propagacion/*
+outputs/recomendaciones/*
+
+# Data procesada (se genera dentro del contenedor)
+data/processed/*
+
+# Git
+.git/
+.gitignore
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Logs
+*.log
+
+# Documentación
+*.md
+!README.md
+
+# Archivos temporales
+*.tmp
+*.bak
+.cache/

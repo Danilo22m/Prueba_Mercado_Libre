@@ -9,63 +9,63 @@
   ],
   "resultados": {
     "0.05": {
-      "cobertura_promedio_pct": 0.9125,
-      "cobertura_std_pct": 0.4633235910246747,
+      "cobertura_promedio_pct": 0.932,
+      "cobertura_std_pct": 0.47814851249376483,
       "cobertura_temporal_promedio": [
         5.0,
-        9.14,
-        12.15,
-        14.67,
-        16.7,
-        18.25
+        9.17,
+        12.35,
+        15.12,
+        17.26,
+        18.64
       ]
     },
     "0.1": {
-      "cobertura_promedio_pct": 2.786,
-      "cobertura_std_pct": 1.002623558470476,
+      "cobertura_promedio_pct": 2.9989999999999997,
+      "cobertura_std_pct": 1.0651990424329156,
       "cobertura_temporal_promedio": [
         5.0,
-        13.37,
-        23.86,
-        35.8,
-        46.6,
-        55.72
+        13.75,
+        25.04,
+        38.4,
+        50.58,
+        59.98
       ]
     },
     "0.15": {
-      "cobertura_promedio_pct": 4.8315,
-      "cobertura_std_pct": 1.5555972325766074,
+      "cobertura_promedio_pct": 5.0489999999999995,
+      "cobertura_std_pct": 1.608679271949508,
       "cobertura_temporal_promedio": [
         5.0,
-        17.67,
-        37.37,
-        58.87,
-        79.21,
-        96.63
+        17.75,
+        37.57,
+        59.11,
+        79.92,
+        100.98
       ]
     },
     "0.2": {
-      "cobertura_promedio_pct": 7.578,
-      "cobertura_std_pct": 2.321425424173691,
+      "cobertura_promedio_pct": 7.6545000000000005,
+      "cobertura_std_pct": 2.310444708275876,
       "cobertura_temporal_promedio": [
         5.0,
-        21.73,
-        49.54,
-        79.07,
-        114.74,
-        151.56
+        22.28,
+        50.25,
+        79.33,
+        115.12,
+        153.09
       ]
     },
     "0.3": {
-      "cobertura_promedio_pct": 13.5775,
-      "cobertura_std_pct": 3.011074351456636,
+      "cobertura_promedio_pct": 14.2515,
+      "cobertura_std_pct": 2.988147042901336,
       "cobertura_temporal_promedio": [
         5.0,
-        28.92,
-        69.61,
-        118.4,
-        191.57,
-        271.55
+        29.77,
+        70.95,
+        124.12,
+        205.78,
+        285.03
       ]
     }
   }
