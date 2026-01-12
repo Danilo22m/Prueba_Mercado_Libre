@@ -1,120 +1,81 @@
-<mxfile host="app.diagrams.net" modified="2026-01-11T00:00:00.000Z" agent="Claude" version="24.0.0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.3.0">
   <diagram name="Ejercicio 1 - ML vs LLM" id="diagrama-ejercicio-1">
-    <mxGraphModel dx="1434" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="1216" dy="813" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- NIVEL 1: INPUT -->
-        <mxCell id="dataset" value="Dataset: precios_historicos.csv&#xa;(ITEM_ID, ORD_CLOSED_DT, PRICE)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="440" y="40" width="280" height="80" as="geometry" />
+        <mxCell id="dataset" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" value="Dataset: precios_historicos.csv&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="280" x="440" y="40" as="geometry" />
         </mxCell>
-
-        <!-- Arrow to preprocessing -->
-        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="dataset" target="preprocessing">
+        <mxCell id="arrow1" edge="1" parent="1" source="dataset" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#82b366;" target="preprocessing">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- NIVEL 2: PREPROCESAMIENTO -->
-        <mxCell id="preprocessing" value="Preprocesamiento de Datos&#xa;• Limpieza y validación&#xa;• Feature engineering (ventanas, stats móviles)&#xa;• Generación ground truth&#xa;• Split train/test" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;align=left;spacingLeft=10;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="400" y="180" width="360" height="100" as="geometry" />
+        <mxCell id="preprocessing" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;align=left;spacingLeft=10;fontColor=#333333;" value="Preprocesamiento de Datos&#xa;• Limpieza y validación&#xa;• Feature engineering (ventanas, stats móviles)&#xa;• Generación ground truth&#xa;• Split train/test" vertex="1">
+          <mxGeometry height="100" width="360" x="400" y="180" as="geometry" />
         </mxCell>
-
-        <!-- Arrows splitting to both models -->
-        <mxCell id="arrow2a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;" edge="1" parent="1" source="preprocessing" target="modelA">
+        <mxCell id="arrow2a" edge="1" parent="1" source="preprocessing" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;" target="modelA">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="arrow2b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="preprocessing" target="modelB">
+        <mxCell id="arrow2b" edge="1" parent="1" source="preprocessing" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;" target="modelB">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- NIVEL 3: MODELOS EN PARALELO -->
-        <!-- Modelo A: LLM -->
-        <mxCell id="modelA" value="Modelo A: LLM Classifier&#xa;• Prompt Engineering&#xa;• Llamada API (GPT-4/Claude)&#xa;• Parse JSON estructurado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=10;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="120" y="360" width="280" height="100" as="geometry" />
+        <mxCell id="modelA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=10;fontStyle=1" value="Modelo A: LLM Classifier&lt;br&gt;• Prompt Engineering&lt;br&gt;• Llamada API&lt;br&gt;• JSON estructurado" vertex="1">
+          <mxGeometry height="100" width="280" x="120" y="360" as="geometry" />
         </mxCell>
-
-        <!-- Output A -->
-        <mxCell id="outputA" value="Output A&#xa;• label: ANOMALO/NORMAL&#xa;• confidence: [0,1]&#xa;• reason: &lt;15 palabras&#xa;• latencia (ms)&#xa;• costo ($)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
-          <mxGeometry x="120" y="500" width="280" height="100" as="geometry" />
+        <mxCell id="outputA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=10;" value="Output A&#xa;• label: ANOMALO/NORMAL&#xa;• confidence: [0,1]&#xa;• reason: &lt;15 palabras&#xa;• latencia (ms)&#xa;• costo ($)" vertex="1">
+          <mxGeometry height="100" width="280" x="120" y="500" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow3a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;" edge="1" parent="1" source="modelA" target="outputA">
+        <mxCell id="arrow3a" edge="1" parent="1" source="modelA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;" target="outputA">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Modelo B: Clásico -->
-        <mxCell id="modelB" value="Modelo B: ML Clásico&#xa;• Algoritmo: Isolation Forest / Z-score / Prophet&#xa;• Entrenamiento/calibración&#xa;• Definición umbral" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="760" y="360" width="280" height="100" as="geometry" />
+        <mxCell id="modelB" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;spacingLeft=10;fontStyle=1" value="Modelo B: ML Clásico&lt;br&gt;• Algoritmo: Isolation Forest&amp;nbsp;&lt;br&gt;• Definición umbral" vertex="1">
+          <mxGeometry height="100" width="280" x="760" y="360" as="geometry" />
         </mxCell>
-
-        <!-- Output B -->
-        <mxCell id="outputB" value="Output B&#xa;• label: ANOMALO/NORMAL&#xa;• anomaly score&#xa;• umbral usado&#xa;• latencia (ms)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
-          <mxGeometry x="760" y="500" width="280" height="100" as="geometry" />
+        <mxCell id="outputB" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;align=left;spacingLeft=10;" value="Output B&#xa;• label: ANOMALO/NORMAL&#xa;• anomaly score&#xa;• umbral usado&#xa;• latencia (ms)" vertex="1">
+          <mxGeometry height="100" width="280" x="760" y="500" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow3b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="modelB" target="outputB">
+        <mxCell id="arrow3b" edge="1" parent="1" source="modelB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;" target="outputB">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- NIVEL 4: EVALUACIÓN -->
-        <mxCell id="evaluation" value="Módulo de Evaluación&#xa;• Cálculo F1, Precision, Recall, PR-AUC&#xa;• Comparación latencia&#xa;• Comparación costo (si aplica)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=left;spacingLeft=10;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="400" y="680" width="360" height="90" as="geometry" />
+        <mxCell id="evaluation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=left;spacingLeft=10;fontStyle=1" value="Módulo de Evaluación&#xa;• Cálculo F1, Precision, Recall, PR-AUC&#xa;• Comparación latencia&#xa;• Comparación costo (si aplica)" vertex="1">
+          <mxGeometry height="90" width="360" x="400" y="680" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow4a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;" edge="1" parent="1" source="outputA" target="evaluation">
+        <mxCell id="arrow4a" edge="1" parent="1" source="outputA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;" target="evaluation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow4b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;" edge="1" parent="1" source="outputB" target="evaluation">
+        <mxCell id="arrow4b" edge="1" parent="1" source="outputB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;" target="evaluation">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- NIVEL 5: A/B TEST -->
-        <mxCell id="abtest" value="A/B Test Estadístico&#xa;Bootstrap Estratificado (≥1000 iteraciones)&#xa;• ΔF1 = F1(LLM) - F1(Clásico)&#xa;• Intervalo confianza 95%&#xa;• p-value" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;align=left;spacingLeft=10;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="400" y="830" width="360" height="100" as="geometry" />
+        <mxCell id="abtest" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;align=left;spacingLeft=10;fontStyle=1" value="A/B Test Estadístico&#xa;Bootstrap Estratificado (≥1000 iteraciones)&#xa;• ΔF1 = F1(LLM) - F1(Clásico)&#xa;• Intervalo confianza 95%&#xa;• p-value" vertex="1">
+          <mxGeometry height="100" width="360" x="400" y="830" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#b85450;" edge="1" parent="1" source="evaluation" target="abtest">
+        <mxCell id="arrow5" edge="1" parent="1" source="evaluation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#b85450;" target="abtest">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- NIVEL 6: OUTPUTS FINALES -->
-        <mxCell id="outputs" value="Resultados Finales" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=14;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1000" width="360" height="50" as="geometry" />
+        <mxCell id="outputs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=14;fontStyle=1;fontColor=#ffffff;" value="Resultados Finales" vertex="1">
+          <mxGeometry height="50" width="360" x="400" y="1000" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#006EAF;" edge="1" parent="1" source="abtest" target="outputs">
+        <mxCell id="arrow6" edge="1" parent="1" source="abtest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#006EAF;" target="outputs">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Output 1: Tabla -->
-        <mxCell id="output1" value="Tabla Comparativa&#xa;Métricas, IC95%, p-value" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="120" y="1120" width="200" height="70" as="geometry" />
+        <mxCell id="output1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;" value="Tabla Comparativa&#xa;Métricas, IC95%, p-value" vertex="1">
+          <mxGeometry height="70" width="200" x="120" y="1120" as="geometry" />
         </mxCell>
-
-        <!-- Output 2: Gráficos -->
-        <mxCell id="output2" value="Gráficos Series Temporales&#xa;2-3 productos con detecciones A vs B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="480" y="1120" width="200" height="70" as="geometry" />
+        <mxCell id="output2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;" value="Gráficos Series Temporales&#xa;2-3 productos con detecciones A vs B" vertex="1">
+          <mxGeometry height="70" width="200" x="480" y="1120" as="geometry" />
         </mxCell>
-
-        <!-- Output 3: Conclusión -->
-        <mxCell id="output3" value="Conclusión Ejecutiva&#xa;≤120 palabras: ganador, riesgos, recomendaciones" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="840" y="1120" width="200" height="70" as="geometry" />
+        <mxCell id="output3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontSize=11;fontColor=#ffffff;" value="Conclusión Ejecutiva&#xa;≤120 palabras: ganador, riesgos, recomendaciones" vertex="1">
+          <mxGeometry height="70" width="200" x="840" y="1120" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow7a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#006EAF;" edge="1" parent="1" source="outputs" target="output1">
+        <mxCell id="arrow7a" edge="1" parent="1" source="outputs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#006EAF;" target="output1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow7b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#006EAF;" edge="1" parent="1" source="outputs" target="output2">
+        <mxCell id="arrow7b" edge="1" parent="1" source="outputs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#006EAF;" target="output2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="arrow7c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#006EAF;" edge="1" parent="1" source="outputs" target="output3">
+        <mxCell id="arrow7c" edge="1" parent="1" source="outputs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#006EAF;" target="output3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
       </root>
     </mxGraphModel>
   </diagram>

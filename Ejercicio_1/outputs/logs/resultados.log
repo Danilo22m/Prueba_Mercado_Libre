@@ -1,3 +1,54 @@
+
+[2026-01-12 15:08:03] INFO - ============================================================
+[2026-01-12 15:08:03] INFO - INICIANDO PREPROCESAMIENTO
+[2026-01-12 15:08:03] INFO - ============================================================
+[2026-01-12 15:08:03] INFO - Cargando dataset...
+[2026-01-12 15:08:03] INFO - Dataset cargado: 175,914 registros
+[2026-01-12 15:08:03] INFO - Productos unicos: 300
+[2026-01-12 15:08:03] INFO - Rango de fechas: 2023-12-13 a 2024-03-11
+[2026-01-12 15:08:03] INFO - Iniciando limpieza de datos...
+[2026-01-12 15:08:03] INFO - Nulos eliminados: 0 (0.00%)
+[2026-01-12 15:08:03] INFO - Duplicados exactos eliminados: 0
+[2026-01-12 15:08:03] INFO - Precios invalidos eliminados: 0
+[2026-01-12 15:08:03] INFO - Productos con < 10 registros eliminados: 0
+[2026-01-12 15:08:03] INFO - Total registros eliminados: 0 (0.00%)
+[2026-01-12 15:08:03] INFO - Dataset limpio: 175,914 registros, 300 productos
+[2026-01-12 15:08:03] INFO - Iniciando feature engineering...
+[2026-01-12 15:08:03] INFO - Calculando estadisticas moviles (ventana=7 dias)...
+[2026-01-12 15:08:03] INFO - Features creadas: 10
+[2026-01-12 15:08:03] INFO -   - PRICE_MEAN_GLOBAL
+[2026-01-12 15:08:03] INFO -   - PRICE_STD_GLOBAL
+[2026-01-12 15:08:03] INFO -   - PRICE_MEAN_ROLLING
+[2026-01-12 15:08:03] INFO -   - PRICE_STD_ROLLING
+[2026-01-12 15:08:03] INFO -   - PRICE_LAG_1
+[2026-01-12 15:08:03] INFO -   - PRICE_DIFF
+[2026-01-12 15:08:03] INFO -   - PRICE_DIFF_PCT
+[2026-01-12 15:08:03] INFO -   - PRICE_DIFF_VS_MEAN
+[2026-01-12 15:08:03] INFO -   - PRICE_MIN_ROLLING
+[2026-01-12 15:08:03] INFO -   - PRICE_MAX_ROLLING
+[2026-01-12 15:08:03] INFO - Generando ground truth (etiquetas)...
+[2026-01-12 15:08:03] INFO - Metodo: zscore, umbral Z-score: 3.0
+[2026-01-12 15:08:03] INFO - Distribucion de etiquetas:
+[2026-01-12 15:08:03] INFO -   - NORMAL: 172,786 (98.22%)
+[2026-01-12 15:08:03] INFO -   - ANOMALO: 3,128 (1.78%)
+[2026-01-12 15:08:03] INFO - Dividiendo dataset en train/test...
+[2026-01-12 15:08:03] INFO - Train set: 140,731 registros (80%)
+[2026-01-12 15:08:03] INFO -   - NORMAL: 138,229
+[2026-01-12 15:08:03] INFO -   - ANOMALO: 2,502
+[2026-01-12 15:08:03] INFO -   - Productos: 300
+[2026-01-12 15:08:03] INFO - Test set: 35,183 registros (20%)
+[2026-01-12 15:08:03] INFO -   - NORMAL: 34,557
+[2026-01-12 15:08:03] INFO -   - ANOMALO: 626
+[2026-01-12 15:08:03] INFO -   - Productos: 300
+[2026-01-12 15:08:03] INFO - Guardando datos procesados...
+[2026-01-12 15:08:04] INFO - Train guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/data/processed/train.csv
+[2026-01-12 15:08:04] INFO - Test guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/data/processed/test.csv
+[2026-01-12 15:08:04] INFO - ============================================================
+[2026-01-12 15:08:04] INFO - PREPROCESAMIENTO COMPLETADO
+[2026-01-12 15:08:04] INFO - ============================================================
+
+
+
 [2026-01-12 13:03:48] INFO - ============================================================
 [2026-01-12 13:03:48] INFO - MODELO A COMPLETADO
 [2026-01-12 13:03:48] INFO - ============================================================

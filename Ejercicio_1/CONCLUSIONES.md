@@ -113,7 +113,7 @@ Actual Normal    33,983    574
 
 | Aspecto | LLM | Isolation Forest |
 |---------|-----|------------------|
-| **Tiempo de procesamiento** | ~20 min (600 registros) | ~5 seg (35k registros) |
+| **Tiempo de procesamiento** | ~20 min (300 registros) | ~5 seg (35k registros) |
 | **Latencia por predicción** | ~2000 ms | <0.1 ms |
 | **Escalabilidad** | ❌ Limitada (rate limits) | ✅ Excelente |
 | **Costo** | $0.00 (Groq gratis) | $0.00 (local) |
@@ -205,35 +205,6 @@ Actual Normal    33,983    574
 
 ---
 
-## 6. Recomendaciones
-
-### Arquitectura Híbrida (Recomendada)
-
-Combinar ambos modelos para maximizar fortalezas:
-
-```
-┌────────────────────────────────────────────────────────────┐
-│                   Sistema Híbrido                          │
-├────────────────────────────────────────────────────────────┤
-│                                                             │
-│  1. Isolation Forest (Filtro rápido)                       │
-│     ↓                                                       │
-│     Detecta anomalías candidatas (alta recall)             │
-│     ↓                                                       │
-│  2. LLM (Validación selectiva)                            │
-│     ↓                                                       │
-│     Valida solo anomalías candidatas con explicación       │
-│     ↓                                                       │
-│  3. Output final con explicación                          │
-│                                                             │
-└────────────────────────────────────────────────────────────┘
-```
-
-**Ventajas**:
-- ✅ Velocidad de IF para filtrado inicial
-- ✅ Explicabilidad de LLM para casos importantes
-- ✅ Balance costo-beneficio óptimo
-
 ### Mejoras Futuras
 
 #### Modelo A (LLM)
@@ -271,52 +242,11 @@ Combinar ambos modelos para maximizar fortalezas:
 4. **Precision e F1 no son estadísticamente diferentes** (p = 0.178)
    - Alta variabilidad impide conclusiones definitivas
 
-### Respuesta a la Pregunta de Investigación
-
-**¿Puede un LLM reemplazar un modelo clásico para detección de anomalías?**
-
-**Respuesta**: **NO** para uso general, **SÍ** para casos específicos.
-
-**Razones**:
-- ❌ **Costo computacional**: 400x más lento (2000ms vs 0.1ms por predicción)
-- ❌ **Escalabilidad**: Rate limits impiden alto volumen
-- ❌ **Precision baja**: 97% de falsos positivos es inviable
-- ✅ **Recall perfecto**: Útil cuando no detectar es crítico
-- ✅ **Explicabilidad**: Valor agregado en escenarios de compliance
 
 ### Recomendación Final
 
 **Para producción en e-commerce**: **Isolation Forest** con monitoreo humano
 
-**Para casos críticos con bajo volumen**: **Sistema Híbrido** (IF + LLM)
-
-**Para exploración y prototipado**: **LLM** por rapidez de implementación
-
----
-
-## 8. Referencias
-
-### Archivos de Resultados
-
-- **Métricas completas**: `outputs/results/evaluacion_completa.json`
-- **A/B Test**: `outputs/results/ab_test_results.json`
-- **Comparación**: `outputs/results/comparacion_modelos.csv`
-- **Predicciones LLM**: `outputs/results/predicciones_llm.csv`
-- **Predicciones IF**: `outputs/results/predicciones_isolation_forest.csv`
-
-### Visualizaciones
-
-- **Matrices de confusión**: `outputs/plots/confusion_matrices.png`
-- **Curvas PR**: `outputs/plots/precision_recall_curves.png`
-- **Series temporales**: `outputs/plots/series_temporales_comparacion_modelos.png`
-
-### Configuración
-
-- **Config YAML**: `config/config.yaml`
-- **Modelo A**: 600 registros, llama-3.3-70b-versatile, temperature=0.0
-- **Modelo B**: contamination=0.02, n_estimators=100
-
----
 
 **Documento generado**: 2026-01-12
 **Proyecto**: Prueba Técnica Mercado Libre - Ejercicio 1
