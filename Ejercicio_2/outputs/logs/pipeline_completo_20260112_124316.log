@@ -1,0 +1,728 @@
+[2026-01-12 12:43:16] INFO - Log guardado en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/logs/pipeline_completo_20260112_124316.log
+[2026-01-12 12:43:16] INFO - 
+[2026-01-12 12:43:16] INFO - ================================================================================
+[2026-01-12 12:43:16] INFO - PIPELINE COMPLETO - ANÁLISIS DE GRAFOS DE URLs
+[2026-01-12 12:43:16] INFO - ================================================================================
+[2026-01-12 12:43:16] INFO - 
+[2026-01-12 12:43:16] INFO - Este script ejecutará las siguientes fases:
+[2026-01-12 12:43:16] INFO -   1. Selección de subgrafo
+[2026-01-12 12:43:16] INFO -   2. Análisis estadístico del grafo
+[2026-01-12 12:43:16] INFO -   3. Cálculo de métricas de centralidad
+[2026-01-12 12:43:16] INFO -   4. Ranking y análisis de roles Top-20
+[2026-01-12 12:43:16] INFO -   5. Visualización del grafo
+[2026-01-12 12:43:16] INFO -   6. Simulación de propagación
+[2026-01-12 12:43:16] INFO -   7. Generación de recomendaciones accionables
+[2026-01-12 12:43:16] INFO - 
+[2026-01-12 12:43:16] INFO - 
+[2026-01-12 12:43:16] INFO - ================================================================================
+[2026-01-12 12:43:16] INFO - EJECUTANDO FASE 1: fase1_seleccion_subgrafo
+[2026-01-12 12:43:16] INFO - ================================================================================
+[2026-01-12 12:43:17] INFO - ================================================================================
+[2026-01-12 12:43:17] INFO - FASE 1: SELECCIÓN DE SUBGRAFO
+[2026-01-12 12:43:17] INFO - ================================================================================
+[2026-01-12 12:43:17] INFO - Cargando grafo desde: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/data/raw/web-Stanford.txt
+[2026-01-12 12:43:20] INFO - ✓ Grafo cargado: 281,903 nodos, 2,312,497 aristas
+[2026-01-12 12:43:20] INFO - Extrayendo Largest Weakly Connected Component...
+[2026-01-12 12:43:20] INFO -   Encontrados 365 componentes débilmente conexas
+[2026-01-12 12:43:20] INFO -   WCC 1: 255,265 nodos
+[2026-01-12 12:43:20] INFO -   WCC 2: 755 nodos
+[2026-01-12 12:43:20] INFO -   WCC 3: 670 nodos
+[2026-01-12 12:43:20] INFO -   WCC 4: 628 nodos
+[2026-01-12 12:43:20] INFO -   WCC 5: 614 nodos
+[2026-01-12 12:43:20] INFO - ✓ Largest WCC seleccionado: 255,265 nodos (90.6% del total)
+[2026-01-12 12:43:24] INFO -   Aristas en WCC: 2,234,572
+[2026-01-12 12:43:24] INFO - Seleccionando subgrafo con ~30,000 aristas...
+[2026-01-12 12:43:24] INFO -   top_n=1,000: 1,000 nodos, 13,811 aristas (diff=16,189)
+[2026-01-12 12:43:24] INFO -   top_n=2,000: 2,000 nodos, 28,074 aristas (diff=1,926)
+[2026-01-12 12:43:24] INFO - ✓ Subgrafo seleccionado: 2,000 nodos, 28,074 aristas
+[2026-01-12 12:43:24] INFO - Validando subgrafo...
+[2026-01-12 12:43:24] INFO -   Nodos: 2,000
+[2026-01-12 12:43:24] INFO -   Aristas: 28,074
+[2026-01-12 12:43:24] INFO - ✓ Tamaño correcto: 10,000 ≤ 28,074 ≤ 50,000
+[2026-01-12 12:43:24] INFO -   Grado mínimo: 0
+[2026-01-12 12:43:24] INFO -   Grado máximo: 573
+[2026-01-12 12:43:24] INFO -   Grado promedio: 28.1
+[2026-01-12 12:43:24] INFO - ✓ Diversidad de grados adecuada
+[2026-01-12 12:43:24] INFO -   Densidad: 0.007022 (0.7022%)
+[2026-01-12 12:43:24] INFO - Guardando subgrafo en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/data/processed/subgrafo.gpickle
+[2026-01-12 12:43:24] INFO - ✓ Subgrafo guardado exitosamente
+[2026-01-12 12:43:24] INFO - ================================================================================
+[2026-01-12 12:43:24] INFO - FASE 1 COMPLETADA
+[2026-01-12 12:43:24] INFO - ================================================================================
+
+✓ Subgrafo final: 2,000 nodos, 28,074 aristas
+[2026-01-12 12:43:25] INFO - FASE 1 completada exitosamente
+[2026-01-12 12:43:25] INFO - 
+[2026-01-12 12:43:25] INFO - ================================================================================
+[2026-01-12 12:43:25] INFO - EJECUTANDO FASE 2: fase2_analisis_grafo
+[2026-01-12 12:43:25] INFO - ================================================================================
+[2026-01-12 12:43:26] INFO - ================================================================================
+[2026-01-12 12:43:26] INFO - FASE 2: ANÁLISIS DEL GRAFO DIRIGIDO
+[2026-01-12 12:43:26] INFO - ================================================================================
+[2026-01-12 12:43:26] INFO - Cargando subgrafo desde: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/data/processed/subgrafo.gpickle
+[2026-01-12 12:43:26] INFO - ✓ Subgrafo cargado exitosamente
+[2026-01-12 12:43:26] INFO - 
+[2026-01-12 12:43:26] INFO - ESTADÍSTICAS DEL GRAFO:
+[2026-01-12 12:43:26] INFO - --------------------------------------------------------------------------------
+[2026-01-12 12:43:26] INFO - Calculando estadísticas básicas...
+[2026-01-12 12:43:26] INFO -   Nodos (N): 2,000
+[2026-01-12 12:43:26] INFO -   Aristas (E): 28,074
+[2026-01-12 12:43:26] INFO -   Densidad: 0.007022 (0.7022%)
+[2026-01-12 12:43:26] INFO - 
+[2026-01-12 12:43:26] INFO - DISTRIBUCIÓN DE GRADOS:
+[2026-01-12 12:43:26] INFO - --------------------------------------------------------------------------------
+[2026-01-12 12:43:26] INFO - Analizando distribución de grados...
+[2026-01-12 12:43:26] INFO -   In-degree:  min=0, max=559, avg=14.04
+[2026-01-12 12:43:26] INFO -   Out-degree: min=0, max=72, avg=14.04
+[2026-01-12 12:43:26] INFO -   Total:      min=0, max=573, avg=28.07
+[2026-01-12 12:43:26] INFO - 
+[2026-01-12 12:43:26] INFO - NODOS ESPECIALES:
+[2026-01-12 12:43:26] INFO - --------------------------------------------------------------------------------
+[2026-01-12 12:43:26] INFO - Identificando nodos especiales...
+[2026-01-12 12:43:26] INFO -   Nodos huérfanos (in-degree=0): 281 (14.05%)
+[2026-01-12 12:43:26] INFO -   Nodos sink (out-degree=0): 139 (6.95%)
+[2026-01-12 12:43:26] INFO -   Nodos aislados (degree=0): 97 (4.85%)
+[2026-01-12 12:43:26] INFO - 
+[2026-01-12 12:43:26] INFO - COMPONENTES CONEXAS:
+[2026-01-12 12:43:26] INFO - --------------------------------------------------------------------------------
+[2026-01-12 12:43:26] INFO - Analizando componentes conexas...
+[2026-01-12 12:43:26] INFO -   Componentes débiles (WCC): 156, mayor=1,447 (72.35%)
+[2026-01-12 12:43:26] INFO -   Componentes fuertes (SCC): 484, mayor=744 (37.20%)
+[2026-01-12 12:43:26] INFO - 
+[2026-01-12 12:43:26] INFO - VALIDACIÓN DE CALIDAD DEL GRAFO:
+[2026-01-12 12:43:26] INFO - --------------------------------------------------------------------------------
+[2026-01-12 12:43:26] INFO - [BUENO] Número de nodos: 2000
+[2026-01-12 12:43:26] INFO -    Suficientes nodos (2,000) para análisis robusto.
+[2026-01-12 12:43:26] INFO - [BUENO] Densidad: 0.007022
+[2026-01-12 12:43:26] INFO -    Densidad adecuada (0.7022%) para análisis de centralidad.
+[2026-01-12 12:43:26] INFO - [EXCELENTE] In-degree máximo: 559
+[2026-01-12 12:43:26] INFO -    Existe diversidad clara de grados (max=559, avg=14.04). Ideal para análisis de autoridad.
+[2026-01-12 12:43:26] INFO - [BUENO] Nodos huérfanos: 14.05%
+[2026-01-12 12:43:26] INFO -    Bajo porcentaje de nodos huérfanos (14.05%).
+[2026-01-12 12:43:26] INFO - [ADVERTENCIA] Conectividad (WCC): 156 componentes
+[2026-01-12 12:43:26] INFO -    Grafo fragmentado en 156 componentes. Considerar usar solo el componente principal.
+[2026-01-12 12:43:26] INFO - 
+[2026-01-12 12:43:26] INFO - VALIDACIÓN: El grafo es APTO para continuar con FASE 3 (Métricas de Centralidad)
+[2026-01-12 12:43:26] INFO - Guardando estadísticas en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results/fase2_estadisticas.json
+[2026-01-12 12:43:26] INFO - ✓ Estadísticas guardadas exitosamente
+[2026-01-12 12:43:26] INFO - 
+[2026-01-12 12:43:26] INFO - ================================================================================
+[2026-01-12 12:43:26] INFO - FASE 2 COMPLETADA
+[2026-01-12 12:43:26] INFO - ================================================================================
+
+✓ Análisis completado. Ver resultados en: outputs/results/fase2_estadisticas.json
+[2026-01-12 12:43:26] INFO - FASE 2 completada exitosamente
+[2026-01-12 12:43:26] INFO - 
+[2026-01-12 12:43:26] INFO - ================================================================================
+[2026-01-12 12:43:26] INFO - EJECUTANDO FASE 3: fase3_metricas_centralidad
+[2026-01-12 12:43:26] INFO - ================================================================================
+[2026-01-12 12:43:26] INFO - ================================================================================
+[2026-01-12 12:43:26] INFO - FASE 3: METRICAS DE CENTRALIDAD
+[2026-01-12 12:43:26] INFO - ================================================================================
+[2026-01-12 12:43:26] INFO - Cargando subgrafo desde: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/data/processed/subgrafo.gpickle
+[2026-01-12 12:43:26] INFO - Subgrafo cargado: 2,000 nodos, 28,074 aristas
+[2026-01-12 12:43:26] INFO - Calculando PageRank...
+[2026-01-12 12:43:26] INFO -   Parámetros: alpha=0.85, max_iter=100, tol=1e-06
+[2026-01-12 12:43:26] INFO -   PageRank calculado para 2,000 nodos
+[2026-01-12 12:43:26] INFO -   Top-5 nodos por PageRank:
+[2026-01-12 12:43:26] INFO -     1. Nodo 226411: 0.023316
+[2026-01-12 12:43:26] INFO -     2. Nodo 114260: 0.009946
+[2026-01-12 12:43:26] INFO -     3. Nodo 29878: 0.008486
+[2026-01-12 12:43:26] INFO -     4. Nodo 161890: 0.008307
+[2026-01-12 12:43:26] INFO -     5. Nodo 145892: 0.008184
+[2026-01-12 12:43:26] INFO - Calculando Degree Centrality...
+[2026-01-12 12:43:26] INFO -   In-Degree calculado para 2,000 nodos
+[2026-01-12 12:43:26] INFO -   Out-Degree calculado para 2,000 nodos
+[2026-01-12 12:43:26] INFO -   Top-5 nodos por In-Degree:
+[2026-01-12 12:43:26] INFO -     1. Nodo 226411: 559 enlaces entrantes
+[2026-01-12 12:43:26] INFO -     2. Nodo 251990: 180 enlaces entrantes
+[2026-01-12 12:43:26] INFO -     3. Nodo 84906: 163 enlaces entrantes
+[2026-01-12 12:43:26] INFO -     4. Nodo 3164: 150 enlaces entrantes
+[2026-01-12 12:43:26] INFO -     5. Nodo 151707: 148 enlaces entrantes
+[2026-01-12 12:43:26] INFO -   Top-5 nodos por Out-Degree:
+[2026-01-12 12:43:26] INFO -     1. Nodo 259439: 72 enlaces salientes
+[2026-01-12 12:43:26] INFO -     2. Nodo 91413: 62 enlaces salientes
+[2026-01-12 12:43:26] INFO -     3. Nodo 183244: 62 enlaces salientes
+[2026-01-12 12:43:26] INFO -     4. Nodo 252121: 62 enlaces salientes
+[2026-01-12 12:43:26] INFO -     5. Nodo 75382: 61 enlaces salientes
+[2026-01-12 12:43:26] INFO - Calculando HITS (Hubs and Authorities)...
+[2026-01-12 12:43:26] INFO -   Parámetros: max_iter=100, tol=1e-06
+[2026-01-12 12:43:26] INFO -   HITS calculado para 2,000 nodos
+[2026-01-12 12:43:26] INFO -   Top-5 Authorities:
+[2026-01-12 12:43:26] INFO -     1. Nodo 3164: 0.019041
+[2026-01-12 12:43:26] INFO -     2. Nodo 84906: 0.019012
+[2026-01-12 12:43:26] INFO -     3. Nodo 151707: 0.018991
+[2026-01-12 12:43:26] INFO -     4. Nodo 90543: 0.018974
+[2026-01-12 12:43:26] INFO -     5. Nodo 73530: 0.018972
+[2026-01-12 12:43:26] INFO -   Top-5 Hubs:
+[2026-01-12 12:43:26] INFO -     1. Nodo 183244: 0.009289
+[2026-01-12 12:43:26] INFO -     2. Nodo 267959: 0.009284
+[2026-01-12 12:43:26] INFO -     3. Nodo 176824: 0.009252
+[2026-01-12 12:43:26] INFO -     4. Nodo 91413: 0.009248
+[2026-01-12 12:43:26] INFO -     5. Nodo 75382: 0.009243
+[2026-01-12 12:43:26] INFO - Calculando Betweenness Centrality...
+[2026-01-12 12:43:26] INFO -   Calculando para todos los nodos (puede tardar varios minutos)
+[2026-01-12 12:43:26] INFO -   Normalized: True
+[2026-01-12 12:43:29] INFO -   Betweenness calculado para 2,000 nodos
+[2026-01-12 12:43:29] INFO -   Top-5 nodos por Betweenness:
+[2026-01-12 12:43:29] INFO -     1. Nodo 226411: 0.158414
+[2026-01-12 12:43:29] INFO -     2. Nodo 161890: 0.080093
+[2026-01-12 12:43:29] INFO -     3. Nodo 84906: 0.067115
+[2026-01-12 12:43:29] INFO -     4. Nodo 65463: 0.057525
+[2026-01-12 12:43:29] INFO -     5. Nodo 221742: 0.048046
+[2026-01-12 12:43:29] INFO - Calculando Closeness Centrality...
+[2026-01-12 12:43:29] INFO -   Wasserman-Faust improved formula: True
+[2026-01-12 12:43:29] INFO -   Closeness calculado para 2,000 nodos
+[2026-01-12 12:43:29] INFO -   ADVERTENCIA: 281 nodos tienen closeness=0 (no alcanzan otros nodos)
+[2026-01-12 12:43:29] INFO -   Top-5 nodos por Closeness:
+[2026-01-12 12:43:29] INFO -     1. Nodo 226411: 0.345939
+[2026-01-12 12:43:29] INFO -     2. Nodo 273989: 0.238920
+[2026-01-12 12:43:29] INFO -     3. Nodo 52022: 0.238617
+[2026-01-12 12:43:29] INFO -     4. Nodo 161890: 0.238465
+[2026-01-12 12:43:29] INFO -     5. Nodo 185472: 0.237861
+[2026-01-12 12:43:29] INFO - Consolidando métricas en DataFrame...
+[2026-01-12 12:43:29] INFO -   DataFrame creado: 2,000 filas, 8 columnas
+[2026-01-12 12:43:29] INFO - 
+  Estadísticas de las métricas:
+[2026-01-12 12:43:29] INFO -     PageRank - min: 0.000086, max: 0.023316, promedio: 0.000500
+[2026-01-12 12:43:29] INFO -     In-Degree - min: 0, max: 559, promedio: 14.0
+[2026-01-12 12:43:29] INFO -     Out-Degree - min: 0, max: 72, promedio: 14.0
+[2026-01-12 12:43:29] INFO -     Authority - min: -0.000000, max: 0.019041, promedio: 0.000500
+[2026-01-12 12:43:29] INFO -     Hub - min: -0.000000, max: 0.009289, promedio: 0.000500
+[2026-01-12 12:43:29] INFO -     Betweenness - min: 0.000000, max: 0.158414, promedio: 0.000604
+[2026-01-12 12:43:29] INFO -     Closeness - min: 0.000000, max: 0.345939, promedio: 0.048600
+[2026-01-12 12:43:29] INFO - Guardando métricas en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results
+[2026-01-12 12:43:29] INFO -   CSV guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results/fase3_metricas_centralidad.csv
+[2026-01-12 12:43:29] INFO -   JSON guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results/fase3_resumen_metricas.json
+[2026-01-12 12:43:29] INFO - Métricas guardadas exitosamente
+[2026-01-12 12:43:29] INFO - ================================================================================
+[2026-01-12 12:43:29] INFO - FASE 3 COMPLETADA
+[2026-01-12 12:43:29] INFO - ================================================================================
+
+[COMPLETADO] Métricas calculadas para 2,000 nodos
+
+Top-5 nodos por PageRank:
+        nodo  pagerank  in_degree  hits_authority
+1587  226411  0.023316        559    7.286055e-05
+816   114260  0.009946         52   -4.237559e-19
+212    29878  0.008486          1   -4.404888e-19
+1148  161890  0.008307         71    2.479506e-06
+1034  145892  0.008184         51    1.573424e-06
+[2026-01-12 12:43:29] INFO - FASE 3 completada exitosamente
+[2026-01-12 12:43:29] INFO - 
+[2026-01-12 12:43:29] INFO - ================================================================================
+[2026-01-12 12:43:29] INFO - EJECUTANDO FASE 4: fase4_ranking_top20
+[2026-01-12 12:43:29] INFO - ================================================================================
+[2026-01-12 12:43:30] INFO - ================================================================================
+[2026-01-12 12:43:30] INFO - FASE 4: RANKING Y ANÁLISIS TOP-N
+[2026-01-12 12:43:30] INFO - ================================================================================
+[2026-01-12 12:43:30] INFO - Cargando métricas desde: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results/fase3_metricas_centralidad.csv
+[2026-01-12 12:43:30] INFO - Métricas cargadas: 2,000 nodos
+[2026-01-12 12:43:30] INFO - Calculando ranking por: pagerank
+[2026-01-12 12:43:30] INFO - Ranking calculado para 2,000 nodos
+[2026-01-12 12:43:30] INFO - Analizando Top-20 nodos...
+[2026-01-12 12:43:30] INFO -   Diversidad de roles en Top-20: {'Multi-Rol': 13, 'Propagador': 3, 'Puente': 2, 'Estándar': 2}
+[2026-01-12 12:43:30] INFO -   Concentración PageRank Top-5: 5.82%
+[2026-01-12 12:43:30] INFO -   Concentración PageRank Top-10: 9.69%
+[2026-01-12 12:43:30] INFO -   Concentración PageRank Top-20: 14.96%
+[2026-01-12 12:43:30] INFO - Calculando correlaciones entre métricas...
+[2026-01-12 12:43:30] INFO -   Correlaciones principales:
+[2026-01-12 12:43:30] INFO -     pagerank_vs_in_degree: 0.5823 (MODERADA)
+[2026-01-12 12:43:30] INFO -     pagerank_vs_authority: 0.0471 (DÉBIL)
+[2026-01-12 12:43:30] INFO -     pagerank_vs_betweenness: 0.6574 (MODERADA)
+[2026-01-12 12:43:30] INFO -     hub_vs_out_degree: 0.6749 (MODERADA)
+[2026-01-12 12:43:30] INFO -     authority_vs_in_degree: 0.5723 (MODERADA)
+[2026-01-12 12:43:30] INFO -     betweenness_vs_closeness: 0.2781 (DÉBIL)
+[2026-01-12 12:43:30] INFO - Guardando ranking CSV en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results/fase4_top_20_urls.csv
+[2026-01-12 12:43:30] INFO -   CSV guardado exitosamente
+[2026-01-12 12:43:30] INFO - Guardando análisis JSON en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results/fase4_analisis_top20.json
+[2026-01-12 12:43:30] INFO -   JSON guardado exitosamente
+[2026-01-12 12:43:30] INFO - Generando insights de texto en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results/fase4_insights.txt
+[2026-01-12 12:43:30] INFO -   Insights de texto generados exitosamente
+[2026-01-12 12:43:30] INFO - 
+[2026-01-12 12:43:30] INFO - ================================================================================
+[2026-01-12 12:43:30] INFO - FASE 4 COMPLETADA
+[2026-01-12 12:43:30] INFO - ================================================================================
+
+[COMPLETADO] Análisis Top-20 generado
+
+Top-5 nodos por PageRank:
+   ranking    nodo  pagerank  in_degree rol_principal
+0        1  226411  0.023316        559     Multi-Rol
+1        2  114260  0.009946         52        Puente
+2        3   29878  0.008486          1        Puente
+3        4  161890  0.008307         71     Multi-Rol
+4        5  145892  0.008184         51     Multi-Rol
+[2026-01-12 12:43:30] INFO - FASE 4 completada exitosamente
+[2026-01-12 12:43:30] INFO - 
+[2026-01-12 12:43:30] INFO - ================================================================================
+[2026-01-12 12:43:30] INFO - EJECUTANDO FASE 5: fase5_visualizacion
+[2026-01-12 12:43:30] INFO - ================================================================================
+[2026-01-12 12:43:30] INFO - ================================================================================
+[2026-01-12 12:43:30] INFO - FASE 5: VISUALIZACIÓN DEL SUBGRAFO
+[2026-01-12 12:43:30] INFO - ================================================================================
+[2026-01-12 12:43:30] INFO - Cargando grafo desde: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/data/processed/subgrafo.gpickle
+[2026-01-12 12:43:30] INFO - Grafo cargado: 2,000 nodos, 28,074 aristas
+[2026-01-12 12:43:30] INFO - Cargando métricas desde: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/results/fase3_metricas_centralidad.csv
+[2026-01-12 12:43:30] INFO - Métricas cargadas: 2,000 nodos
+[2026-01-12 12:43:30] INFO - Induciendo subgrafo con Top-10...
+[2026-01-12 12:43:30] INFO -   Núcleo: 10 nodos
+[2026-01-12 12:43:30] INFO -   + Vecinos 1er nivel: 675 nodos totales
+[2026-01-12 12:43:30] INFO - Subgrafo inducido: 675 nodos, 10,613 aristas
+[2026-01-12 12:43:30] INFO - Preparando métricas para subgrafo...
+[2026-01-12 12:43:30] INFO -   Métricas preparadas para 675 nodos
+[2026-01-12 12:43:30] INFO - Generando visualización estática...
+[2026-01-12 12:43:30] INFO -   Calculando layout: spring
+[2026-01-12 12:43:45] INFO -   Visualización guardada: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/visualizaciones/subgrafo_top_urls.png
+[2026-01-12 12:43:45] INFO - Generando visualización interactiva...
+[2026-01-12 12:43:45] INFO -   Visualización interactiva guardada: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/visualizaciones/subgrafo_interactivo.html
+[2026-01-12 12:43:45] INFO - Analizando patrones del subgrafo...
+[2026-01-12 12:43:45] INFO -   Densidad: 0.023328
+[2026-01-12 12:43:45] INFO -   Grado promedio: 31.45
+[2026-01-12 12:43:45] INFO -   9.29% de aristas apuntan hacia Top-10
+[2026-01-12 12:43:45] INFO - Generando reporte de insights en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/visualizaciones/fase5_insights_visualizacion.txt
+[2026-01-12 12:43:45] INFO -   Reporte de insights generado exitosamente
+[2026-01-12 12:43:45] INFO - Guardando subgrafo en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/visualizaciones/subgrafo_top.gpickle
+[2026-01-12 12:43:45] INFO -   Subgrafo guardado exitosamente
+[2026-01-12 12:43:45] INFO - 
+[2026-01-12 12:43:45] INFO - ================================================================================
+[2026-01-12 12:43:45] INFO - FASE 5 COMPLETADA
+[2026-01-12 12:43:45] INFO - ================================================================================
+[2026-01-12 12:43:45] INFO - Visualizaciones guardadas en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/visualizaciones
+
+[COMPLETADO] Subgrafo visualizado: 675 nodos, 10,613 aristas
+
+Archivos generados:
+  - subgrafo_top_urls.png (visualización estática)
+  - subgrafo_interactivo.html (visualización interactiva)
+  - fase5_insights_visualizacion.txt (reporte de insights)
+[2026-01-12 12:43:45] INFO - FASE 5 completada exitosamente
+[2026-01-12 12:43:45] INFO - 
+[2026-01-12 12:43:45] INFO - ================================================================================
+[2026-01-12 12:43:45] INFO - EJECUTANDO FASE 6: fase6_propagacion
+[2026-01-12 12:43:45] INFO - ================================================================================
+[2026-01-12 12:43:46] INFO - ================================================================================
+[2026-01-12 12:43:46] INFO - FASE 6: SIMULACIÓN DE PROPAGACIÓN DE INFORMACIÓN
+[2026-01-12 12:43:46] INFO - ================================================================================
+[2026-01-12 12:43:46] INFO - 
+[2026-01-12 12:43:46] INFO - [INFO] Configuración cargada correctamente
+[2026-01-12 12:43:46] INFO - [INFO] Directorio de salida: outputs/propagacion
+[2026-01-12 12:43:46] INFO - Cargando grafo y métricas de fases anteriores...
+[2026-01-12 12:43:46] INFO - Grafo cargado: 2000 nodos, 28074 aristas
+[2026-01-12 12:43:46] INFO - Métricas cargadas: 2000 nodos
+[2026-01-12 12:43:46] INFO - 
+================================================================================
+[2026-01-12 12:43:46] INFO - FASE 6.1: COMPARACIÓN DE ESTRATEGIAS
+[2026-01-12 12:43:46] INFO - ================================================================================
+
+[2026-01-12 12:43:46] INFO - 
+================================================================================
+[2026-01-12 12:43:46] INFO - COMPARACIÓN DE ESTRATEGIAS DE PROPAGACIÓN
+[2026-01-12 12:43:46] INFO - ================================================================================
+[2026-01-12 12:43:46] INFO - Probabilidad de activación: 0.1
+[2026-01-12 12:43:46] INFO - Número de semillas por estrategia: 5
+[2026-01-12 12:43:46] INFO - Máximo de pasos: 5
+[2026-01-12 12:43:46] INFO - Simulaciones por estrategia: 100
+[2026-01-12 12:43:46] INFO - ================================================================================
+
+[2026-01-12 12:43:46] INFO - 
+[INFO] Evaluando estrategia: pagerank_top5
+[2026-01-12 12:43:46] INFO - [Estrategia: pagerank_top5] Top-5 PageRank: [226411, 114260, 29878]...
+
+Simulando pagerank_top5:   0%|          | 0/100 [00:00<?, ?it/s]
+Simulando pagerank_top5: 100%|██████████| 100/100 [00:00<00:00, 10074.71it/s]
+[2026-01-12 12:43:46] INFO - [INFO] Cobertura promedio: 2.72% (+/- 0.68%)
+[2026-01-12 12:43:46] INFO - [INFO] Pasos promedio: 5.81
+[2026-01-12 12:43:46] INFO - 
+[INFO] Evaluando estrategia: in_degree_top5
+[2026-01-12 12:43:46] INFO - [Estrategia: in_degree_top5] Top-5 In-Degree: [226411, 251990, 84906]...
+
+Simulando in_degree_top5:   0%|          | 0/100 [00:00<?, ?it/s]
+Simulando in_degree_top5: 100%|██████████| 100/100 [00:00<00:00, 9894.33it/s]
+[2026-01-12 12:43:46] INFO - [INFO] Cobertura promedio: 2.76% (+/- 1.88%)
+[2026-01-12 12:43:46] INFO - [INFO] Pasos promedio: 5.54
+[2026-01-12 12:43:46] INFO - 
+[INFO] Evaluando estrategia: betweenness_top5
+[2026-01-12 12:43:46] INFO - [Estrategia: betweenness_top5] Top-5 Betweenness: [226411, 161890, 84906]...
+
+Simulando betweenness_top5:   0%|          | 0/100 [00:00<?, ?it/s]
+Simulando betweenness_top5: 100%|██████████| 100/100 [00:00<00:00, 10954.05it/s]
+[2026-01-12 12:43:46] INFO - [INFO] Cobertura promedio: 2.80% (+/- 1.00%)
+[2026-01-12 12:43:46] INFO - [INFO] Pasos promedio: 5.85
+[2026-01-12 12:43:46] INFO - 
+[INFO] Evaluando estrategia: authority_top5
+[2026-01-12 12:43:46] INFO - [Estrategia: authority_top5] Top-5 Authority: [3164, 84906, 151707]...
+
+Simulando authority_top5:   0%|          | 0/100 [00:00<?, ?it/s]
+Simulando authority_top5: 100%|██████████| 100/100 [00:00<00:00, 12779.72it/s]
+[2026-01-12 12:43:47] INFO - [INFO] Cobertura promedio: 2.06% (+/- 1.71%)
+[2026-01-12 12:43:47] INFO - [INFO] Pasos promedio: 4.72
+[2026-01-12 12:43:47] INFO - 
+[INFO] Evaluando estrategia: random
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+
+Simulando random:   0%|          | 0/100 [00:00<?, ?it/s][2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+[2026-01-12 12:43:47] INFO - [Estrategia: random] Semillas aleatorias seleccionadas: [264066, 51025, 186902]...
+
+Simulando random: 100%|██████████| 100/100 [00:00<00:00, 5502.03it/s]
+[2026-01-12 12:43:47] INFO - [INFO] Cobertura promedio: 0.72% (+/- 0.33%)
+[2026-01-12 12:43:47] INFO - [INFO] Pasos promedio: 4.33
+[2026-01-12 12:43:47] INFO - 
+================================================================================
+[2026-01-12 12:43:47] INFO - RANKING DE ESTRATEGIAS (por cobertura promedio)
+[2026-01-12 12:43:47] INFO - ================================================================================
+[2026-01-12 12:43:47] INFO - 1. betweenness_top5: 2.80% (+/- 1.00%)
+[2026-01-12 12:43:47] INFO - 2. in_degree_top5: 2.76% (+/- 1.88%)
+[2026-01-12 12:43:47] INFO - 3. pagerank_top5: 2.72% (+/- 0.68%)
+[2026-01-12 12:43:47] INFO - 4. authority_top5: 2.06% (+/- 1.71%)
+[2026-01-12 12:43:47] INFO - 5. random: 0.72% (+/- 0.33%)
+[2026-01-12 12:43:47] INFO - ================================================================================
+
+[2026-01-12 12:43:47] INFO - [INFO] Resultados de comparación guardados en: outputs/propagacion/fase6_comparacion_estrategias.json
+[2026-01-12 12:43:47] INFO - [INFO] Visualización guardada en: outputs/propagacion/propagacion_comparacion_estrategias.png
+[2026-01-12 12:43:47] INFO - 
+================================================================================
+[2026-01-12 12:43:47] INFO - FASE 6.2: ANÁLISIS DE SENSIBILIDAD
+[2026-01-12 12:43:47] INFO - ================================================================================
+
+[2026-01-12 12:43:47] INFO - 
+================================================================================
+[2026-01-12 12:43:47] INFO - ANÁLISIS DE SENSIBILIDAD - Estrategia: betweenness_top5
+[2026-01-12 12:43:47] INFO - ================================================================================
+[2026-01-12 12:43:47] INFO - Probabilidades a probar: [0.05, 0.1, 0.15, 0.2, 0.3]
+[2026-01-12 12:43:47] INFO - Simulaciones por probabilidad: 100
+[2026-01-12 12:43:47] INFO - ================================================================================
+
+[2026-01-12 12:43:47] INFO - [Estrategia: betweenness_top5] Top-5 Betweenness: [226411, 161890, 84906]...
+[2026-01-12 12:43:47] INFO - Semillas fijas: [226411, 161890, 84906]...
+[2026-01-12 12:43:47] INFO - 
+[INFO] Probando probabilidad p=0.05
+
+p=0.05:   0%|          | 0/100 [00:00<?, ?it/s]
+p=0.05: 100%|██████████| 100/100 [00:00<00:00, 25517.45it/s]
+[2026-01-12 12:43:47] INFO - [INFO] Cobertura promedio con p=0.05: 0.95% (+/- 0.54%)
+[2026-01-12 12:43:47] INFO - 
+[INFO] Probando probabilidad p=0.1
+
+p=0.1:   0%|          | 0/100 [00:00<?, ?it/s]
+p=0.1: 100%|██████████| 100/100 [00:00<00:00, 9239.57it/s]
+[2026-01-12 12:43:47] INFO - [INFO] Cobertura promedio con p=0.1: 2.98% (+/- 1.09%)
+[2026-01-12 12:43:47] INFO - 
+[INFO] Probando probabilidad p=0.15
+
+p=0.15:   0%|          | 0/100 [00:00<?, ?it/s]
+p=0.15: 100%|██████████| 100/100 [00:00<00:00, 6198.91it/s]
+[2026-01-12 12:43:47] INFO - [INFO] Cobertura promedio con p=0.15: 4.95% (+/- 1.71%)
+[2026-01-12 12:43:47] INFO - 
+[INFO] Probando probabilidad p=0.2
+
+p=0.2:   0%|          | 0/100 [00:00<?, ?it/s]
+p=0.2: 100%|██████████| 100/100 [00:00<00:00, 4778.96it/s]
+[2026-01-12 12:43:47] INFO - [INFO] Cobertura promedio con p=0.2: 7.66% (+/- 2.00%)
+[2026-01-12 12:43:47] INFO - 
+[INFO] Probando probabilidad p=0.3
+
+p=0.3:   0%|          | 0/100 [00:00<?, ?it/s]
+p=0.3: 100%|██████████| 100/100 [00:00<00:00, 3260.22it/s]
+[2026-01-12 12:43:47] INFO - [INFO] Cobertura promedio con p=0.3: 13.54% (+/- 3.05%)
+[2026-01-12 12:43:47] INFO - 
+================================================================================
+[2026-01-12 12:43:47] INFO - RESUMEN ANÁLISIS DE SENSIBILIDAD
+[2026-01-12 12:43:47] INFO - ================================================================================
+[2026-01-12 12:43:47] INFO - p=0.05: 0.95% (+/- 0.54%)
+[2026-01-12 12:43:47] INFO - p=0.1: 2.98% (+/- 1.09%)
+[2026-01-12 12:43:47] INFO - p=0.15: 4.95% (+/- 1.71%)
+[2026-01-12 12:43:47] INFO - p=0.2: 7.66% (+/- 2.00%)
+[2026-01-12 12:43:47] INFO - p=0.3: 13.54% (+/- 3.05%)
+[2026-01-12 12:43:47] INFO - ================================================================================
+
+[2026-01-12 12:43:47] INFO - [INFO] Resultados de sensibilidad guardados en: outputs/propagacion/fase6_analisis_sensibilidad.json
+[2026-01-12 12:43:47] INFO - [INFO] Visualización de sensibilidad guardada en: outputs/propagacion/propagacion_sensibilidad.png
+[2026-01-12 12:43:47] INFO - 
+================================================================================
+[2026-01-12 12:43:47] INFO - GENERANDO INSIGHTS FINALES
+[2026-01-12 12:43:47] INFO - ================================================================================
+
+[2026-01-12 12:43:47] INFO - [INFO] Insights guardados en: outputs/propagacion/fase6_insights_propagacion.txt
+[2026-01-12 12:43:47] INFO - 
+================================================================================
+[2026-01-12 12:43:47] INFO - FASE 6 COMPLETADA EXITOSAMENTE
+[2026-01-12 12:43:47] INFO - ================================================================================
+[2026-01-12 12:43:47] INFO - 
+Archivos generados en: outputs/propagacion
+[2026-01-12 12:43:47] INFO -   - fase6_comparacion_estrategias.json
+[2026-01-12 12:43:47] INFO -   - propagacion_comparacion_estrategias.png
+[2026-01-12 12:43:47] INFO -   - fase6_analisis_sensibilidad.json
+[2026-01-12 12:43:47] INFO -   - propagacion_sensibilidad.png
+[2026-01-12 12:43:47] INFO -   - fase6_insights_propagacion.txt
+[2026-01-12 12:43:47] INFO - 
+
+================================================================================
+INSIGHTS - SIMULACIÓN DE PROPAGACIÓN DE INFORMACIÓN
+================================================================================
+
+1. CONFIGURACIÓN DE SIMULACIÓN
+--------------------------------------------------------------------------------
+Modelo: independent_cascade
+Probabilidad base: 0.1
+Máximo de pasos: 5
+Simulaciones por estrategia: 100
+Número de semillas: 5
+
+2. RANKING DE ESTRATEGIAS
+--------------------------------------------------------------------------------
+1. betweenness_top5
+   - Cobertura promedio: 2.80%
+   - Desviación estándar: 1.00%
+   - Cobertura mediana: 2.88%
+   - Pasos promedio: 5.85
+
+2. in_degree_top5
+   - Cobertura promedio: 2.76%
+   - Desviación estándar: 1.88%
+   - Cobertura mediana: 2.03%
+   - Pasos promedio: 5.54
+
+3. pagerank_top5
+   - Cobertura promedio: 2.72%
+   - Desviación estándar: 0.68%
+   - Cobertura mediana: 2.80%
+   - Pasos promedio: 5.81
+
+4. authority_top5
+   - Cobertura promedio: 2.06%
+   - Desviación estándar: 1.71%
+   - Cobertura mediana: 1.27%
+   - Pasos promedio: 4.72
+
+5. random
+   - Cobertura promedio: 0.72%
+   - Desviación estándar: 0.33%
+   - Cobertura mediana: 0.65%
+   - Pasos promedio: 4.33
+
+3. ANÁLISIS DE LA MEJOR ESTRATEGIA
+--------------------------------------------------------------------------------
+Estrategia más efectiva: betweenness_top5
+Cobertura: 2.80%
+
+Estrategia menos efectiva: random
+Cobertura: 0.72%
+
+Mejora relativa: 2.08 puntos porcentuales
+Mejora relativa: 290.3%
+
+4. ANÁLISIS DE SENSIBILIDAD A LA PROBABILIDAD
+--------------------------------------------------------------------------------
+Estrategia analizada: betweenness_top5
+
+Cobertura por probabilidad:
+  p=0.05: 0.95% (+/- 0.54%)
+  p=0.10: 2.98% (+/- 1.09%)
+  p=0.15: 4.95% (+/- 1.71%)
+  p=0.20: 7.66% (+/- 2.00%)
+  p=0.30: 13.54% (+/- 3.05%)
+
+Cobertura mínima (p=0.05): 0.95%
+Cobertura máxima (p=0.3): 13.54%
+
+Elasticidad promedio: 50.37 puntos porcentuales por 0.01 de incremento en p
+
+5. RECOMENDACIONES
+--------------------------------------------------------------------------------
+[RECOMENDACIÓN 1] Usar estrategia 'betweenness_top5' para maximizar alcance
+   Esta estrategia alcanza 2.80% del grafo en promedio.
+
+[RECOMENDACIÓN 2] La estrategia 'betweenness_top5' supera significativamente
+   a la selección aleatoria, demostrando el valor de las métricas de centralidad.
+
+[RECOMENDACIÓN 3] Ajustar probabilidad de activación según objetivo:
+   - Para propagación conservadora: p=0.05
+   - Para propagación agresiva: p=0.3
+
+================================================================================
+[2026-01-12 12:43:47] INFO - FASE 6 completada exitosamente
+[2026-01-12 12:43:47] INFO - 
+[2026-01-12 12:43:47] INFO - ================================================================================
+[2026-01-12 12:43:47] INFO - EJECUTANDO FASE 7: fase7_recomendaciones_ecommerce
+[2026-01-12 12:43:47] INFO - ================================================================================
+[2026-01-12 12:43:48] INFO - ================================================================================
+[2026-01-12 12:43:48] INFO - FASE 7: RECOMENDACIONES ACCIONABLES PARA E-COMMERCE
+[2026-01-12 12:43:48] INFO - ================================================================================
+[2026-01-12 12:43:48] INFO - Directorio de salida: outputs/recomendaciones
+[2026-01-12 12:43:48] INFO - 
+[PASO 1] Cargando resultados de fases previas...
+[2026-01-12 12:43:48] INFO - Cargando resultados de FASE 2: outputs/results/fase2_estadisticas.json
+[2026-01-12 12:43:48] INFO -   - Nodos totales: 2000
+[2026-01-12 12:43:48] INFO -   - Aristas totales: 28074
+[2026-01-12 12:43:48] INFO -   - Densidad: 0.007022
+[2026-01-12 12:43:48] INFO - Cargando resultados de FASE 3: outputs/results/fase3_metricas_centralidad.csv
+[2026-01-12 12:43:48] INFO -   - Métricas cargadas para 2000 nodos
+[2026-01-12 12:43:48] INFO -   - Columnas: nodo, pagerank, in_degree, out_degree, hits_hub, hits_authority, betweenness, closeness
+[2026-01-12 12:43:48] INFO - Cargando resultados de FASE 4: outputs/results/fase4_analisis_top20.json
+[2026-01-12 12:43:48] INFO -   - Top-20 nodos analizados
+[2026-01-12 12:43:48] INFO -   - Diversidad de roles: {'Multi-Rol': 13, 'Propagador': 3, 'Puente': 2, 'Estándar': 2}
+[2026-01-12 12:43:48] INFO - Cargando resultados de FASE 6: outputs/propagacion/fase6_comparacion_estrategias.json
+[2026-01-12 12:43:48] INFO -   - Estrategias comparadas: 5
+[2026-01-12 12:43:48] INFO -   - Mejor estrategia: betweenness_top5 (cobertura: 2.80%)
+[2026-01-12 12:43:48] INFO - 
+[PASO 2] Analizando oportunidades de optimización...
+[2026-01-12 12:43:48] INFO - [ANÁLISIS] Detectando nodos huérfanos (bajo in-degree)...
+[2026-01-12 12:43:48] INFO -   - Nodos huérfanos absolutos (in-degree=0): 281 (14.05%)
+[2026-01-12 12:43:48] INFO -   - Nodos poco enlazados (in-degree<=2): 664 (33.20%)
+[2026-01-12 12:43:48] INFO - [ANÁLISIS] Analizando concentración de PageRank en Top-20...
+[2026-01-12 12:43:48] INFO -   - PageRank total: 1.000000
+[2026-01-12 12:43:48] INFO -   - PageRank en Top-20: 0.149647
+[2026-01-12 12:43:48] INFO -   - Concentración: 14.96%
+[2026-01-12 12:43:48] INFO - [ANÁLISIS] Identificando mejor estrategia de propagación...
+[2026-01-12 12:43:48] INFO -   - Mejor estrategia: betweenness_top5
+[2026-01-12 12:43:48] INFO -   - Cobertura promedio: 2.80%
+[2026-01-12 12:43:48] INFO -   - Semillas: [226411, 161890, 84906]...
+[2026-01-12 12:43:48] INFO - [ANÁLISIS] Analizando roles de autoridades...
+[2026-01-12 12:43:48] INFO -   - Autoridades identificadas: 3
+[2026-01-12 12:43:48] INFO - 
+[PASO 3] Generando accionables concretos...
+[2026-01-12 12:43:48] INFO -   ✓ ACT-001: Implementar Link Building Interno para Páginas Huérfanas
+[2026-01-12 12:43:48] INFO -   ✓ ACT-002: Optimizar Campañas Virales con Estrategia Betweenness
+[2026-01-12 12:43:48] INFO -   ✓ ACT-003: Potenciar Contenido y UX de Páginas Autoridad
+[2026-01-12 12:43:48] INFO - 
+[PASO 4] Guardando recomendaciones en múltiples formatos...
+[2026-01-12 12:43:48] INFO - Guardando recomendaciones en JSON: outputs/recomendaciones/fase7_recomendaciones.json
+[2026-01-12 12:43:48] INFO -   ✓ JSON guardado: 3 accionables
+[2026-01-12 12:43:48] INFO - Guardando recomendaciones en Markdown: outputs/recomendaciones/fase7_recomendaciones.md
+[2026-01-12 12:43:48] INFO -   ✓ Markdown guardado: 3 accionables
+[2026-01-12 12:43:48] INFO - Guardando resumen en CSV: outputs/recomendaciones/fase7_accionables.csv
+[2026-01-12 12:43:48] INFO -   ✓ CSV guardado: 3 accionables
+[2026-01-12 12:43:48] INFO - Guardando resumen ejecutivo en TXT: outputs/recomendaciones/fase7_resumen_ejecutivo.txt
+[2026-01-12 12:43:48] INFO -   ✓ TXT guardado: resumen ejecutivo
+[2026-01-12 12:43:48] INFO - 
+================================================================================
+[2026-01-12 12:43:48] INFO - FASE 7 COMPLETADA
+[2026-01-12 12:43:48] INFO - ================================================================================
+[2026-01-12 12:43:48] INFO - ✓ 3 accionables generados
+[2026-01-12 12:43:48] INFO - ✓ Archivos guardados en: outputs/recomendaciones
+[2026-01-12 12:43:48] INFO - 
+[2026-01-12 12:43:48] INFO - PRÓXIMOS PASOS:
+[2026-01-12 12:43:48] INFO -   1. Revisar recomendaciones en formato Markdown (para PMs)
+[2026-01-12 12:43:48] INFO -   2. Priorizar accionables según recursos disponibles
+[2026-01-12 12:43:48] INFO -   3. Implementar accionables de alta prioridad
+[2026-01-12 12:43:48] INFO -   4. Monitorear KPIs definidos en cada accionable
+[2026-01-12 12:43:48] INFO - ================================================================================
+[2026-01-12 12:43:48] INFO - FASE 7 completada exitosamente
+[2026-01-12 12:43:48] INFO - 
+[2026-01-12 12:43:48] INFO - ================================================================================
+[2026-01-12 12:43:48] INFO - PIPELINE COMPLETADO
+[2026-01-12 12:43:48] INFO - ================================================================================
+[2026-01-12 12:43:48] INFO - ✓ 7/7 fases ejecutadas exitosamente
+[2026-01-12 12:43:48] INFO - 
+[2026-01-12 12:43:48] INFO - ARCHIVOS GENERADOS:
+[2026-01-12 12:43:48] INFO -   - Datos procesados: outputs/results
+[2026-01-12 12:43:48] INFO -   - Visualizaciones: outputs/visualizaciones
+[2026-01-12 12:43:48] INFO -   - Propagación: outputs/propagacion
+[2026-01-12 12:43:48] INFO -   - Recomendaciones: outputs/recomendaciones
+[2026-01-12 12:43:48] INFO - 
+[2026-01-12 12:43:48] INFO - PROXIMOS PASOS:
+[2026-01-12 12:43:48] INFO -   1. Revisar visualizaciones en outputs/visualizaciones/
+[2026-01-12 12:43:48] INFO -   2. Abrir grafo interactivo: outputs/visualizaciones/fase5_grafo_interactivo.html
+[2026-01-12 12:43:48] INFO -   3. Leer recomendaciones: outputs/recomendaciones/fase7_recomendaciones.md
+[2026-01-12 12:43:48] INFO - 
+[2026-01-12 12:43:48] INFO - LOG GUARDADO EN: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_2/outputs/logs/pipeline_completo_20260112_124316.log
+[2026-01-12 12:43:48] INFO - ================================================================================

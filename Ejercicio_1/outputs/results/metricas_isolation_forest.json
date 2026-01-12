@@ -1,6 +1,6 @@
 {
-  "tiempo_entrenamiento_s": 0.45140600204467773,
-  "latencia_promedio_ms": 0.004379764816344464,
+  "tiempo_entrenamiento_s": 0.4617490768432617,
+  "latencia_promedio_ms": 0.004489646215319305,
   "total_predicciones": 35183,
   "predicciones_anomalas": 708,
   "pct_anomalas": 2.0123355029417618,

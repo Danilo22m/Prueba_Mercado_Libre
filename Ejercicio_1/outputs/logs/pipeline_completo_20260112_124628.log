@@ -1,0 +1,20 @@
+[2026-01-12 12:46:28] INFO - Log guardado en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/logs/pipeline_completo_20260112_124628.log
+
+================================================================================
+  EJERCICIO 1: COMPARACION LLM vs MODELO CLASICO
+  Deteccion de Anomalias en Series Temporales de Precios
+================================================================================
+
+
+--------------------------------------------------------------------------------
+  PASO 1/6: PREPROCESAMIENTO DE DATOS
+--------------------------------------------------------------------------------
+
+[2026-01-12 12:46:28] INFO - Ejecutando preprocesamiento...
+[2026-01-12 12:46:30] INFO - ✓ Preprocesamiento completado
+
+--------------------------------------------------------------------------------
+  PASO 2/6: MODELO A - LLM (GROQ)
+--------------------------------------------------------------------------------
+
+[2026-01-12 12:46:30] INFO - Ejecutando Modelo A (LLM)...

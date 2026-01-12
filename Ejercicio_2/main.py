@@ -79,19 +79,20 @@ def setup_logging(config: Dict) -> Tuple[logging.Logger, Path]:
 
 
 # =============================================================================
-# EJECUCIÓN DE FASES
+# EJECUCION DE FASES
 # =============================================================================
-def ejecutar_fase(fase_num: int, script_path: str, logger: logging.Logger) -> bool:
+def ejecutar_fase(fase_num: int, script_path: str, logger: logging.Logger, log_file: Path) -> bool:
     """
-    Ejecuta un script de fase usando subprocess.
+    Ejecuta un script de fase usando subprocess, capturando output para consola y archivo.
 
     Args:
-        fase_num: Número de fase
+        fase_num: Numero de fase
         script_path: Ruta al script de la fase
         logger: Logger para mensajes
+        log_file: Ruta al archivo de log
 
     Returns:
-        bool: True si se ejecutó correctamente, False en caso contrario
+        bool: True si se ejecuto correctamente, False en caso contrario
     """
     logger.info("")
     logger.info("=" * 80)
@@ -99,23 +100,35 @@ def ejecutar_fase(fase_num: int, script_path: str, logger: logging.Logger) -> bo
     logger.info("=" * 80)
 
     try:
-        # Ejecutar el script usando el intérprete de Python actual
-        result = subprocess.run(
+        # Ejecutar el script capturando stdout y stderr
+        process = subprocess.Popen(
             [sys.executable, script_path],
-            check=True,
-            capture_output=False,  # Mostrar output en tiempo real
-            text=True
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1
         )
 
-        logger.info(f"✓ FASE {fase_num} completada exitosamente")
-        return True
+        # Leer output linea por linea y escribir a consola y archivo
+        with open(log_file, 'a', encoding='utf-8') as f:
+            for line in process.stdout:
+                line = line.rstrip('\n')
+                print(line)  # Consola
+                f.write(line + '\n')  # Archivo
+                f.flush()
 
-    except subprocess.CalledProcessError as e:
-        logger.error(f"✗ Error en FASE {fase_num}: {e}")
-        logger.error(f"  Código de salida: {e.returncode}")
-        return False
+        # Esperar a que termine el proceso
+        return_code = process.wait()
+
+        if return_code == 0:
+            logger.info(f"FASE {fase_num} completada exitosamente")
+            return True
+        else:
+            logger.error(f"Error en FASE {fase_num}: codigo de salida {return_code}")
+            return False
+
     except Exception as e:
-        logger.error(f"✗ Error inesperado en FASE {fase_num}: {e}")
+        logger.error(f"Error inesperado en FASE {fase_num}: {e}")
         return False
 
 
@@ -167,7 +180,7 @@ def main():
             continue
 
         # Ejecutar fase
-        exito = ejecutar_fase(fase_num, str(script_path), logger)
+        exito = ejecutar_fase(fase_num, str(script_path), logger, log_file)
 
         if exito:
             fases_exitosas += 1

@@ -1,0 +1,70 @@
+[2026-01-12 12:51:28] INFO - Log guardado en: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/logs/pipeline_completo_20260112_125128.log
+
+================================================================================
+  EJERCICIO 1: COMPARACION LLM vs MODELO CLASICO
+  Deteccion de Anomalias en Series Temporales de Precios
+================================================================================
+
+
+--------------------------------------------------------------------------------
+  PASO 1/6: PREPROCESAMIENTO DE DATOS
+--------------------------------------------------------------------------------
+
+[2026-01-12 12:51:28] INFO - Ejecutando preprocesamiento...
+[2026-01-12 12:51:29] INFO - ✓ Preprocesamiento completado
+
+--------------------------------------------------------------------------------
+  PASO 2/6: MODELO A - LLM (GROQ)
+--------------------------------------------------------------------------------
+
+[2026-01-12 12:51:29] INFO - Ejecutando Modelo A (LLM)...
+[2026-01-12 13:03:48] INFO - ✓ Modelo A completado
+
+--------------------------------------------------------------------------------
+  PASO 3/6: MODELO B - ISOLATION FOREST
+--------------------------------------------------------------------------------
+
+[2026-01-12 13:03:48] INFO - Ejecutando Modelo B (Isolation Forest)...
+[2026-01-12 13:03:49] INFO - ✓ Modelo B completado
+
+--------------------------------------------------------------------------------
+  PASO 4/6: EVALUACIÓN COMPARATIVA
+--------------------------------------------------------------------------------
+
+[2026-01-12 13:03:49] INFO - Ejecutando evaluación...
+[2026-01-12 13:03:50] INFO - ✓ Evaluación completada
+
+--------------------------------------------------------------------------------
+  PASO 5/6: A/B TESTING ESTADÍSTICO
+--------------------------------------------------------------------------------
+
+[2026-01-12 13:03:50] INFO - Ejecutando A/B test...
+[2026-01-12 13:03:54] INFO - ✓ A/B Testing completado
+
+--------------------------------------------------------------------------------
+  PASO 6/6: VISUALIZACIONES DE SERIES TEMPORALES
+--------------------------------------------------------------------------------
+
+[2026-01-12 13:03:54] INFO - Generando visualizaciones...
+[2026-01-12 13:03:55] INFO - ✓ Visualizaciones completadas
+
+================================================================================
+  PIPELINE COMPLETADO EXITOSAMENTE
+================================================================================
+
+RESULTADOS GENERADOS:
+  - Datos procesados:         data/processed/
+  - Predicciones:             outputs/results/
+  - Metricas:                 outputs/results/
+  - Graficos:                 outputs/plots/
+  - Modelos:                  outputs/models/
+
+ARCHIVOS CLAVE:
+  - comparacion_modelos.csv
+  - ab_test_results.json
+  - confusion_matrices.png
+  - precision_recall_curves.png
+  - series_temporales_comparacion_modelos.png
+
+LOG GUARDADO EN: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/logs/pipeline_completo_20260112_125128.log
+================================================================================

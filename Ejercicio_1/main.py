@@ -76,19 +76,30 @@ def setup_logging() -> logging.Logger:
 logger, log_file = setup_logging()
 
 
+def log_print(mensaje: str):
+    """Escribe mensaje a consola y archivo de log"""
+    print(mensaje)
+    with open(log_file, 'a', encoding='utf-8') as f:
+        f.write(mensaje + '\n')
+
+
 def print_banner():
     """Imprime banner inicial"""
-    print("\n" + "="*80)
-    print("  EJERCICIO 1: COMPARACIÓN LLM vs MODELO CLÁSICO")
-    print("  Detección de Anomalías en Series Temporales de Precios")
-    print("="*80 + "\n")
+    log_print("")
+    log_print("=" * 80)
+    log_print("  EJERCICIO 1: COMPARACION LLM vs MODELO CLASICO")
+    log_print("  Deteccion de Anomalias en Series Temporales de Precios")
+    log_print("=" * 80)
+    log_print("")
 
 
 def print_step(step_num, total_steps, description):
-    """Imprime información del paso actual"""
-    print("\n" + "-"*80)
-    print(f"  PASO {step_num}/{total_steps}: {description}")
-    print("-"*80 + "\n")
+    """Imprime informacion del paso actual"""
+    log_print("")
+    log_print("-" * 80)
+    log_print(f"  PASO {step_num}/{total_steps}: {description}")
+    log_print("-" * 80)
+    log_print("")
 
 
 def ejecutar_pipeline_completo(config_path=None, skip_preprocessing=False,
@@ -160,33 +171,37 @@ def ejecutar_pipeline_completo(config_path=None, skip_preprocessing=False,
         logger.info("✓ Visualizaciones completadas")
 
         # Resumen final
-        print("\n" + "="*80)
-        print("  PIPELINE COMPLETADO EXITOSAMENTE")
-        print("="*80)
-        print("\nRESULTADOS GENERADOS:")
-        print("  - Datos procesados:         data/processed/")
-        print("  - Predicciones:             outputs/results/")
-        print("  - Métricas:                 outputs/results/")
-        print("  - Gráficos:                 outputs/plots/")
-        print("  - Modelos:                  outputs/models/")
-        print("\nARCHIVOS CLAVE:")
-        print("  - comparacion_modelos.csv")
-        print("  - ab_test_results.json")
-        print("  - confusion_matrices.png")
-        print("  - precision_recall_curves.png")
-        print("  - series_temporales_comparacion_modelos.png")
-        print(f"\nLOG GUARDADO EN:")
-        print(f"  - {log_file}")
-        print("="*80 + "\n")
+        log_print("")
+        log_print("=" * 80)
+        log_print("  PIPELINE COMPLETADO EXITOSAMENTE")
+        log_print("=" * 80)
+        log_print("")
+        log_print("RESULTADOS GENERADOS:")
+        log_print("  - Datos procesados:         data/processed/")
+        log_print("  - Predicciones:             outputs/results/")
+        log_print("  - Metricas:                 outputs/results/")
+        log_print("  - Graficos:                 outputs/plots/")
+        log_print("  - Modelos:                  outputs/models/")
+        log_print("")
+        log_print("ARCHIVOS CLAVE:")
+        log_print("  - comparacion_modelos.csv")
+        log_print("  - ab_test_results.json")
+        log_print("  - confusion_matrices.png")
+        log_print("  - precision_recall_curves.png")
+        log_print("  - series_temporales_comparacion_modelos.png")
+        log_print("")
+        log_print(f"LOG GUARDADO EN: {log_file}")
+        log_print("=" * 80)
 
         return True
 
     except Exception as e:
         logger.error(f"Error en el pipeline: {e}", exc_info=True)
-        print("\n" + "="*80)
-        print("  ERROR: EL PIPELINE FALLÓ")
-        print("="*80)
-        print(f"\n{str(e)}\n")
+        log_print("")
+        log_print("=" * 80)
+        log_print("  ERROR: EL PIPELINE FALLO")
+        log_print("=" * 80)
+        log_print(f"{str(e)}")
         return False
 
 

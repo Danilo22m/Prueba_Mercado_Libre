@@ -1,6 +1,6 @@
 # Recomendaciones Accionables - Optimización de Grafo de URLs
 
-**Fecha de Generación:** 2026-01-12 00:18:26  
+**Fecha de Generación:** 2026-01-12 12:43:48  
 **Grafo Analizado:** 2000 nodos, 28074 aristas  
 **Método:** Análisis de Grafos con NetworkX + Simulación de Propagación
 
@@ -44,7 +44,7 @@ Se detectaron 281 páginas (14.05%) sin enlaces internos entrantes. Esto reduce 
 
 ---
 
-## 2. Optimizar Campañas Virales con Estrategia In-Degree
+## 2. Optimizar Campañas Virales con Estrategia Betweenness
 
 **ID:** `ACT-002`  
 **Categoría:** Marketing Viral  
@@ -53,11 +53,11 @@ Se detectaron 281 páginas (14.05%) sin enlaces internos entrantes. Esto reduce 
 
 ### Descripción
 
-La estrategia 'In-Degree' alcanzó 3.25% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.
+La estrategia 'Betweenness' alcanzó 2.80% de cobertura en simulaciones de propagación (modelo Independent Cascade). Usar estos nodos como semillas maximiza el alcance viral.
 
 ### Acciones Concretas
 
-- Identificar las páginas top según In-Degree
+- Identificar las páginas top según Betweenness
 - Ejecutar campañas de promoción inicial en estas páginas (banners, emails, push notifications)
 - Implementar mecanismos de sharing fácil (botones sociales, referrals)
 - Medir alcance viral post-campaña (vistas, shares, conversiones)
@@ -66,7 +66,7 @@ La estrategia 'In-Degree' alcanzó 3.25% de cobertura en simulaciones de propaga
 
 - **Cobertura viral (% usuarios alcanzados)**
   - Actual: Baseline pre-campaña
-  - Objetivo: +3% vs baseline
+  - Objetivo: +2% vs baseline
   - Plazo: 1 mes post-campaña
 
 - **Tasa de viralización (shares/usuario)**

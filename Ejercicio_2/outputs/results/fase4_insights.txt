@@ -39,15 +39,15 @@ betweenness_vs_closeness: 0.2781 (DÉBIL - Métricas relativamente independiente
     Rol: Puente
     PageRank: 0.009946
     In-Degree: 52 | Out-Degree: 1
-    Authority: 0.000000 | Hub: 0.000000
-    Explicación: PageRank 19.9x superior al promedio (excepcional). 52 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub).
+    Authority: -0.000000 | Hub: -0.000000
+    Explicación: PageRank 19.9x superior al promedio (excepcional). 52 enlaces entrantes (top 5%). Principalmente página de referencia (hub > authority).
 
 [3] Nodo 29878
     Rol: Puente
     PageRank: 0.008486
     In-Degree: 1 | Out-Degree: 52
-    Authority: 0.000000 | Hub: -0.000000
-    Explicación: PageRank 17.0x superior al promedio (excepcional). Principalmente destino de navegación (authority > hub).
+    Authority: -0.000000 | Hub: 0.000000
+    Explicación: PageRank 17.0x superior al promedio (excepcional). Principalmente página de referencia (hub > authority).
 
 [4] Nodo 161890
     Rol: Multi-Rol

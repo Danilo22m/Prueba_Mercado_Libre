@@ -12,69 +12,69 @@ Número de semillas: 5
 
 2. RANKING DE ESTRATEGIAS
 --------------------------------------------------------------------------------
-1. in_degree_top5
-   - Cobertura promedio: 3.25%
-   - Desviación estándar: 2.09%
-   - Cobertura mediana: 3.65%
-   - Pasos promedio: 5.52
+1. betweenness_top5
+   - Cobertura promedio: 2.80%
+   - Desviación estándar: 1.00%
+   - Cobertura mediana: 2.88%
+   - Pasos promedio: 5.85
 
-2. betweenness_top5
-   - Cobertura promedio: 2.93%
-   - Desviación estándar: 1.01%
-   - Cobertura mediana: 2.83%
-   - Pasos promedio: 5.92
+2. in_degree_top5
+   - Cobertura promedio: 2.76%
+   - Desviación estándar: 1.88%
+   - Cobertura mediana: 2.03%
+   - Pasos promedio: 5.54
 
 3. pagerank_top5
-   - Cobertura promedio: 2.74%
-   - Desviación estándar: 0.77%
-   - Cobertura mediana: 2.83%
-   - Pasos promedio: 5.87
+   - Cobertura promedio: 2.72%
+   - Desviación estándar: 0.68%
+   - Cobertura mediana: 2.80%
+   - Pasos promedio: 5.81
 
 4. authority_top5
-   - Cobertura promedio: 1.99%
-   - Desviación estándar: 1.64%
-   - Cobertura mediana: 1.23%
-   - Pasos promedio: 4.65
+   - Cobertura promedio: 2.06%
+   - Desviación estándar: 1.71%
+   - Cobertura mediana: 1.27%
+   - Pasos promedio: 4.72
 
 5. random
-   - Cobertura promedio: 0.69%
-   - Desviación estándar: 0.32%
+   - Cobertura promedio: 0.72%
+   - Desviación estándar: 0.33%
    - Cobertura mediana: 0.65%
-   - Pasos promedio: 4.01
+   - Pasos promedio: 4.33
 
 3. ANÁLISIS DE LA MEJOR ESTRATEGIA
 --------------------------------------------------------------------------------
-Estrategia más efectiva: in_degree_top5
-Cobertura: 3.25%
+Estrategia más efectiva: betweenness_top5
+Cobertura: 2.80%
 
 Estrategia menos efectiva: random
-Cobertura: 0.69%
+Cobertura: 0.72%
 
-Mejora relativa: 2.56 puntos porcentuales
-Mejora relativa: 371.2%
+Mejora relativa: 2.08 puntos porcentuales
+Mejora relativa: 290.3%
 
 4. ANÁLISIS DE SENSIBILIDAD A LA PROBABILIDAD
 --------------------------------------------------------------------------------
-Estrategia analizada: in_degree_top5
+Estrategia analizada: betweenness_top5
 
 Cobertura por probabilidad:
-  p=0.05: 0.72% (+/- 0.57%)
-  p=0.10: 2.56% (+/- 1.80%)
-  p=0.15: 5.72% (+/- 2.48%)
-  p=0.20: 8.98% (+/- 2.75%)
-  p=0.30: 14.35% (+/- 2.66%)
+  p=0.05: 0.95% (+/- 0.54%)
+  p=0.10: 2.98% (+/- 1.09%)
+  p=0.15: 4.95% (+/- 1.71%)
+  p=0.20: 7.66% (+/- 2.00%)
+  p=0.30: 13.54% (+/- 3.05%)
 
-Cobertura mínima (p=0.05): 0.72%
-Cobertura máxima (p=0.3): 14.35%
+Cobertura mínima (p=0.05): 0.95%
+Cobertura máxima (p=0.3): 13.54%
 
-Elasticidad promedio: 54.53 puntos porcentuales por 0.01 de incremento en p
+Elasticidad promedio: 50.37 puntos porcentuales por 0.01 de incremento en p
 
 5. RECOMENDACIONES
 --------------------------------------------------------------------------------
-[RECOMENDACIÓN 1] Usar estrategia 'in_degree_top5' para maximizar alcance
-   Esta estrategia alcanza 3.25% del grafo en promedio.
+[RECOMENDACIÓN 1] Usar estrategia 'betweenness_top5' para maximizar alcance
+   Esta estrategia alcanza 2.80% del grafo en promedio.
 
-[RECOMENDACIÓN 2] La estrategia 'in_degree_top5' supera significativamente
+[RECOMENDACIÓN 2] La estrategia 'betweenness_top5' supera significativamente
    a la selección aleatoria, demostrando el valor de las métricas de centralidad.
 
 [RECOMENDACIÓN 3] Ajustar probabilidad de activación según objetivo:

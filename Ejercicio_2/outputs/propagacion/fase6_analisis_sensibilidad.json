@@ -1,71 +1,71 @@
 {
-  "estrategia": "in_degree_top5",
+  "estrategia": "betweenness_top5",
   "semillas": [
     226411,
-    251990,
+    161890,
     84906,
-    3164,
-    73530
+    65463,
+    221742
   ],
   "resultados": {
     "0.05": {
-      "cobertura_promedio_pct": 0.7204999999999999,
-      "cobertura_std_pct": 0.5705740530378156,
+      "cobertura_promedio_pct": 0.9464999999999999,
+      "cobertura_std_pct": 0.535035279210633,
       "cobertura_temporal_promedio": [
         5.0,
-        7.6,
-        9.03,
-        10.59,
-        12.52,
-        14.41
+        9.22,
+        12.23,
+        14.91,
+        17.26,
+        18.93
       ]
     },
     "0.1": {
-      "cobertura_promedio_pct": 2.565,
-      "cobertura_std_pct": 1.798158780530796,
+      "cobertura_promedio_pct": 2.9784999999999995,
+      "cobertura_std_pct": 1.0872270921937148,
       "cobertura_temporal_promedio": [
         5.0,
-        9.84,
-        15.74,
-        25.81,
-        39.35,
-        51.3
+        13.47,
+        24.49,
+        37.11,
+        49.29,
+        59.57
       ]
     },
     "0.15": {
-      "cobertura_promedio_pct": 5.718500000000001,
-      "cobertura_std_pct": 2.4775658921610946,
+      "cobertura_promedio_pct": 4.9495,
+      "cobertura_std_pct": 1.7111910325851991,
       "cobertura_temporal_promedio": [
         5.0,
-        13.35,
-        27.08,
-        55.41,
-        87.13,
-        114.37
+        17.22,
+        36.69,
+        57.7,
+        78.06,
+        98.99
       ]
     },
     "0.2": {
-      "cobertura_promedio_pct": 8.985,
-      "cobertura_std_pct": 2.745009107453016,
+      "cobertura_promedio_pct": 7.663500000000002,
+      "cobertura_std_pct": 2.0031831543820453,
       "cobertura_temporal_promedio": [
         5.0,
-        16.29,
-        40.06,
-        86.54,
-        133.49,
-        179.7
+        21.86,
+        49.02,
+        78.38,
+        114.65,
+        153.27
       ]
     },
     "0.3": {
-      "cobertura_promedio_pct": 14.353,
-      "cobertura_std_pct": 2.662384457586845,
+      "cobertura_promedio_pct": 13.54,
+      "cobertura_std_pct": 3.050999836119301,
       "cobertura_temporal_promedio": [
         5.0,
-        20.65,
-        61.26,
-        135.48,
-        213.09,
-        287.06
+        28.62,
+        69.0,
+        117.08,
+        190.99,
+        270.8
       ]
     }
   }

@@ -1,0 +1,255 @@
+[2026-01-12 13:03:48] INFO - ============================================================
+[2026-01-12 13:03:48] INFO - MODELO A COMPLETADO
+[2026-01-12 13:03:48] INFO - ============================================================
+[2026-01-12 13:03:48] INFO - ✓ Modelo A completado
+[2026-01-12 13:03:48] INFO - ✓ Modelo A completado
+
+--------------------------------------------------------------------------------
+  PASO 3/6: MODELO B - ISOLATION FOREST
+--------------------------------------------------------------------------------
+
+[2026-01-12 13:03:48] INFO - Ejecutando Modelo B (Isolation Forest)...
+[2026-01-12 13:03:48] INFO - Ejecutando Modelo B (Isolation Forest)...
+[2026-01-12 13:03:48] INFO - ============================================================
+[2026-01-12 13:03:48] INFO - MODELO B - ISOLATION FOREST
+[2026-01-12 13:03:48] INFO - ============================================================
+[2026-01-12 13:03:48] INFO - Cargando datos de train y test...
+[2026-01-12 13:03:48] INFO - Train cargado: 140,731 registros
+[2026-01-12 13:03:48] INFO - Test cargado: 35,183 registros
+[2026-01-12 13:03:48] INFO - Entrenando Isolation Forest...
+[2026-01-12 13:03:48] INFO - Modelo entrenado en 0.46 segundos
+[2026-01-12 13:03:48] INFO - Parametros: contamination=0.02, n_estimators=100, max_samples=256
+[2026-01-12 13:03:48] INFO - Generando predicciones con Isolation Forest...
+[2026-01-12 13:03:48] INFO - Predicciones completadas en 0.16 segundos
+[2026-01-12 13:03:48] INFO - Latencia promedio: 0.00ms por prediccion
+[2026-01-12 13:03:48] INFO - Calculando metricas de Isolation Forest...
+[2026-01-12 13:03:48] INFO - Tiempo entrenamiento: 0.46s
+[2026-01-12 13:03:48] INFO - Latencia promedio: 0.00ms
+[2026-01-12 13:03:48] INFO - Predicciones ANOMALO: 708 (2.01%)
+[2026-01-12 13:03:48] INFO - Confidence promedio: 0.143
+[2026-01-12 13:03:48] INFO - Score promedio: -0.4023
+[2026-01-12 13:03:48] INFO - Guardando modelo y predicciones...
+[2026-01-12 13:03:48] INFO - Modelo guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/models/isolation_forest.pkl
+[2026-01-12 13:03:49] INFO - Predicciones guardadas: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/results/predicciones_isolation_forest.csv
+[2026-01-12 13:03:49] INFO - Metricas guardadas: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/results/metricas_isolation_forest.json
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - MODELO B COMPLETADO
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - ✓ Modelo B completado
+[2026-01-12 13:03:49] INFO - ✓ Modelo B completado
+
+--------------------------------------------------------------------------------
+  PASO 4/6: EVALUACIÓN COMPARATIVA
+--------------------------------------------------------------------------------
+
+[2026-01-12 13:03:49] INFO - Ejecutando evaluación...
+[2026-01-12 13:03:49] INFO - Ejecutando evaluación...
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - EVALUACION COMPARATIVA DE MODELOS
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - Cargando predicciones de ambos modelos...
+[2026-01-12 13:03:49] INFO - Predicciones LLM cargadas: 300 registros
+[2026-01-12 13:03:49] INFO - Predicciones Isolation Forest cargadas: 35,183 registros
+[2026-01-12 13:03:49] INFO - Preparando datasets independientes para evaluación...
+[2026-01-12 13:03:49] INFO - Modelo A (LLM) será evaluado en: 300 registros (muestra 5%)
+[2026-01-12 13:03:49] INFO - Modelo B (Isolation Forest) será evaluado en: 35,183 registros (test completo)
+[2026-01-12 13:03:49] INFO - 
+============================================================
+[2026-01-12 13:03:49] INFO - EVALUANDO MODELO A (LLM) - Muestra 5%
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - Calculando metricas para Modelo A (LLM)...
+[2026-01-12 13:03:49] INFO - Modelo A (LLM) - Precision: 0.0276, Recall: 1.0000, F1: 0.0536
+[2026-01-12 13:03:49] INFO - Modelo A (LLM) - TP: 7, TN: 46, FP: 247, FN: 0
+[2026-01-12 13:03:49] INFO - Calculando PR-AUC para Modelo A (LLM)...
+[2026-01-12 13:03:49] INFO - Modelo A (LLM) - PR-AUC: 0.4610
+[2026-01-12 13:03:49] INFO - 
+============================================================
+[2026-01-12 13:03:49] INFO - EVALUANDO MODELO B (ISOLATION FOREST) - Test Completo
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - Calculando metricas para Modelo B (Isolation Forest)...
+[2026-01-12 13:03:49] INFO - Modelo B (Isolation Forest) - Precision: 0.1893, Recall: 0.2141, F1: 0.2009
+[2026-01-12 13:03:49] INFO - Modelo B (Isolation Forest) - TP: 134, TN: 33983, FP: 574, FN: 492
+[2026-01-12 13:03:49] INFO - Calculando PR-AUC para Modelo B (Isolation Forest)...
+[2026-01-12 13:03:49] INFO - Modelo B (Isolation Forest) - PR-AUC: 0.2143
+[2026-01-12 13:03:49] INFO - 
+============================================================
+[2026-01-12 13:03:49] INFO - NOTA: Métricas calculadas sobre datasets diferentes
+[2026-01-12 13:03:49] INFO - - Modelo A (LLM): 300 registros (muestra 5%)
+[2026-01-12 13:03:49] INFO - - Modelo B (IF): 35,183 registros (test completo)
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - Creando tabla comparativa...
+[2026-01-12 13:03:49] INFO - 
+============================================================
+[2026-01-12 13:03:49] INFO - TABLA COMPARATIVA DE MODELOS
+[2026-01-12 13:03:49] INFO - (IMPORTANTE: Evaluados sobre diferentes datasets)
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - 
+                               Precision    Recall  F1-Score    PR-AUC     TP       TN     FP     FN
+Modelo A (LLM) [muestra 5%]     0.027559  1.000000   0.05364  0.460987    7.0     46.0  247.0    0.0
+Modelo B (IF) [test completo]   0.189266  0.214058   0.20090  0.214289  134.0  33983.0  574.0  492.0
+[2026-01-12 13:03:49] INFO - ============================================================
+[2026-01-12 13:03:49] INFO - Graficando matrices de confusion...
+[2026-01-12 13:03:50] INFO - Grafico guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/plots/confusion_matrices.png
+[2026-01-12 13:03:50] INFO - Graficando curvas PR...
+[2026-01-12 13:03:50] INFO - Grafico guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/plots/precision_recall_curves.png
+[2026-01-12 13:03:50] INFO - Guardando resultados de evaluacion...
+[2026-01-12 13:03:50] INFO - Tabla comparativa guardada: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/results/comparacion_modelos.csv
+[2026-01-12 13:03:50] INFO - Evaluacion completa guardada: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/results/evaluacion_completa.json
+[2026-01-12 13:03:50] INFO - ============================================================
+[2026-01-12 13:03:50] INFO - EVALUACION COMPLETADA
+[2026-01-12 13:03:50] INFO - ============================================================
+[2026-01-12 13:03:50] INFO - ✓ Evaluación completada
+[2026-01-12 13:03:50] INFO - ✓ Evaluación completada
+
+--------------------------------------------------------------------------------
+  PASO 5/6: A/B TESTING ESTADÍSTICO
+--------------------------------------------------------------------------------
+
+[2026-01-12 13:03:50] INFO - Ejecutando A/B test...
+[2026-01-12 13:03:50] INFO - Ejecutando A/B test...
+[2026-01-12 13:03:50] INFO - ============================================================
+[2026-01-12 13:03:50] INFO - A/B TESTING - MODELO A (LLM) VS MODELO B (ISOLATION FOREST)
+[2026-01-12 13:03:50] INFO - ============================================================
+[2026-01-12 13:03:50] INFO - Cargando predicciones para A/B test...
+[2026-01-12 13:03:50] INFO - Predicciones LLM cargadas: 300 registros
+[2026-01-12 13:03:50] INFO - Predicciones Isolation Forest cargadas: 35,183 registros
+[2026-01-12 13:03:50] INFO - Haciendo merge para encontrar registros comunes...
+[2026-01-12 13:03:50] INFO - Registros comunes encontrados: 300
+[2026-01-12 13:03:50] INFO - ============================================================
+[2026-01-12 13:03:50] INFO - EJECUTANDO A/B TEST CON BOOTSTRAP STRATIFIED SAMPLING
+[2026-01-12 13:03:50] INFO - ============================================================
+[2026-01-12 13:03:50] INFO - Generando 1000 muestras bootstrap estratificadas...
+[2026-01-12 13:03:50] INFO - Distribución original - NORMAL: 293, ANOMALO: 7
+[2026-01-12 13:03:50] INFO - Generadas 1000 muestras bootstrap
+[2026-01-12 13:03:50] INFO - Calculando métricas en cada muestra bootstrap...
+[2026-01-12 13:03:51] INFO - Procesando muestra 100/1000...
+[2026-01-12 13:03:51] INFO - Procesando muestra 200/1000...
+[2026-01-12 13:03:51] INFO - Procesando muestra 300/1000...
+[2026-01-12 13:03:52] INFO - Procesando muestra 400/1000...
+[2026-01-12 13:03:52] INFO - Procesando muestra 500/1000...
+[2026-01-12 13:03:52] INFO - Procesando muestra 600/1000...
+[2026-01-12 13:03:53] INFO - Procesando muestra 700/1000...
+[2026-01-12 13:03:53] INFO - Procesando muestra 800/1000...
+[2026-01-12 13:03:53] INFO - Procesando muestra 900/1000...
+[2026-01-12 13:03:54] INFO - Procesando muestra 1000/1000...
+[2026-01-12 13:03:54] INFO - 
+============================================================
+[2026-01-12 13:03:54] INFO - RESULTADOS A/B TEST
+[2026-01-12 13:03:54] INFO - ============================================================
+[2026-01-12 13:03:54] INFO - 
+Número de iteraciones bootstrap: 1,000
+[2026-01-12 13:03:54] INFO - Registros comunes evaluados: 300
+[2026-01-12 13:03:54] INFO - 
+------------------------------------------------------------
+[2026-01-12 13:03:54] INFO - MODELO A (LLM) - Métricas Bootstrap
+[2026-01-12 13:03:54] INFO - ------------------------------------------------------------
+[2026-01-12 13:03:54] INFO - Precision: 0.0276 ± 0.0007
+[2026-01-12 13:03:54] INFO - Recall:    1.0000 ± 0.0000
+[2026-01-12 13:03:54] INFO - F1-Score:  0.0537 ± 0.0013
+[2026-01-12 13:03:54] INFO - 
+------------------------------------------------------------
+[2026-01-12 13:03:54] INFO - MODELO B (ISOLATION FOREST) - Métricas Bootstrap
+[2026-01-12 13:03:54] INFO - ------------------------------------------------------------
+[2026-01-12 13:03:54] INFO - Precision: 0.5067 ± 0.2749
+[2026-01-12 13:03:54] INFO - Recall:    0.2759 ± 0.1620
+[2026-01-12 13:03:54] INFO - F1-Score:  0.3401 ± 0.1778
+[2026-01-12 13:03:54] INFO - 
+============================================================
+[2026-01-12 13:03:54] INFO - DIFERENCIAS (Modelo A - Modelo B)
+[2026-01-12 13:03:54] INFO - ============================================================
+[2026-01-12 13:03:54] INFO - 
+PRECISION:
+[2026-01-12 13:03:54] INFO -   Diferencia media: -0.4791
+[2026-01-12 13:03:54] INFO -   IC 95%: [-0.9730, +0.0279]
+[2026-01-12 13:03:54] INFO -   P-value: 0.1780
+[2026-01-12 13:03:54] INFO -   NO significativo (α=0.05)
+[2026-01-12 13:03:54] INFO - 
+RECALL:
+[2026-01-12 13:03:54] INFO -   Diferencia media: +0.7241
+[2026-01-12 13:03:54] INFO -   IC 95%: [+0.4286, +1.0000]
+[2026-01-12 13:03:54] INFO -   P-value: 0.0000
+[2026-01-12 13:03:54] INFO -   ✓ SIGNIFICATIVO (α=0.05)
+[2026-01-12 13:03:54] INFO - 
+F1-SCORE:
+[2026-01-12 13:03:54] INFO -   Diferencia media: -0.2864
+[2026-01-12 13:03:54] INFO -   IC 95%: [-0.6138, +0.0543]
+[2026-01-12 13:03:54] INFO -   P-value: 0.1780
+[2026-01-12 13:03:54] INFO -   NO significativo (α=0.05)
+[2026-01-12 13:03:54] INFO - 
+============================================================
+[2026-01-12 13:03:54] INFO - CONCLUSIÓN
+[2026-01-12 13:03:54] INFO - ============================================================
+[2026-01-12 13:03:54] INFO - ⚠ NO hay diferencia significativa entre los modelos (α=0.05)
+[2026-01-12 13:03:54] INFO -   Ambos modelos tienen rendimiento estadísticamente similar
+[2026-01-12 13:03:54] INFO - ============================================================
+[2026-01-12 13:03:54] INFO - Generando gráficos de distribuciones bootstrap...
+[2026-01-12 13:03:54] INFO - Gráfico guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/plots/ab_test_bootstrap_distributions.png
+[2026-01-12 13:03:54] INFO - Guardando resultados del A/B test...
+[2026-01-12 13:03:54] INFO - Resultados guardados: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/results/ab_test_results.json
+[2026-01-12 13:03:54] INFO - ============================================================
+[2026-01-12 13:03:54] INFO - A/B TEST COMPLETADO
+[2026-01-12 13:03:54] INFO - ============================================================
+[2026-01-12 13:03:54] INFO - ✓ A/B Testing completado
+[2026-01-12 13:03:54] INFO - ✓ A/B Testing completado
+
+--------------------------------------------------------------------------------
+  PASO 6/6: VISUALIZACIONES DE SERIES TEMPORALES
+--------------------------------------------------------------------------------
+
+[2026-01-12 13:03:54] INFO - Generando visualizaciones...
+[2026-01-12 13:03:54] INFO - Generando visualizaciones...
+[2026-01-12 13:03:54] INFO - ============================================================
+[2026-01-12 13:03:54] INFO - VISUALIZACIONES DE SERIES TEMPORALES
+[2026-01-12 13:03:54] INFO - ============================================================
+[2026-01-12 13:03:54] INFO - Cargando datos completos con predicciones...
+[2026-01-12 13:03:54] INFO - Predicciones LLM: 300 registros
+[2026-01-12 13:03:54] INFO - Predicciones IF: 35,183 registros
+[2026-01-12 13:03:54] INFO - Registros con ambas predicciones: 300
+[2026-01-12 13:03:54] INFO - Seleccionando 3 productos interesantes para visualizar...
+[2026-01-12 13:03:54] INFO - Productos seleccionados: ['MLB3836655204', 'MLB3836681004']
+[2026-01-12 13:03:54] INFO -   MLB3836655204: 167/172 predicciones diferentes entre modelos
+[2026-01-12 13:03:54] INFO -   MLB3836681004: 68/72 predicciones diferentes entre modelos
+[2026-01-12 13:03:54] INFO - Graficando producto 1/3: MLB3836655204
+[2026-01-12 13:03:55] INFO - Graficando producto 2/3: MLB3836681004
+[2026-01-12 13:03:55] INFO - Gráfico guardado: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/plots/series_temporales_comparacion_modelos.png
+[2026-01-12 13:03:55] INFO - 
+Generando reporte de categorías...
+[2026-01-12 13:03:55] INFO - 
+============================================================
+[2026-01-12 13:03:55] INFO - DISTRIBUCIÓN DE PREDICCIONES (Registros comunes)
+[2026-01-12 13:03:55] INFO - ============================================================
+[2026-01-12 13:03:55] INFO - solo_if_acierta     :   245 (81.67%)
+[2026-01-12 13:03:55] INFO - ambos_aciertan      :    48 (16.00%)
+[2026-01-12 13:03:55] INFO - solo_llm_acierta    :     5 ( 1.67%)
+[2026-01-12 13:03:55] INFO - ambos_fallan        :     2 ( 0.67%)
+[2026-01-12 13:03:55] INFO - TOTAL               :   300 (100.00%)
+[2026-01-12 13:03:55] INFO - ============================================================
+[2026-01-12 13:03:55] INFO - 
+ACUERDO entre modelos: 50 (16.67%)
+[2026-01-12 13:03:55] INFO - DESACUERDO entre modelos: 250 (83.33%)
+[2026-01-12 13:03:55] INFO - ============================================================
+[2026-01-12 13:03:55] INFO - VISUALIZACIONES COMPLETADAS
+[2026-01-12 13:03:55] INFO - ============================================================
+[2026-01-12 13:03:55] INFO - ✓ Visualizaciones completadas
+[2026-01-12 13:03:55] INFO - ✓ Visualizaciones completadas
+
+================================================================================
+  PIPELINE COMPLETADO EXITOSAMENTE
+================================================================================
+
+RESULTADOS GENERADOS:
+  - Datos procesados:         data/processed/
+  - Predicciones:             outputs/results/
+  - Metricas:                 outputs/results/
+  - Graficos:                 outputs/plots/
+  - Modelos:                  outputs/models/
+
+ARCHIVOS CLAVE:
+  - comparacion_modelos.csv
+  - ab_test_results.json
+  - confusion_matrices.png
+  - precision_recall_curves.png
+  - series_temporales_comparacion_modelos.png
+
+LOG GUARDADO EN: /Users/danilomelo/Desktop/Prueba_Mercado_Libre/Ejercicio_1/outputs/logs/pipeline_completo_20260112_125128.log
+================================================================================

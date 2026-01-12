@@ -33,10 +33,10 @@
   },
   "correlaciones": {
     "pagerank_vs_in_degree": 0.5823472377184589,
-    "pagerank_vs_authority": 0.04712477453697474,
+    "pagerank_vs_authority": 0.04712477453697478,
     "pagerank_vs_betweenness": 0.6574004315576855,
-    "hub_vs_out_degree": 0.6749213926164959,
-    "authority_vs_in_degree": 0.5723050485198024,
+    "hub_vs_out_degree": 0.6749213926164961,
+    "authority_vs_in_degree": 0.5723050485198027,
     "betweenness_vs_closeness": 0.27812110504933296
   },
   "top_nodos": [
@@ -47,8 +47,8 @@
         "pagerank": 0.0233155199242625,
         "in_degree": 559,
         "out_degree": 14,
-        "hits_authority": 7.286055461189497e-05,
-        "hits_hub": 2.951195499529399e-07,
+        "hits_authority": 7.28605546118985e-05,
+        "hits_hub": 2.951195499532908e-07,
         "betweenness": 0.1584139481371339,
         "closeness": 0.3459390985815489
       },
@@ -68,15 +68,15 @@
         "pagerank": 0.0099464919257347,
         "in_degree": 52,
         "out_degree": 1,
-        "hits_authority": 4.193660392616326e-20,
-        "hits_hub": 2.3237769678377185e-21,
+        "hits_authority": -4.237559449943661e-19,
+        "hits_hub": -6.258701369108393e-21,
         "betweenness": 0.0006512265141579,
         "closeness": 0.0260130065032516
       },
       "rol_principal": "Puente",
       "roles_secundarios": [],
       "explicacion_rol": "Alto betweenness (0.000651), conecta comunidades",
-      "explicacion_completa": "PageRank 19.9x superior al promedio (excepcional). 52 enlaces entrantes (top 5%). Principalmente destino de navegación (authority > hub)."
+      "explicacion_completa": "PageRank 19.9x superior al promedio (excepcional). 52 enlaces entrantes (top 5%). Principalmente página de referencia (hub > authority)."
     },
     {
       "ranking": 3,
@@ -85,15 +85,15 @@
         "pagerank": 0.0084861295084515,
         "in_degree": 1,
         "out_degree": 52,
-        "hits_authority": 1.6354794748718892e-19,
-        "hits_hub": -3.922104012500691e-20,
+        "hits_authority": -4.404888149852856e-19,
+        "hits_hub": 4.798207614820777e-20,
         "betweenness": 0.0006512265141579,
         "closeness": 0.0131327799822241
       },
       "rol_principal": "Puente",
       "roles_secundarios": [],
       "explicacion_rol": "Alto betweenness (0.000651), conecta comunidades",
-      "explicacion_completa": "PageRank 17.0x superior al promedio (excepcional). Principalmente destino de navegación (authority > hub)."
+      "explicacion_completa": "PageRank 17.0x superior al promedio (excepcional). Principalmente página de referencia (hub > authority)."
     },
     {
       "ranking": 4,
@@ -102,8 +102,8 @@
         "pagerank": 0.0083066008699241,
         "in_degree": 71,
         "out_degree": 37,
-        "hits_authority": 2.4795060149016426e-06,
-        "hits_hub": 9.180680739365704e-07,
+        "hits_authority": 2.4795060149033184e-06,
+        "hits_hub": 9.180680739372438e-07,
         "betweenness": 0.0800926011181829,
         "closeness": 0.2384650075990981
       },
@@ -122,8 +122,8 @@
         "pagerank": 0.0081842805040081,
         "in_degree": 51,
         "out_degree": 15,
-        "hits_authority": 1.5734244089524984e-06,
-        "hits_hub": 8.126068849225063e-07,
+        "hits_authority": 1.57342440895383e-06,
+        "hits_hub": 8.126068849227718e-07,
         "betweenness": 0.0196548018517886,
         "closeness": 0.2371092368673281
       },
@@ -142,8 +142,8 @@
         "pagerank": 0.0078564273513626,
         "in_degree": 51,
         "out_degree": 14,
-        "hits_authority": 1.6289194169580748e-06,
-        "hits_hub": 8.112079697733317e-07,
+        "hits_authority": 1.6289194169597623e-06,
+        "hits_hub": 8.112079697735935e-07,
         "betweenness": 0.0352697716698378,
         "closeness": 0.2367353654752321
       },
@@ -162,8 +162,8 @@
         "pagerank": 0.0077432808467327,
         "in_degree": 51,
         "out_degree": 11,
-        "hits_authority": 1.5639080193282017e-06,
-        "hits_hub": 2.261413252969345e-07,
+        "hits_authority": 1.5639080193301965e-06,
+        "hits_hub": 2.2614132529716367e-07,
         "betweenness": 0.0084395760707752,
         "closeness": 0.237334127069858
       },
@@ -182,8 +182,8 @@
         "pagerank": 0.0077149298799781,
         "in_degree": 50,
         "out_degree": 12,
-        "hits_authority": 1.588606578203192e-06,
-        "hits_hub": 7.979045431954545e-07,
+        "hits_authority": 1.5886065782049727e-06,
+        "hits_hub": 7.979045431957123e-07,
         "betweenness": 0.0190864815726133,
         "closeness": 0.2366607326361794
       },
@@ -202,8 +202,8 @@
         "pagerank": 0.0077082436762194,
         "in_degree": 49,
         "out_degree": 12,
-        "hits_authority": 1.5621752478849654e-06,
-        "hits_hub": 2.207011178712525e-07,
+        "hits_authority": 1.562175247885745e-06,
+        "hits_hub": 2.2070111787155358e-07,
         "betweenness": 0.0068541493000467,
         "closeness": 0.2365861468395717
       },
@@ -222,8 +222,8 @@
         "pagerank": 0.0076709031277261,
         "in_degree": 51,
         "out_degree": 11,
-        "hits_authority": 1.6176879254621076e-06,
-        "hits_hub": 1.2631568686298608e-06,
+        "hits_authority": 1.6176879254646998e-06,
+        "hits_hub": 1.2631568686301856e-06,
         "betweenness": 0.0042915751392287,
         "closeness": 0.2367353654752321
       },
@@ -242,8 +242,8 @@
         "pagerank": 0.0076075631641111,
         "in_degree": 49,
         "out_degree": 10,
-        "hits_authority": 1.562396195703554e-06,
-        "hits_hub": 2.0924050230371958e-07,
+        "hits_authority": 1.5623961957061895e-06,
+        "hits_hub": 2.092405023039466e-07,
         "betweenness": 8.228305811124953e-05,
         "closeness": 0.2365861468395717
       },
@@ -259,8 +259,8 @@
         "pagerank": 0.0075534139523559,
         "in_degree": 50,
         "out_degree": 9,
-        "hits_authority": 1.5865985157144191e-06,
-        "hits_hub": 2.0037979818711146e-07,
+        "hits_authority": 1.5865985157178155e-06,
+        "hits_hub": 2.0037979818733482e-07,
         "betweenness": 2.4093666039230317e-05,
         "closeness": 0.2366607326361794
       },
@@ -276,8 +276,8 @@
         "pagerank": 0.0062875900330244,
         "in_degree": 22,
         "out_degree": 14,
-        "hits_authority": 5.261516159689568e-07,
-        "hits_hub": 2.8824103612967454e-07,
+        "hits_authority": 5.261516159701961e-07,
+        "hits_hub": 2.8824103612999424e-07,
         "betweenness": 0.0004431774800635,
         "closeness": 0.2345899512256128
       },
@@ -293,8 +293,8 @@
         "pagerank": 0.0050461388622786,
         "in_degree": 28,
         "out_degree": 8,
-        "hits_authority": 5.060045702436498e-12,
-        "hits_hub": 2.600909233337912e-10,
+        "hits_authority": 5.060044442713285e-12,
+        "hits_hub": 2.6009092336385093e-10,
         "betweenness": 0.0002938155764568,
         "closeness": 0.0137211462874294
       },
@@ -331,8 +331,8 @@
         "pagerank": 0.0046990332331769,
         "in_degree": 34,
         "out_degree": 9,
-        "hits_authority": 2.5072146302862602e-14,
-        "hits_hub": 2.6016228635302657e-10,
+        "hits_authority": 2.5071651067075063e-14,
+        "hits_hub": 2.601622863350692e-10,
         "betweenness": 0.0003860789253485,
         "closeness": 0.0170611621600273
       },
@@ -348,8 +348,8 @@
         "pagerank": 0.00450205153636,
         "in_degree": 44,
         "out_degree": 13,
-        "hits_authority": 1.3494463354913812e-06,
-        "hits_hub": 2.640289257965007e-07,
+        "hits_authority": 1.349446335493728e-06,
+        "hits_hub": 2.640289257968052e-07,
         "betweenness": 0.011610594247145,
         "closeness": 0.2378605335620915
       },
@@ -368,8 +368,8 @@
         "pagerank": 0.0041456472374957,
         "in_degree": 180,
         "out_degree": 9,
-        "hits_authority": 6.744818734522809e-06,
-        "hits_hub": 1.2079254469544618e-06,
+        "hits_authority": 6.744818734540427e-06,
+        "hits_hub": 1.2079254469547204e-06,
         "betweenness": 0.0066363042680865,
         "closeness": 0.16290968835112
       },
@@ -388,8 +388,8 @@
         "pagerank": 0.0040923518215781,
         "in_degree": 56,
         "out_degree": 12,
-        "hits_authority": 9.470909755915984e-07,
-        "hits_hub": 1.56392736223148e-08,
+        "hits_authority": 9.470909755901876e-07,
+        "hits_hub": 1.5639273622268172e-08,
         "betweenness": 0.0104238637912473,
         "closeness": 0.1883783799051345
       },
