@@ -145,7 +145,7 @@
           <mxGeometry height="30" width="660" x="245" y="930" as="geometry" />
         </mxCell>
         <mxCell id="eval_examples_items" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" value="• 5-10 ejemplos completos (Query → Chunks → Respuesta)   • Tabla de métricas consolidada   • Logs JSON del agente crítico   • Análisis de casos aprobados/rechazados" vertex="1">
-          <mxGeometry height="40" width="640" x="255" y="965" as="geometry" />
+          <mxGeometry height="40" width="640" x="255" y="960" as="geometry" />
         </mxCell>
         <mxCell id="arrow_output_eval" edge="1" parent="1" source="output_box" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" target="fase6_box" value="Evaluar">
           <mxGeometry height="50" relative="1" width="50" as="geometry">

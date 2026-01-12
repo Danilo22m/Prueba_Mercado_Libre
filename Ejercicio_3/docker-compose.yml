@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  rag-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-agente-critico
+    env_file:
+      - .env
+    volumes:
+      # Persistir datos y resultados
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - ./config:/app/config
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Ejecutar pipeline completo
+    command: python main.py
+
+  # Servicio alternativo para ejecutar fases individuales
+  rag-fase1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-fase1
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    command: python src/fase1_ingesta.py
+    profiles:
+      - fase1
+
+  rag-fase2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-fase2
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - ./config:/app/config
+    command: python src/fase2_chunking.py
+    profiles:
+      - fase2
+
+  rag-fase3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-fase3
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - ./config:/app/config
+    command: python src/fase3_retrieval.py
+    profiles:
+      - fase3
+
+  rag-evaluacion:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-evaluacion
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - ./config:/app/config
+    command: python src/fase6_evaluacion.py
+    profiles:
+      - evaluacion

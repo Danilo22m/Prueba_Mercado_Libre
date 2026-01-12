@@ -1,0 +1,147 @@
+[
+  {
+    "query_id": 1,
+    "query": "Que procesador tiene el HP 15?",
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 607.32,
+      "error": false
+    },
+    "advertencia": ""
+  },
+  {
+    "query_id": 2,
+    "query": "Que laptops tienen tarjeta grafica NVIDIA?",
+    "aprobada": true,
+    "intentos": 2,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 435.13,
+      "error": false
+    },
+    "advertencia": ""
+  },
+  {
+    "query_id": 3,
+    "query": "Cual es el tamano de pantalla del Lenovo ThinkPad?",
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 348.68,
+      "error": false
+    },
+    "advertencia": ""
+  },
+  {
+    "query_id": 4,
+    "query": "Que laptop tiene mejor rendimiento de CPU?",
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 343.81,
+      "error": false
+    },
+    "advertencia": ""
+  },
+  {
+    "query_id": 5,
+    "query": "Cuales laptops tienen WiFi 6?",
+    "aprobada": false,
+    "intentos": 3,
+    "verificacion": {
+      "veredicto": "REHACER",
+      "problemas": [
+        {
+          "tipo": "error_parseo",
+          "descripcion": "Unterminated string starting at: line 2 column 18 (char 19)"
+        }
+      ],
+      "feedback": "No se pudo parsear la verificacion. Regenerar respuesta.",
+      "verification_time_ms": 1841.31,
+      "error": false
+    },
+    "advertencia": "Respuesta no verificada completamente. Usar con precaucion."
+  },
+  {
+    "query_id": 6,
+    "query": "Que GPU tiene el ASUS ROG?",
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 620.59,
+      "error": false
+    },
+    "advertencia": ""
+  },
+  {
+    "query_id": 7,
+    "query": "Laptops con pantalla de 15.6 pulgadas",
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 471.46,
+      "error": false
+    },
+    "advertencia": ""
+  },
+  {
+    "query_id": 8,
+    "query": "Que laptops tienen puerto Ethernet?",
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 479.32,
+      "error": false
+    },
+    "advertencia": ""
+  },
+  {
+    "query_id": 9,
+    "query": "Cual es el peso del Dell XPS?",
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 488.2,
+      "error": false
+    },
+    "advertencia": ""
+  },
+  {
+    "query_id": 10,
+    "query": "Que resolucion de pantalla tiene el Lenovo IdeaPad?",
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 333.06,
+      "error": false
+    },
+    "advertencia": ""
+  }
+]

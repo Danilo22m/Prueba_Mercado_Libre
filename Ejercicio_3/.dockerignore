@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs (se montan como volumen)
+outputs/logs/*
+outputs/results/*
+outputs/models/*
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Test files
+test_groq.py

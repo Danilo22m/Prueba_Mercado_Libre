@@ -1,0 +1,733 @@
+[
+  {
+    "query_id": 1,
+    "query": "Que procesador tiene el HP 15?",
+    "chunks": [
+      {
+        "chunk_id": 966,
+        "laptop_id": 926,
+        "field": "cpu",
+        "text": "HP 15 de HP tiene procesador Intel Pentium Silver N5030, con rendimiento de 2621 puntos en CPU Mark",
+        "citation": "[926:cpu]",
+        "tokens": 27,
+        "score": 0.6511
+      },
+      {
+        "chunk_id": 251,
+        "laptop_id": 228,
+        "field": "cpu",
+        "text": "HP 15 de HP tiene procesador Intel Core i5-1135G7, con rendimiento de 9901 puntos en CPU Mark",
+        "citation": "[228:cpu]",
+        "tokens": 29,
+        "score": 0.6412
+      },
+      {
+        "chunk_id": 397,
+        "laptop_id": 368,
+        "field": "cpu",
+        "text": "HP 15 de HP tiene procesador Intel Core i5-1135G7, con rendimiento de 9901 puntos en CPU Mark",
+        "citation": "[368:cpu]",
+        "tokens": 29,
+        "score": 0.6412
+      },
+      {
+        "chunk_id": 798,
+        "laptop_id": 757,
+        "field": "cpu",
+        "text": "HP 15 de HP tiene procesador Intel Core i5-1135G7, con rendimiento de 9901 puntos en CPU Mark",
+        "citation": "[757:cpu]",
+        "tokens": 29,
+        "score": 0.6412
+      },
+      {
+        "chunk_id": 225,
+        "laptop_id": 212,
+        "field": "cpu",
+        "text": "HP 15 de HP tiene procesador Intel Core i5-1135G7, con rendimiento de 9901 puntos en CPU Mark",
+        "citation": "[212:cpu]",
+        "tokens": 29,
+        "score": 0.6412
+      }
+    ],
+    "respuesta": "El HP 15 tiene procesador Intel Pentium Silver N5030 [926:cpu] o Intel Core i5-1135G7 [228:cpu, 368:cpu, 757:cpu, 212:cpu].",
+    "citations_used": [
+      "[926:cpu]",
+      "[228:cpu, 368:cpu, 757:cpu, 212:cpu]"
+    ],
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 607.32,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 1586.13,
+      "retrieval_ms": 365.35,
+      "generation_ms": 613.3,
+      "verificacion_ms": 607.32
+    }
+  },
+  {
+    "query_id": 2,
+    "query": "Que laptops tienen tarjeta grafica NVIDIA?",
+    "chunks": [
+      {
+        "chunk_id": 305,
+        "laptop_id": 282,
+        "field": "gpu",
+        "text": "HP Victus 15 de HP tiene tarjeta grafica NVIDIA GeForce GTX 1650 (Laptop)",
+        "citation": "[282:gpu]",
+        "tokens": 22,
+        "score": 0.7387
+      },
+      {
+        "chunk_id": 675,
+        "laptop_id": 644,
+        "field": "gpu",
+        "text": "HP Victus 15 de HP tiene tarjeta grafica NVIDIA GeForce GTX 1650 (Laptop)",
+        "citation": "[644:gpu]",
+        "tokens": 22,
+        "score": 0.7387
+      },
+      {
+        "chunk_id": 670,
+        "laptop_id": 640,
+        "field": "gpu",
+        "text": "HP OMEN 16 de HP tiene tarjeta grafica NVIDIA GeForce RTX 3070 (Laptop)",
+        "citation": "[640:gpu]",
+        "tokens": 23,
+        "score": 0.7161
+      },
+      {
+        "chunk_id": 819,
+        "laptop_id": 778,
+        "field": "gpu",
+        "text": "HP OMEN 17 de HP tiene tarjeta grafica NVIDIA GeForce RTX 3070 Ti (Laptop)",
+        "citation": "[778:gpu]",
+        "tokens": 24,
+        "score": 0.7022
+      },
+      {
+        "chunk_id": 727,
+        "laptop_id": 709,
+        "field": "gpu",
+        "text": "HP OMEN 17 de HP tiene tarjeta grafica NVIDIA GeForce RTX 3070 Ti (Laptop)",
+        "citation": "[709:gpu]",
+        "tokens": 24,
+        "score": 0.7022
+      }
+    ],
+    "respuesta": "La laptop HP Victus 15 tiene tarjeta gráfica NVIDIA GeForce GTX 1650 [282:gpu] y [644:gpu], la laptop HP OMEN 16 tiene tarjeta gráfica NVIDIA GeForce RTX 3070 [640:gpu] y la laptop HP OMEN 17 tiene tarjeta gráfica NVIDIA GeForce RTX 3070 Ti [778:gpu] y [709:gpu].",
+    "citations_used": [
+      "[644:gpu]",
+      "[709:gpu]",
+      "[282:gpu]",
+      "[778:gpu]",
+      "[640:gpu]"
+    ],
+    "aprobada": true,
+    "intentos": 2,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 435.13,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 3502.34,
+      "retrieval_ms": 70.63,
+      "generation_ms": 2996.53,
+      "verificacion_ms": 435.13
+    }
+  },
+  {
+    "query_id": 3,
+    "query": "Cual es el tamano de pantalla del Lenovo ThinkPad?",
+    "chunks": [
+      {
+        "chunk_id": 53,
+        "laptop_id": 34,
+        "field": "ram",
+        "text": "Lenovo ThinkPad X13 Gen 1 de Lenovo tiene memoria RAM 8 GB de tipo 2666MHz",
+        "citation": "[34:ram]",
+        "tokens": 23,
+        "score": 0.6284
+      },
+      {
+        "chunk_id": 831,
+        "laptop_id": 797,
+        "field": "display_resolution",
+        "text": "Lenovo IdeaPad 3 15 de Lenovo tiene resolucion de pantalla  HD (1366 x 768)",
+        "citation": "[797:display_resolution]",
+        "tokens": 24,
+        "score": 0.5904
+      },
+      {
+        "chunk_id": 395,
+        "laptop_id": 366,
+        "field": "display_resolution",
+        "text": "Lenovo IdeaPad 3 15 de Lenovo tiene resolucion de pantalla  HD (1366 x 768)",
+        "citation": "[366:display_resolution]",
+        "tokens": 24,
+        "score": 0.5904
+      },
+      {
+        "chunk_id": 56,
+        "laptop_id": 34,
+        "field": "display_resolution",
+        "text": "Lenovo ThinkPad X13 Gen 1 de Lenovo tiene resolucion de pantalla  HD (1366 x 768)",
+        "citation": "[34:display_resolution]",
+        "tokens": 25,
+        "score": 0.5889
+      },
+      {
+        "chunk_id": 664,
+        "laptop_id": 638,
+        "field": "ram",
+        "text": "Lenovo ThinkPad X1 Carbon 8 de Lenovo tiene memoria RAM 16 GB de tipo 2133MHz",
+        "citation": "[638:ram]",
+        "tokens": 23,
+        "score": 0.5886
+      }
+    ],
+    "respuesta": "No tengo informacion suficiente para responder esta pregunta.",
+    "citations_used": [],
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 348.68,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 1101.08,
+      "retrieval_ms": 105.99,
+      "generation_ms": 646.26,
+      "verificacion_ms": 348.68
+    }
+  },
+  {
+    "query_id": 4,
+    "query": "Que laptop tiene mejor rendimiento de CPU?",
+    "chunks": [
+      {
+        "chunk_id": 89,
+        "laptop_id": 75,
+        "field": "cpu",
+        "text": "HP OMEN 17 de HP tiene procesador Intel Core i7-12700H, con rendimiento de 26457 puntos en CPU Mark",
+        "citation": "[75:cpu]",
+        "tokens": 30,
+        "score": 0.6712
+      },
+      {
+        "chunk_id": 726,
+        "laptop_id": 709,
+        "field": "cpu",
+        "text": "HP OMEN 17 de HP tiene procesador Intel Core i7-12700H, con rendimiento de 26457 puntos en CPU Mark",
+        "citation": "[709:cpu]",
+        "tokens": 30,
+        "score": 0.6712
+      },
+      {
+        "chunk_id": 215,
+        "laptop_id": 204,
+        "field": "cpu",
+        "text": "HP OMEN 16 de HP tiene procesador Intel Core i9-12900H, con rendimiento de 28587 puntos en CPU Mark",
+        "citation": "[204:cpu]",
+        "tokens": 30,
+        "score": 0.6676
+      },
+      {
+        "chunk_id": 611,
+        "laptop_id": 606,
+        "field": "cpu",
+        "text": "HP OMEN 16 de HP tiene procesador Intel Core i9-12900H, con rendimiento de 28587 puntos en CPU Mark",
+        "citation": "[606:cpu]",
+        "tokens": 30,
+        "score": 0.6676
+      },
+      {
+        "chunk_id": 731,
+        "laptop_id": 712,
+        "field": "cpu",
+        "text": "HP OMEN 16 de HP tiene procesador Intel Core i9-12900H, con rendimiento de 28587 puntos en CPU Mark",
+        "citation": "[712:cpu]",
+        "tokens": 30,
+        "score": 0.6676
+      }
+    ],
+    "respuesta": "El HP OMEN 16 tiene mejor rendimiento de CPU con 28587 puntos en CPU Mark [204:cpu], [606:cpu], [712:cpu]. El HP OMEN 17 tiene un rendimiento de 26457 puntos en CPU Mark [75:cpu], [709:cpu].",
+    "citations_used": [
+      "[204:cpu]",
+      "[75:cpu]",
+      "[709:cpu]",
+      "[606:cpu]",
+      "[712:cpu]"
+    ],
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 343.81,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 956.65,
+      "retrieval_ms": 39.11,
+      "generation_ms": 573.65,
+      "verificacion_ms": 343.81
+    }
+  },
+  {
+    "query_id": 5,
+    "query": "Cuales laptops tienen WiFi 6?",
+    "chunks": [
+      {
+        "chunk_id": 126,
+        "laptop_id": 122,
+        "field": "wifi_version",
+        "text": "HP Victus 16 de HP tiene version WiFi 802.11a/b/g/n/ac/ax",
+        "citation": "[122:wifi_version]",
+        "tokens": 21,
+        "score": 0.6401
+      },
+      {
+        "chunk_id": 461,
+        "laptop_id": 441,
+        "field": "wifi_version",
+        "text": "Lenovo YOGA 910 (13\") de Lenovo tiene version WiFi 802.11ac",
+        "citation": "[441:wifi_version]",
+        "tokens": 20,
+        "score": 0.6372
+      },
+      {
+        "chunk_id": 572,
+        "laptop_id": 556,
+        "field": "wifi_version",
+        "text": "Lenovo ThinkPad X1 Carbon Gen 10 de Lenovo tiene version WiFi 802.11ax",
+        "citation": "[556:wifi_version]",
+        "tokens": 20,
+        "score": 0.5893
+      },
+      {
+        "chunk_id": 483,
+        "laptop_id": 458,
+        "field": "wifi_version",
+        "text": "Lenovo ThinkPad X1 Carbon Gen 10 de Lenovo tiene version WiFi 802.11ax",
+        "citation": "[458:wifi_version]",
+        "tokens": 20,
+        "score": 0.5893
+      },
+      {
+        "chunk_id": 73,
+        "laptop_id": 51,
+        "field": "wifi_version",
+        "text": "Lenovo ThinkPad X1 Carbon Gen 10 de Lenovo tiene version WiFi 802.11ax",
+        "citation": "[51:wifi_version]",
+        "tokens": 20,
+        "score": 0.5893
+      }
+    ],
+    "respuesta": "Las laptops que tienen WiFi 6 (802.11ax) son: HP Victus 16 [122:wifi_version] y Lenovo ThinkPad X1 Carbon Gen 10 [556:wifi_version], [458:wifi_version], [51:wifi_version].",
+    "citations_used": [
+      "[51:wifi_version]",
+      "[122:wifi_version]",
+      "[458:wifi_version]",
+      "[556:wifi_version]"
+    ],
+    "aprobada": false,
+    "intentos": 3,
+    "verificacion": {
+      "veredicto": "REHACER",
+      "problemas": [
+        {
+          "tipo": "error_parseo",
+          "descripcion": "Unterminated string starting at: line 2 column 18 (char 19)"
+        }
+      ],
+      "feedback": "No se pudo parsear la verificacion. Regenerar respuesta.",
+      "verification_time_ms": 1841.31,
+      "error": false
+    },
+    "advertencia": "Respuesta no verificada completamente. Usar con precaucion.",
+    "tiempos": {
+      "total_ms": 7394.27,
+      "retrieval_ms": 33.66,
+      "generation_ms": 5519.23,
+      "verificacion_ms": 1841.31
+    }
+  },
+  {
+    "query_id": 6,
+    "query": "Que GPU tiene el ASUS ROG?",
+    "chunks": [
+      {
+        "chunk_id": 814,
+        "laptop_id": 774,
+        "field": "gpu",
+        "text": "ASUS ROG Strix G15 de ASUS tiene tarjeta grafica AMD Radeon RX 6800M",
+        "citation": "[774:gpu]",
+        "tokens": 22,
+        "score": 0.6992
+      },
+      {
+        "chunk_id": 813,
+        "laptop_id": 774,
+        "field": "cpu",
+        "text": "ASUS ROG Strix G15 de ASUS tiene procesador AMD Ryzen 9 5980HX, con rendimiento de 23634 puntos en CPU Mark",
+        "citation": "[774:cpu]",
+        "tokens": 33,
+        "score": 0.6376
+      },
+      {
+        "chunk_id": 141,
+        "laptop_id": 133,
+        "field": "cpu",
+        "text": "ASUS ROG Strix G15 de ASUS tiene procesador AMD Ryzen 7 4800H, con rendimiento de 18678 puntos en CPU Mark",
+        "citation": "[133:cpu]",
+        "tokens": 33,
+        "score": 0.6335
+      },
+      {
+        "chunk_id": 843,
+        "laptop_id": 804,
+        "field": "cpu",
+        "text": "ASUS ROG Strix G15 de ASUS tiene procesador AMD Ryzen 7 4800H, con rendimiento de 18678 puntos en CPU Mark",
+        "citation": "[804:cpu]",
+        "tokens": 33,
+        "score": 0.6335
+      },
+      {
+        "chunk_id": 741,
+        "laptop_id": 728,
+        "field": "cpu",
+        "text": "ASUS ROG Strix G15 de ASUS tiene procesador AMD Ryzen 7 4800H, con rendimiento de 18678 puntos en CPU Mark",
+        "citation": "[728:cpu]",
+        "tokens": 33,
+        "score": 0.6335
+      }
+    ],
+    "respuesta": "El ASUS ROG Strix G15 tiene una tarjeta gráfica AMD Radeon RX 6800M [774:gpu].",
+    "citations_used": [
+      "[774:gpu]"
+    ],
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 620.59,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 1793.78,
+      "retrieval_ms": 578.67,
+      "generation_ms": 594.27,
+      "verificacion_ms": 620.59
+    }
+  },
+  {
+    "query_id": 7,
+    "query": "Laptops con pantalla de 15.6 pulgadas",
+    "chunks": [
+      {
+        "chunk_id": 675,
+        "laptop_id": 644,
+        "field": "gpu",
+        "text": "HP Victus 15 de HP tiene tarjeta grafica NVIDIA GeForce GTX 1650 (Laptop)",
+        "citation": "[644:gpu]",
+        "tokens": 22,
+        "score": 0.5942
+      },
+      {
+        "chunk_id": 305,
+        "laptop_id": 282,
+        "field": "gpu",
+        "text": "HP Victus 15 de HP tiene tarjeta grafica NVIDIA GeForce GTX 1650 (Laptop)",
+        "citation": "[282:gpu]",
+        "tokens": 22,
+        "score": 0.5942
+      },
+      {
+        "chunk_id": 238,
+        "laptop_id": 225,
+        "field": "display_resolution",
+        "text": "ASUS VivoBook 16X de ASUS tiene resolucion de pantalla  WQUXGA (3840 x 2400)",
+        "citation": "[225:display_resolution]",
+        "tokens": 28,
+        "score": 0.5762
+      },
+      {
+        "chunk_id": 544,
+        "laptop_id": 529,
+        "field": "display_resolution",
+        "text": "ASUS VivoBook 14 de ASUS tiene resolucion de pantalla  HD (1366 x 768)",
+        "citation": "[529:display_resolution]",
+        "tokens": 22,
+        "score": 0.5719
+      },
+      {
+        "chunk_id": 1012,
+        "laptop_id": 960,
+        "field": "display_resolution",
+        "text": "ASUS VivoBook 14 de ASUS tiene resolucion de pantalla  HD (1366 x 768)",
+        "citation": "[960:display_resolution]",
+        "tokens": 22,
+        "score": 0.5719
+      }
+    ],
+    "respuesta": "No tengo informacion suficiente para responder esta pregunta.",
+    "citations_used": [],
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 471.46,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 855.79,
+      "retrieval_ms": 98.11,
+      "generation_ms": 286.17,
+      "verificacion_ms": 471.46
+    }
+  },
+  {
+    "query_id": 8,
+    "query": "Que laptops tienen puerto Ethernet?",
+    "chunks": [
+      {
+        "chunk_id": 261,
+        "laptop_id": 233,
+        "field": "ethernet",
+        "text": "HP Victus 15 de HP tiene puerto Ethernet 10, 100, 1000 Mbit/s",
+        "citation": "[233:ethernet]",
+        "tokens": 22,
+        "score": 0.6791
+      },
+      {
+        "chunk_id": 360,
+        "laptop_id": 340,
+        "field": "ethernet",
+        "text": "HP Victus 15 de HP tiene puerto Ethernet 10, 100, 1000 Mbit/s",
+        "citation": "[340:ethernet]",
+        "tokens": 22,
+        "score": 0.6791
+      },
+      {
+        "chunk_id": 433,
+        "laptop_id": 434,
+        "field": "ethernet",
+        "text": "HP Victus 15 de HP tiene puerto Ethernet 10, 100, 1000 Mbit/s",
+        "citation": "[434:ethernet]",
+        "tokens": 22,
+        "score": 0.6791
+      },
+      {
+        "chunk_id": 679,
+        "laptop_id": 644,
+        "field": "ethernet",
+        "text": "HP Victus 15 de HP tiene puerto Ethernet 10, 100, 1000 Mbit/s",
+        "citation": "[644:ethernet]",
+        "tokens": 22,
+        "score": 0.6791
+      },
+      {
+        "chunk_id": 993,
+        "laptop_id": 951,
+        "field": "ethernet",
+        "text": "HP Victus 15 de HP tiene puerto Ethernet 10, 100, 1000 Mbit/s",
+        "citation": "[951:ethernet]",
+        "tokens": 22,
+        "score": 0.6791
+      }
+    ],
+    "respuesta": "El HP Victus 15 de HP tiene puerto Ethernet [233:ethernet], [340:ethernet], [434:ethernet], [644:ethernet], [951:ethernet].",
+    "citations_used": [
+      "[340:ethernet]",
+      "[233:ethernet]",
+      "[644:ethernet]",
+      "[951:ethernet]",
+      "[434:ethernet]"
+    ],
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 479.32,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 1307.15,
+      "retrieval_ms": 380.97,
+      "generation_ms": 446.75,
+      "verificacion_ms": 479.32
+    }
+  },
+  {
+    "query_id": 9,
+    "query": "Cual es el peso del Dell XPS?",
+    "chunks": [
+      {
+        "chunk_id": 298,
+        "laptop_id": 276,
+        "field": "weight",
+        "text": "Dell XPS 9510 de Dell tiene peso 344.40 x 230.30 x 7.70 ~ 18.00 mm (13.56\" x 9.07\" x 0.30\")",
+        "citation": "[276:weight]",
+        "tokens": 48,
+        "score": 0.5619
+      },
+      {
+        "chunk_id": 296,
+        "laptop_id": 276,
+        "field": "display_size",
+        "text": "Dell XPS 9510 de Dell tiene tamano de pantalla 15.6 inches con resolucion Full HD + (1920 x 1200)",
+        "citation": "[276:display_size]",
+        "tokens": 33,
+        "score": 0.5113
+      },
+      {
+        "chunk_id": 297,
+        "laptop_id": 276,
+        "field": "display_resolution",
+        "text": "Dell XPS 9510 de Dell tiene resolucion de pantalla  Full HD + (1920 x 1200)",
+        "citation": "[276:display_resolution]",
+        "tokens": 26,
+        "score": 0.5009
+      },
+      {
+        "chunk_id": 472,
+        "laptop_id": 448,
+        "field": "weight",
+        "text": "Dell G5 5511 de Dell tiene peso 357.26 x 272.11 x 21.32 - 25.33 mm (14.07\" x 10.71\" x 0.84\")",
+        "citation": "[448:weight]",
+        "tokens": 48,
+        "score": 0.4923
+      },
+      {
+        "chunk_id": 661,
+        "laptop_id": 636,
+        "field": "weight",
+        "text": "Dell G5 5511 de Dell tiene peso 357.26 x 272.11 x 21.32 - 25.33 mm (14.07\" x 10.71\" x 0.84\")",
+        "citation": "[636:weight]",
+        "tokens": 48,
+        "score": 0.4923
+      }
+    ],
+    "respuesta": "El peso del Dell XPS 9510 es de 344.40 x 230.30 x 7.70 ~ 18.00 mm [276:weight]. No hay informacion sobre el peso del Dell XPS en general, solo del modelo 9510 [276:weight].",
+    "citations_used": [
+      "[276:weight]"
+    ],
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 488.2,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 1080.9,
+      "retrieval_ms": 30.03,
+      "generation_ms": 562.55,
+      "verificacion_ms": 488.2
+    }
+  },
+  {
+    "query_id": 10,
+    "query": "Que resolucion de pantalla tiene el Lenovo IdeaPad?",
+    "chunks": [
+      {
+        "chunk_id": 831,
+        "laptop_id": 797,
+        "field": "display_resolution",
+        "text": "Lenovo IdeaPad 3 15 de Lenovo tiene resolucion de pantalla  HD (1366 x 768)",
+        "citation": "[797:display_resolution]",
+        "tokens": 24,
+        "score": 0.7322
+      },
+      {
+        "chunk_id": 395,
+        "laptop_id": 366,
+        "field": "display_resolution",
+        "text": "Lenovo IdeaPad 3 15 de Lenovo tiene resolucion de pantalla  HD (1366 x 768)",
+        "citation": "[366:display_resolution]",
+        "tokens": 24,
+        "score": 0.7322
+      },
+      {
+        "chunk_id": 16,
+        "laptop_id": 9,
+        "field": "display_resolution",
+        "text": "Lenovo Ideapad 320 de Lenovo tiene resolucion de pantalla  HD (1366 x 768)",
+        "citation": "[9:display_resolution]",
+        "tokens": 23,
+        "score": 0.7203
+      },
+      {
+        "chunk_id": 1042,
+        "laptop_id": 987,
+        "field": "display_resolution",
+        "text": "Lenovo IdeaPad 5 Pro 14 de Lenovo tiene resolucion de pantalla  2.2K (2240 x 1400)",
+        "citation": "[987:display_resolution]",
+        "tokens": 30,
+        "score": 0.7116
+      },
+      {
+        "chunk_id": 541,
+        "laptop_id": 527,
+        "field": "display_resolution",
+        "text": "Lenovo IdeaPad 5 Pro 14 de Lenovo tiene resolucion de pantalla  2.2K (2240 x 1400)",
+        "citation": "[527:display_resolution]",
+        "tokens": 30,
+        "score": 0.7116
+      }
+    ],
+    "respuesta": "El Lenovo IdeaPad 3 15 tiene resolucion de pantalla HD (1366 x 768) [797:display_resolution] [366:display_resolution]. El Lenovo Ideapad 320 tiene resolucion de pantalla HD (1366 x 768) [9:display_resolution]. El Lenovo IdeaPad 5 Pro 14 tiene resolucion de pantalla 2.2K (2240 x 1400) [987:display_resolution] [527:display_resolution].",
+    "citations_used": [
+      "[797:display_resolution]",
+      "[366:display_resolution]",
+      "[987:display_resolution]",
+      "[527:display_resolution]",
+      "[9:display_resolution]"
+    ],
+    "aprobada": true,
+    "intentos": 1,
+    "verificacion": {
+      "veredicto": "APROBAR",
+      "problemas": [],
+      "feedback": "",
+      "verification_time_ms": 333.06,
+      "error": false
+    },
+    "advertencia": "",
+    "tiempos": {
+      "total_ms": 964.52,
+      "retrieval_ms": 64.54,
+      "generation_ms": 566.88,
+      "verificacion_ms": 333.06
+    }
+  }
+]
